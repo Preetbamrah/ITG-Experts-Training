@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.VideoDashboard">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/video_toolbar"/>
+    <android.support.v7.widget.CardView
+        android:layout_below="@id/video_toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="20dp"
+        android:id="@+id/live_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/live_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:tint="#FDFDFD"
+            android:layout_marginLeft="30dp"
+            app:srcCompat="@drawable/video_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/live_image"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/live_btn"
+        android:background="#FDFDFD"
+        android:layout_centerVertical="true"
+        android:text="LIVE VIDEO"
+        android:textSize="30dp"
+        android:visibility="visible"
+        android:textColor="#000"
+        />
+</RelativeLayout>
+    </android.support.v7.widget.CardView>
+          <android.support.v7.widget.CardView
+        android:layout_below="@id/live_card_view"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+              android:padding="20dp"
+        android:id="@+id/motivational_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/motivational_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_background"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:tint="#FDFDFD"
+
+            android:layout_marginLeft="30dp"
+            app:srcCompat="@drawable/video_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/motivational_image"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/motivational_video"
+        android:gravity="center_vertical"
+        android:visibility="visible"
+        android:background="#FDFDFD"
+        android:text="MOTIVATIONAL VIDEO"
+        android:textColor="#000"
+        android:textSize="30dp"
+        />
+              </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <include
+        layout="@layout/toolbar_activity"
+        android:id="@+id/toolbar_update_status"/>
+    <TextView
+        android:id="@+id/update_text"
+        android:layout_below="@id/toolbar_update_status"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:id="@+id/update_radio"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/update_text">
+        <RadioButton
+            android:id="@+id/busy_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:layout_marginLeft="20dp"
+            android:text="Busy"/>
+        <RadioButton
+            android:id="@+id/free_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_marginLeft="60dp"
+            android:textColor="#000"
+            android:text="Free"/>
+    </RadioGroup>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/update_radio"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/roundbtndesign"
+        android:backgroundTint="#34e1bb"
+        android:text="update"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#d41f1c"
+        android:padding="10dp"
+
+        />
+</RelativeLayout>

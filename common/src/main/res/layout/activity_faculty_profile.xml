@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrd"
+    tools:context=".activities.FacultyProfile">
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/profile" />
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="25dp"
+        android:layout_below="@id/profile"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="25dp"
+        android:layout_below="@id/user_name"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <TextView
+        android:id="@+id/user_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="25dp"
+        android:layout_below="@id/user_email"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <EditText
+        android:id="@+id/change_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_mobile"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Change Password"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"/>
+    <Spinner
+        android:id="@+id/spinner_quali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/change_pass"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </Spinner>
+    <TextView
+        android:id="@+id/logout_confi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner_quali"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="LOG OUT"
+        android:textSize="20dp"
+        android:textColor="#000"
+        />
+</RelativeLayout>

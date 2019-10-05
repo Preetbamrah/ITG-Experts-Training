@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.itgexperttraining">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/itglogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.StudentRegistration" />
+        <activity android:name=".activities.RegistrationForm" />
+        <activity android:name=".activities.CreateResume" />
+        <activity android:name=".activities.JobRegistrationForm" />
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.AboutActivity" />
+        <activity android:name=".activities.ContactActivity" />
+        <activity android:name=".activities.LogoutConfiguration" />
+        <activity android:name=".activities.ProfileDetail" />
+        <activity android:name=".activities.ElectricalData" />
+        <activity android:name=".activities.MechanicalData" />
+        <activity android:name=".activities.BbaData" />
+        <activity android:name=".activities.CivilData" />
+        <activity android:name=".activities.ComputerData" />
+        <activity android:name=".activities.Dashboard" />
+        <activity android:name=".activities.RegisterPage" />
+        <activity android:name=".activities.LoginPage" />
+        <activity android:name=".activities.UploadResumeActivity" />
+
+        <activity android:name=".activities.ViewUploadActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_bk">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="90dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:text="LOGIN"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#3949AB"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            />
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+        android:text="Username"
+        android:textColor="#5968C4"
+        android:textSize="20dp"
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logemail"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:text="Password"
+            android:textColor="#5968C4"
+            android:textSize="20dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logpassword"
+            android:inputType="textPassword"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:id="@+id/loginbtn"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/roundbtndesign"
+            android:backgroundTint="#FFB300"
+            android:hint="Login"
+            android:textAlignment="center"
+            android:textColorHint="#fff"
+            android:textSize="25dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Don't have an account yet? "
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signup"
+                android:id="@+id/logreg"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold" />
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
