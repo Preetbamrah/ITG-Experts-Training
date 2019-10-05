@@ -18,6 +18,8 @@ EditText editUser,editEmail,editPass,editMobile;
 Button button;
 TextView textView;
 private FirebaseAuth mAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
