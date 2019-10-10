@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterPage extends AppCompatActivity {
-EditText editUser,editEmail,editPass,editMobile;
+EditText editUser,editEmail,editPass,editMobile, editRePass;
 Button button;
 TextView textView;
 private FirebaseAuth mAuth;
@@ -27,17 +27,18 @@ private FirebaseAuth mAuth;
         editUser = findViewById(R.id.reguser);
         editEmail = findViewById(R.id.regemail);
         editPass = findViewById(R.id.regpass);
+        editRePass = findViewById(R.id.regrepass);
         editMobile = findViewById(R.id.regmobile);
         button = findViewById(R.id.signupbtn);
-        textView = findViewById(R.id.text_login);
+       // textView = findViewById(R.id.text_login);
         mAuth = FirebaseAuth.getInstance();
-        textView.setOnClickListener(new View.OnClickListener() {
+        /*textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterPage.this, LoginPage.class);
                 startActivity(intent);
             }
-        });
+        });*/
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +82,8 @@ private FirebaseAuth mAuth;
                     editMobile.setError("Enter valid mobile number");
                     editMobile.requestFocus();
                 }
+                Intent intent = new Intent(RegisterPage.this, LoginPage.class);
+                startActivity(intent);
             }
         });
 

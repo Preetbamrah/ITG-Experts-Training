@@ -1,148 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/login_bk"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+    android:background="@color/whiteCardColor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="50dp"
-            android:text="REGISTER"
-            android:fontFamily="sans-serif-black"
-            android:textColor="#3949AB"
-            android:textSize="40dp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center_horizontal"
+            android:text="Hi!!!"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorPrimary"
+            android:padding="@dimen/_2sdp"
+            android:textSize="@dimen/_30ssp"
             android:textStyle="bold"
             />
-        <TextView
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_18sdp">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Username"
-            android:textColor="#5968C4"
-            android:textSize="20dp"
-            />
+            android:orientation="vertical">
+       <android.support.design.widget.TextInputLayout
+           android:layout_width="match_parent"
+           android:padding="@dimen/_10sdp"
+           android:layout_marginTop="@dimen/_2sdp"
+           android:layout_height="wrap_content">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/reguser"
-            android:padding="8dp"
-            android:layout_marginLeft="10dp"
+            android:hint="Username"
+            android:drawableTint="#817b7b"
+            android:drawableRight="@drawable/user"
+            android:paddingLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:singleLine="true"
+            android:paddingRight="@dimen/_9sdp"
             android:textColor="#000"
-            android:textSize="20dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Email"
-            android:textColor="#5968C4"
-            android:textSize="20dp"
-            />
+            android:textSize="@dimen/_15ssp"/>
+       </android.support.design.widget.TextInputLayout>
+       <android.support.design.widget.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="@dimen/_10sdp">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/regemail"
+            android:hint="Email"
+            android:singleLine="true"
+            android:drawableRight="@drawable/email"
             android:inputType="textEmailAddress"
-            android:padding="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
             android:textColor="#000"
-            android:textSize="20dp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Mobile Number"
-            android:textColor="#5968C4"
-            android:textSize="20dp"
-            />
+            android:drawableTint="#817b7b"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_9sdp"/>
+       </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/regmobile"
-            android:padding="8dp"
+            android:drawableRight="@drawable/phone"
             android:singleLine="true"
+            android:hint="Mobile Number"
+            android:drawableTint="#817b7b"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_9sdp"
             android:inputType="number"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_15ssp"
             android:textColor="#0A0A0A" />
-        <TextView
+            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="5dp"
-            android:text="Password"
-            android:textColor="#5968C4"
-            android:textSize="20dp"
-            />
+            android:padding="@dimen/_10sdp">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/regpass"
             android:inputType="textPassword"
-            android:padding="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-            android:textColor="#000" />
-
+            android:drawableTint="#817b7b"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="#000"
+            android:hint="Password"
+            android:drawableRight="@drawable/key"/>
+        </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/regrepass"
+                    android:inputType="textPassword"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_9sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="#000"
+                    android:drawableTint="#817b7b"
+                    android:hint="Re-Password"/>
+            </android.support.design.widget.TextInputLayout>
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_40sdp"
             android:id="@+id/signupbtn"
-            android:padding="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="150dp"
-            android:hint="Sign Up"
-            android:textAlignment="center"
             android:background="@drawable/roundbtndesign"
-            android:backgroundTint="#FFB300"
-            android:textColorHint="#fff"
-            android:textSize="25dp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textSize="@dimen/_18ssp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Already have an account? "
-            android:textSize="15dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Signin"
-            android:id="@+id/text_login"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-</LinearLayout>
 </LinearLayout>
