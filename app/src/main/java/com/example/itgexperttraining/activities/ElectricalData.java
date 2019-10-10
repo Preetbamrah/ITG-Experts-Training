@@ -15,8 +15,8 @@ import com.example.itgexperttraining.R;
 public class ElectricalData extends AppCompatActivity implements View.OnClickListener {
     TextView networking, plc, embedded, robotics, matlab, sap, telecom, iot;
     Toolbar toolbar;
-    RelativeLayout layout_network, layout_plc, layout_matlab, layout_embedded, layout_telecom, layout_iot, layout_robot;
-    Button btn_net, btn_plc, btn_matlab, btn_embedded, btn_tele, btn_iot, btn_robot;
+    RelativeLayout layout_network, layout_plc, layout_matlab, layout_embedded, layout_telecom, layout_iot, layout_robot,layout_sap;
+    TextView btn_net, btn_plc, btn_matlab, btn_embedded, btn_tele, btn_iot, btn_robot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class ElectricalData extends AppCompatActivity implements View.OnClickLis
         sap = findViewById(R.id.textsap);
         telecom = findViewById(R.id.texttele);
         iot = findViewById(R.id.textiot);
+        layout_sap = findViewById(R.id.sap_rela);
         btn_embedded = findViewById(R.id.button_embedded);
         btn_iot = findViewById(R.id.button_internet);
         btn_matlab = findViewById(R.id.button_mat);
@@ -52,6 +53,7 @@ public class ElectricalData extends AppCompatActivity implements View.OnClickLis
         layout_matlab.setOnClickListener(this);
         layout_iot.setOnClickListener(this);
         layout_embedded.setOnClickListener(this);
+        layout_sap.setOnClickListener(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -104,6 +106,10 @@ public class ElectricalData extends AppCompatActivity implements View.OnClickLis
                 startActivity(tele);
                 ;
                 break;
+            case R.id.sap_rela:
+                Intent sap = new Intent(Intent.ACTION_VIEW);
+                sap.setData(Uri.parse("https://firebasestorage.googleapis.com/v0/b/itgexperttraining-edcab.appspot.com/o/sap_tutorial.pdf?alt=media&token=eb1a4049-1e9b-4a98-9a3e-a254fd138bae"));
+                startActivity(sap);
             default:
                 break;
         }

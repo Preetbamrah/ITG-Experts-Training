@@ -1,9 +1,12 @@
 package com.example.itgexperttraining.activities;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,6 +19,7 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
     Context context;
     Toolbar toolbar;
     private static final int REQUEST_CALL = 1;
+    private  final int MY_REQUEST_CODE_READ_STORAGE = 46;
     TextView hrtext,itgtext,urltext,call_text,itg_text,url_view;
     ImageView hr_contact_image,itg_contact_img,url_imag;
 
@@ -94,23 +98,42 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
     }
     private  void contactHr()
     {
-        String phno = "9700009148";
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:" + phno));
-        startActivity(callIntent);
+        if (ActivityCompat.checkSelfPermission(ContactActivity.this,Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(ContactActivity.this,new String[]{Manifest.permission.CALL_PHONE},MY_REQUEST_CODE_READ_STORAGE);
+        }
+        else
+            {
+            String phno = "9700009148";
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + phno));
+            startActivity(callIntent);
+        }
     }
     private void callItg()
     {
-        String phno = "8728039876";
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:"+phno));
-        startActivity(intent);
+        if (ActivityCompat.checkSelfPermission(ContactActivity.this,Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(ContactActivity.this,new String[]{Manifest.permission.CALL_PHONE},MY_REQUEST_CODE_READ_STORAGE);
+        }
+        else {
+            String phno = "8728039876";
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(Uri.parse("tel:" + phno));
+            startActivity(intent);
+        }
     }
     private  void gotoUrl()
     {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://www.infotechnogen.com/"));
-        startActivity(intent);
+        if (ActivityCompat.checkSelfPermission(ContactActivity.this,Manifest.permission.INTERNET)!= PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(ContactActivity.this,new String[]{Manifest.permission.INTERNET},MY_REQUEST_CODE_READ_STORAGE);
+        }
+        else {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://www.infotechnogen.com/"));
+            startActivity(intent);
+        }
     }
     /*textcontacthr.setOnClickListener(new View.OnClickListener() {
             @Override

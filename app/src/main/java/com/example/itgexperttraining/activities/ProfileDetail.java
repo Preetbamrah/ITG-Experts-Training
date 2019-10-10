@@ -1,12 +1,15 @@
 package com.example.itgexperttraining.activities;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +27,7 @@ import java.io.File;
 public class ProfileDetail extends AppCompatActivity {
     TextView txt1,txt2,txt3,txt4,txt5;
     ImageView imageView, profile_image;
+    private  final int MY_REQUEST_CODE_READ_STORAGE = 46;
     int SELECT_FILE = 0;
     EditText et1,et2;
     private File image;
@@ -55,7 +59,15 @@ public class ProfileDetail extends AppCompatActivity {
         profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SelectImage();
+                if(ActivityCompat.checkSelfPermission(ProfileDetail.this,Manifest.permission.WRITE_EXTERNAL_STORAGE )!= PackageManager.PERMISSION_GRANTED)
+                {
+                    ActivityCompat.requestPermissions(ProfileDetail.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_REQUEST_CODE_READ_STORAGE);
+                }
+                else
+                {
+                    SelectImage();
+                }
+
             }
         });
         imageView.setOnClickListener(new View.OnClickListener() {

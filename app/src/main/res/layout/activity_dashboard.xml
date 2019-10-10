@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:background="@color/whiteCardColor">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,29 +19,30 @@
         android:id="@+id/logo_image"
         android:layout_below="@id/toolbar"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:src="@drawable/itgback"
-        android:background="@color/colorPrimary"/>
+        android:layout_height="@dimen/_170sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/itgback"/>
 
 
         <LinearLayout
             android:id="@+id/mec_linear"
             android:layout_below="@+id/logo_image"
             android:layout_width="match_parent"
+            android:elevation="@dimen/_10sdp"
             android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:layout_weight="1"
         android:id="@+id/mechanical_card_view"
         android:layout_below="@id/logo_image"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        app:cardElevation="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardElevation="5dp"
         app:cardCornerRadius="20dp"
         android:layout_height="170dp"
-        android:layout_marginLeft="19dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 <RelativeLayout
     android:id="@+id/relative"
     android:layout_below="@id/logo_image"
@@ -64,7 +65,7 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:layout_below="@+id/imagemec"
-    android:textSize="20dp"
+       android:textSize="@dimen/_12sdp"
        android:background= "#FDFDFD"
        android:gravity="center"
        android:layout_marginTop="10dp"
@@ -77,14 +78,14 @@
 <android.support.v7.widget.CardView
     android:layout_weight="1"
     android:id="@+id/electrical_card_view"
-
+    android:layout_marginTop="@dimen/_10sdp"
     android:layout_width="match_parent"
-    app:cardElevation="20dp"
+    app:cardElevation="5dp"
     app:cardCornerRadius="20dp"
     android:layout_height="170dp"
-    android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
+    android:layout_marginBottom="@dimen/_5sdp"
     android:layout_toRightOf="@id/mechanical_card_view">
 
  <RelativeLayout
@@ -118,7 +119,7 @@
         android:textColor="#000"
         android:gravity="center"
         android:padding="9dp"
-        android:textSize="20dp"/>
+        android:textSize="@dimen/_12sdp"/>
  </RelativeLayout>
     </android.support.v7.widget.CardView>
 
@@ -130,6 +131,8 @@
           android:id="@+id/cs_linear"
           android:layout_below="@id/mec_linear"
                 android:layout_width="match_parent"
+          android:elevation="@dimen/_10sdp"
+          android:layout_marginTop="@dimen/_5sdp"
                 android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
@@ -137,10 +140,11 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
             app:cardCornerRadius="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="19dp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
             <RelativeLayout
                 android:id="@+id/computerrela"
@@ -171,7 +175,7 @@
                     android:textColor="#000"
                     android:text="CSE / BCA / MCA"
                     android:layout_marginTop="9dp"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_12sdp"
                     android:padding="8dp"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
@@ -180,11 +184,12 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
             app:cardCornerRadius="20dp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_below="@id/electrical_card_view"
             android:layout_toRightOf="@id/computer_card_view"
-            android:layout_marginTop="15dp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
             <RelativeLayout
@@ -201,6 +206,7 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:src="@drawable/civil"
                     android:layout_marginTop="15dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="30dp"
                     android:padding="12dp" />
                 <TextView
@@ -214,7 +220,7 @@
                     android:textStyle="bold"
                     android:text="CIVIL ENGINEERING"
                     android:gravity="center"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_12sdp"
                     android:background="#FDFDFD"
                     android:layout_marginTop="8dp"
                     />
@@ -227,7 +233,9 @@
             android:id="@+id/bba_linear"
             android:layout_below="@id/cs_linear"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp">
 
 
         <android.support.v7.widget.CardView
@@ -235,11 +243,12 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
             app:cardCornerRadius="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_below="@id/computer_card_view">
             <RelativeLayout
             android:id="@+id/bbarela"
@@ -271,16 +280,17 @@
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="BBA / MBA"
-                android:textSize="20dp" />
+                android:textSize="@dimen/_12sdp" />
         </RelativeLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:id="@+id/contact_card_view"
             android:layout_weight="1"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:cardCornerRadius="20dp"
             android:layout_width="match_parent"
             android:layout_height="170dp"
@@ -304,6 +314,7 @@
                     android:layout_marginTop="15dp"
                     android:src="@drawable/contact"
                     android:layout_marginLeft="30dp"
+                    android:layout_centerHorizontal="true"
                     android:padding="15dp" />
 
                 <TextView
@@ -317,7 +328,7 @@
                     android:textColor="#000"
                     android:background="#FDFDFD"
                     android:layout_marginTop="10dp"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_12sdp"
                     android:gravity="center"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
@@ -328,17 +339,20 @@
             android:id="@+id/about_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bba_linear">
+            android:layout_below="@id/bba_linear"
+            android:elevation="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp">
         <android.support.v7.widget.CardView
             android:id="@+id/about_card_view"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_below="@id/bba_card_view"
-            android:layout_marginTop="10dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
             app:cardCornerRadius="20dp"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
             <RelativeLayout
                 android:id="@+id/aboutrela"
@@ -366,7 +380,7 @@
                     android:background="#FDFDFD"
                     android:id="@+id/about"
                     android:text="ABOUT"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_12sdp"
                     android:gravity="center"
                     android:padding="10dp"
                     />
@@ -377,10 +391,11 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:cardCornerRadius="20dp"
             android:layout_below="@id/contact_card_view"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/about_card_view">
@@ -413,7 +428,7 @@
                     android:layout_marginTop="8dp"
                     android:textColor="#000"
                     android:gravity="center"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_12sdp"
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
@@ -424,15 +439,18 @@
             android:layout_below="@id/about_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:elevation="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp">
         <android.support.v7.widget.CardView
             android:layout_width="150dp"
             android:layout_height="170dp"
-            app:cardElevation="20dp"
+            app:cardElevation="5dp"
             app:cardCornerRadius="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:layout_below="@id/about_card_view"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
             android:layout_marginBottom="20dp">
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -462,7 +480,7 @@
                     android:textColor="#000"
                     android:layout_marginTop="10dp"
                     android:text="PROFILE"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_12sdp"
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
