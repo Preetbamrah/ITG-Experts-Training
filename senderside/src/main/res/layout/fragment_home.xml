@@ -14,7 +14,7 @@
         android:id="@+id/view_flip"
         android:layout_width="match_parent"
         android:layout_below="@id/home_toolbar"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="@dimen/_44sdp"
         android:layout_height="match_parent"></ViewFlipper>
 </RelativeLayout>
 </FrameLayout>

@@ -5,28 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.Faculty_status">
+    <include
+        layout="@layout/toolbar_activity"
+        android:id="@+id/status_toolbar"/>
     <TextView
+        android:layout_below="@id/status_toolbar"
         android:id="@+id/text_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:padding="10dp"
+        android:textSize="@dimen/_12ssp"
+        android:padding="@dimen/_5sdp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         />
     <TextView
         android:id="@+id/text_status"
     android:layout_below="@+id/text_name"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-        android:textSize="20dp"
-    android:padding="10dp"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginTop="@dimen/_10sdp"
+    android:padding="@dimen/_5sdp"
+        android:fontFamily="sans-serif"
+        android:layout_marginHorizontal="@dimen/_10sdp"
     />
     <TextView
         android:id="@+id/text_number"
         android:layout_below="@+id/text_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:padding="10dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="sans-serif"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         />
 
 

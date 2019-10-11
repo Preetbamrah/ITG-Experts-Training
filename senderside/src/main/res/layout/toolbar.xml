@@ -4,31 +4,30 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:minHeight="?attr/actionBarSize"
+    android:fitsSystemWindows="true"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:background="?attr/colorPrimary">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp">
         <TextView
             android:id="@+id/text_toolbar"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_width="match_parent"
-            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
-            android:text="ITG Expert Training and Development"
+            android:text="ITG Experts Training and Development"
             android:textColor="#FDFDFD"
-            android:textStyle="bold"
-            android:textSize="15dp"/>
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
             android:text="9700009148"
             android:layout_below="@id/text_toolbar"
-            android:textSize="15dp"
-            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="#FDFDFD"
-            android:textStyle="bold"/>
+            android:fontFamily="sans-serif"/>
 
     </RelativeLayout>
 </android.support.v7.widget.Toolbar>

@@ -25,7 +25,8 @@
         <activity android:name=".activities.LoginPage" />
         <activity android:name=".activities.RegisterPage" />
         <activity android:name=".activities.Faculty_status" />
-        <activity android:name=".activities.ViewStatusList"></activity>
+        <activity android:name=".activities.ViewStatusList" />
+        <activity android:name=".activities.PasswordConfiguration"></activity>
     </application>
 
 </manifest>

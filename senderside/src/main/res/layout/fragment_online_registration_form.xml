@@ -15,29 +15,31 @@
         <Button
             android:id="@+id/studentregister_btn"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:elevation="6dp"
             android:layout_below="@id/registration_toolbar"
-            android:background="@color/colorPrimary"
-            android:text="Student Registration form"
-            android:textSize="25dp"
-            android:textColor="#FDFDFD"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginTop="@dimen/_40sdp"
+            android:elevation="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/roundbtndesign"
+            android:text="ITG Training Experts"
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#FDFDFD"/>
         <Button
             android:id="@+id/job_register_btn"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:elevation="6dp"
             android:layout_below="@id/studentregister_btn"
-            android:background="@color/colorPrimary"
-            android:text="Job Registration form"
-            android:textSize="25dp"
-            android:textColor="#FDFDFD"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginTop="@dimen/_50sdp"
+            android:elevation="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/roundbtndesign"
+            android:text="ITG Development Experts"
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#FDFDFD"/>
 
 
 

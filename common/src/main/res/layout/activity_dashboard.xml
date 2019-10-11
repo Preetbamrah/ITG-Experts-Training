@@ -7,105 +7,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgrd"
     tools:context=".activities.Dashboard">
         <include
             layout="@layout/toolbar_activity"
             android:id="@+id/toolbar_dashboard"
             />
-
+<LinearLayout
+    android:id="@+id/linear_layout"
+    android:layout_below="@id/toolbar_dashboard"
+    android:layout_width="match_parent"
+    android:elevation="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_height="@dimen/_170sdp">
     <android.support.v7.widget.CardView
         android:id="@+id/update_card_view"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        app:cardElevation="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
         android:background="@drawable/roundbtndesign"
         android:layout_below="@id/toolbar_dashboard"
-        android:layout_width="170dp"
-        android:layout_height="170dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/roundbtndesign">
         <ImageView
             android:id="@+id/update_image"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/update"
             android:tint="@color/colorPrimary"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:padding="@dimen/_10sdp"
             />
         <TextView
             android:id="@+id/update_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/update_image"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:text="Update Your Status"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:textColor="#000"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="sans-serif-condensed"
             android:gravity="center_horizontal"
             />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:id="@+id/view_card"
-        android:layout_width="170dp"
-        app:cardElevation="20dp"
-        android:layout_height="170dp"
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_dashboard"
         android:layout_toRightOf="@id/update_card_view"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <ImageView
             android:id="@+id/view_image"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:tint="@color/colorPrimary"
             android:layout_centerHorizontal="true"
             android:src="@drawable/eye_icon"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
             />
             <TextView
                 android:id="@+id/view_update_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view_image"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="View Status"
-                android:padding="5dp"
+                android:padding="@dimen/_10sdp"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:textSize="@dimen/_15sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linear_layout_view"
+    android:layout_below="@id/linear_layout"
+    android:layout_width="match_parent"
+    android:elevation="@dimen/_10sdp"
+    android:layout_height="@dimen/_170sdp">
     <android.support.v7.widget.CardView
         android:id="@+id/register_card_view"
-        android:layout_below="@id/update_card_view"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        app:cardElevation="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_width="170dp"
-        android:layout_height="170dp">
+        android:layout_weight="1"
+        android:layout_below="@id/linear_layout"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/registration_image"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_centerHorizontal="true"
-                android:padding="10dp"
+                android:padding="@dimen/_10sdp"
                 android:src="@drawable/register"
                 android:tint="@color/colorPrimary"/>
             <TextView
@@ -113,81 +136,93 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/registration_image"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="View Registered Student"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textColor="#000"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_horizontal"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        app:cardElevation="20dp"
-        android:layout_below="@id/view_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_below="@id/linear_layout"
         android:layout_toRightOf="@id/register_card_view"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp">
         <RelativeLayout
             android:id="@+id/app_rela"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <ImageView
             android:id="@+id/other_app_image"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:tint="@color/colorPrimary"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
             android:src="@drawable/app_icon"/>
             <TextView
                 android:id="@+id/other_app_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/other_app_image"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_10sdp"
                 android:text="Apps"
                 android:gravity="center_horizontal"
-                android:textSize="20dp"/>
+                android:textSize="@dimen/_15sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_170sdp"
+    android:layout_below="@id/linear_layout_view"
+    android:elevation="@dimen/_10sdp"
+    android:gravity="center_horizontal">
     <android.support.v7.widget.CardView
         android:id="@+id/faculty_profile_card_view"
-        android:layout_below="@id/register_card_view"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp"
-        app:cardElevation="20dp"
-        android:layout_width="170dp"
-        android:layout_height="170dp">
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/faculty_profile_image"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:padding="@dimen/_10sdp"
                 android:tint="@color/colorPrimary"
                 android:src="@drawable/profile"/>
             <TextView
                 android:id="@+id/faculty_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="Profile"
-                android:padding="5dp"
+                android:padding="@dimen/_10sdp"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="#000"
                 android:layout_below="@id/faculty_profile_image"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+</LinearLayout>
 </RelativeLayout>
 </ScrollView>

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.common.R;
 
 public class RegisterPage extends AppCompatActivity {
-EditText editText1,editText2,editText3,editText4;
+EditText editText1,editText2,editText3;
 Button button;
 TextView textView;
     @Override
@@ -21,10 +21,8 @@ TextView textView;
         editText1 = findViewById(R.id.reguser);
         editText2 = findViewById(R.id.regemail);
         editText3 = findViewById(R.id.regpass);
-        editText4 = findViewById(R.id.regpassre);
         button = findViewById(R.id.signupbtn);
-        textView = findViewById(R.id.text_login);
-        textView.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterPage.this, LoginPage.class);

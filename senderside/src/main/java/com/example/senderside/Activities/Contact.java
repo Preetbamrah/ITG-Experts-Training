@@ -34,7 +34,7 @@ private View view;
         view = inflater.inflate(R.layout.fragment_contact, container, false);
         hrtext = view.findViewById(R.id.hr);
         AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
-        toolbar = view.findViewById(R.id.contact_toolbar);
+        toolbar = view.findViewById(R.id.toolbar_contact);
         itgtext = view.findViewById(R.id.itg);
         hr_contact_image = view.findViewById(R.id.image_no);
         itg_contact_img = view.findViewById(R.id.image_itg);
