@@ -21,10 +21,10 @@ private int textSize = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        button = findViewById(R.id.login_btn);
-        textView = findViewById(R.id.signup_text);
-        emailEdit = findViewById(R.id.email_edit);
-        passEdit = findViewById(R.id.pass_edit);
+        button = findViewById(R.id.loginbtn);
+        textView = findViewById(R.id.logreg);
+        emailEdit = findViewById(R.id.logemail);
+        passEdit = findViewById(R.id.logpassword);
         button.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)

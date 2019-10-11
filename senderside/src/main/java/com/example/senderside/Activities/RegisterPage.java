@@ -19,17 +19,18 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterPage extends AppCompatActivity {
 Button button;
-EditText userEdit,passEdit,emailEdit,mobileEdit;
+EditText userEdit,passEdit,emailEdit,mobileEdit,repassEdit;
 private FirebaseAuth mauth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
-        button = findViewById(R.id.register_btn);
-        userEdit = findViewById(R.id.user_edt);
-        emailEdit = findViewById(R.id.email_edt);
-        passEdit = findViewById(R.id.pass_edt);
-        mobileEdit = findViewById(R.id.mobile_edt);
+        button = findViewById(R.id.signupbtn);
+        userEdit = findViewById(R.id.reguser);
+        emailEdit = findViewById(R.id.regemail);
+        passEdit = findViewById(R.id.regpass);
+        mobileEdit = findViewById(R.id.regmobile);
+        repassEdit = findViewById(R.id.regrepass);
         mauth = FirebaseAuth.getInstance();
         button.setOnClickListener(new View.OnClickListener()
         {

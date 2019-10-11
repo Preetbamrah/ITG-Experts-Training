@@ -26,8 +26,7 @@ import java.io.File;
 
 public class ProfileDetail extends AppCompatActivity {
 ImageView imageView;
-TextView name_text,mobile_text,email_text, pass_text;
-FloatingActionButton floatingActionButton;
+TextView name_text,mobile_text,email_text, pass_text,log_text;
 EditText old_edt, new_edt;
     private File image;
     int SELECT_FILE = 0;
@@ -42,7 +41,13 @@ EditText old_edt, new_edt;
         mobile_text = findViewById(R.id.mobile_text_view);
         email_text = findViewById(R.id.email_text_view);
         pass_text = findViewById(R.id.password_text);
-        floatingActionButton = findViewById(R.id.fab);
+        log_text = findViewById(R.id.log_out);
+        log_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkLogConformation();
+            }
+        });
         pass_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +77,7 @@ EditText old_edt, new_edt;
             }
         });
 
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(ActivityCompat.checkSelfPermission(ProfileDetail.this,Manifest.permission.WRITE_EXTERNAL_STORAGE )!= PackageManager.PERMISSION_GRANTED)
@@ -158,6 +163,28 @@ EditText old_edt, new_edt;
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA);
         cursor.moveToFirst();
         return cursor.getString(column_index);
+    }
+    public  void checkLogConformation()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProfileDetail.this);
+        alertDialogBuilder.setMessage("ARE YOU SURE YOU WANT TO LOGOUT?")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(ProfileDetail.this,LoginPage.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
     }
 
     /*///////addcabdetail

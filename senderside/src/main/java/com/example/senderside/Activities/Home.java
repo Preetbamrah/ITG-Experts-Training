@@ -60,7 +60,7 @@ public class Home extends Fragment {
                     viewFlipper.setFlipInterval(4000);
                     viewFlipper.setAutoStart(true);
 
-                    viewFlipper.setInAnimation(getActivity(),R.anim.slide_in_right);
+                    viewFlipper.setInAnimation(getActivity(),R.anim.slide_in_left);
 
                 }
 

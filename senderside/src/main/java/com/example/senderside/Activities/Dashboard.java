@@ -67,7 +67,9 @@ public class Dashboard extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.gallery_itg,fragment)
+                    .setCustomAnimations(R.anim.slide_in_left,R.anim.slide_in_right)
                     .commit();
+
             return true;
         }
         return false;
