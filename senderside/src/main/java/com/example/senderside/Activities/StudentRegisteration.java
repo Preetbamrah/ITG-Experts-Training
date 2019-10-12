@@ -47,6 +47,7 @@ public class StudentRegisteration extends AppCompatActivity {
         editTextst = findViewById(R.id.studentedit);
         editTextfa = findViewById(R.id.fatheredit);
         editTextcon = findViewById(R.id.contactdit);
+
         editTextem = findViewById(R.id.emailedit);
         editTextsem = findViewById(R.id.semedit);
         spinnerinter = findViewById(R.id.spinnerinterest);
@@ -65,7 +66,7 @@ public class StudentRegisteration extends AppCompatActivity {
         int thisyear = Calendar.getInstance().get(Calendar.YEAR);
         for (int i= 2012;i<=thisyear;i++)
         {
-            years.add(Integer.toString(i));
+            years.add(Integer.toString(i+1));
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(StudentRegisteration.this, android.R.layout.simple_spinner_dropdown_item, years);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegisteration.this,android.R.layout.simple_spinner_dropdown_item,years);

@@ -56,7 +56,6 @@ public class Dashboard extends AppCompatActivity {
         FrameLayout frameLayout = findViewById(R.id.gallery_itg);
         setSupportActionBar(toolbar);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        int images[] = {R.drawable.itgseminar,R.drawable.christmisprty,R.drawable.interview,R.drawable.seminar};
         mTextMessage = findViewById(R.id.message);
         loadFragment(new Home());
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -67,7 +66,6 @@ public class Dashboard extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.gallery_itg,fragment)
-                    .setCustomAnimations(R.anim.slide_in_left,R.anim.slide_in_right)
                     .commit();
 
             return true;
