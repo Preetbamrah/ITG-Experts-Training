@@ -149,11 +149,11 @@ public class ProfileDetail extends AppCompatActivity {
 
         // get prompts.xml view
         LayoutInflater layoutInflater = LayoutInflater.from(ProfileDetail.this);
-        View promptView = layoutInflater.inflate(R.layout.activity_change_pass_form, null);
+        View promptView = layoutInflater.inflate(R.layout.activity_password_configuration, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProfileDetail.this);
         alertDialogBuilder.setView(promptView);
-        et1 = (EditText) promptView.findViewById(R.id.edit_old_password);
-        et2 = (EditText) promptView.findViewById(R.id.edit_new_password);
+        et1 = (EditText) promptView.findViewById(R.id.old_edit);
+        et2 = (EditText) promptView.findViewById(R.id.new_edit);
 
         // setup a dialog window
         alertDialogBuilder.setCancelable(false)

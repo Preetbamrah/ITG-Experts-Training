@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
 public class Home extends Fragment {
     private View view;
     ViewPager viewPager;

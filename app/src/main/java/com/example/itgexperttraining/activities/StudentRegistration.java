@@ -1,5 +1,8 @@
 package com.example.itgexperttraining.activities;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,12 +20,13 @@ import java.util.Calendar;
 
 public class StudentRegistration extends AppCompatActivity {
     TextView textStu,textfath,textadd,textbran,textbat,textcou,textcon,textem,textsem,textin;
-    Spinner spinnerbathfi,spinnerbathse,spinnerco,spinnerbran,spinnerinter;
+    Spinner spinnerbathfi,spinnerbathse,spinnerco,spinnerbran;
     Button buttonreg;
-    EditText editTextst,editTextfa,editTextadd,editTextcon,editTextem,editTextsem;
+    boolean[] checkedItems;
+    EditText editTextst,editTextfa,editTextadd,editTextcon,editTextem,editTextsem,spinnerinter;
     String[] course = {"B.Tech","BBA","MBA","B.Com","IT"};
     String[] branch = {"CSE","EE","ECE","ME","CE"};
-    String[] interested = {"Java", "Python", "Android", "Php", "C", "C++", "Networking", "3DS-MAX", "Autocad", "Revit Architecture Structure", "Staad-Pro","Marketing","Digital Marketing","Finance","HR","SEO","Accounting","Tally","Telecom","Robotics","Embedded System","PLC/SCADA","MATLAB","IOT","Solid Work","Catia","CNC","NX CAD/CAM"};
+    final String[] interested = {"Java", "Python", "Android", "Php", "C", "C++", "Networking", "3DS-MAX", "Autocad", "Revit Architecture Structure", "Staad-Pro","Marketing","Digital Marketing","Finance","HR","SEO","Accounting","Tally","Telecom","Robotics","Embedded System","PLC/SCADA","MATLAB","IOT","Solid Work","Catia","CNC","NX CAD/CAM"};
     Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class StudentRegistration extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        checkedItems =  new boolean[interested.length];
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,9 +68,9 @@ public class StudentRegistration extends AppCompatActivity {
         // year Spinner
         ArrayList<String> years = new ArrayList<String>();
         int thisyear = Calendar.getInstance().get(Calendar.YEAR);
-        for (int i= 2010;i<=thisyear;i++)
+        for (int i= 2009;i<=thisyear;i++)
         {
-            years.add(Integer.toString(i+1));
+            years.add(Integer.toString(i+3));
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(StudentRegistration.this, android.R.layout.simple_spinner_dropdown_item, years);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,years);
@@ -82,7 +87,104 @@ public class StudentRegistration extends AppCompatActivity {
         spinnerbran.setAdapter(branchArray);
 
         //Interested Spinner
-        ArrayAdapter<String> interestArray = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,interested);
-        spinnerinter.setAdapter(interestArray);
+       final ArrayList<Integer> interestArray = new ArrayList<>();//<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,interested);
+      //  spinnerinter.setAdapter(interestArray);
+
+        buttonreg.setOnClickListener(new View.OnClickListener(){
+            public  void onClick(View view)
+            {
+                String name = editTextst.getText().toString().trim();
+                String fatherName = editTextfa.getText().toString().trim();
+                String address = editTextadd.getText().toString().trim();
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                String contact = editTextcon.getText().toString();
+                String contactPattern = "(0/91)?[6-9][0-9]{9}";
+                String emailAddress = editTextem.getText().toString();
+                String semester = editTextsem.getText().toString().trim();
+                if (name.isEmpty())
+                {
+                    editTextst.setError("Enter your name");
+                    editTextst.requestFocus();
+                }
+                if (fatherName.isEmpty())
+                {
+                    editTextfa.setError("Enter your Father Name");
+                    editTextfa.requestFocus();
+                }
+                if (address.isEmpty())
+                {
+                    editTextadd.setError("Enter Your Address");
+                    editTextadd.requestFocus();
+                }
+                if (emailAddress.isEmpty())
+                {
+                    editTextem.setError("Enter Email Address");
+                    editTextem.requestFocus();
+                }
+                if (!emailAddress.matches(emailPattern))
+                {
+                    editTextem.setError("Enter valid email");
+                    editTextem.requestFocus();
+                }
+                if (!contact.matches(contactPattern))
+                {
+                    editTextcon.setError("Enter Valid Contact");
+                    editTextcon.requestFocus();
+                }
+                if (semester.isEmpty())
+                {
+                    editTextsem.setError("Enter your Semester");
+                    editTextsem.requestFocus();
+                }
+
+            }
+        });
+        spinnerinter.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alertDilaogBuilder = new AlertDialog.Builder(StudentRegistration.this);
+                alertDilaogBuilder.setTitle("Choose Courses")
+                        .setMultiChoiceItems(interested, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int selectedItemId, boolean isSelected) {
+                                if (isSelected) {
+                                    if (!interestArray.contains(selectedItemId))
+                                    {
+                                        interestArray.add(selectedItemId);
+                                    }
+                                } else if (interestArray.contains(selectedItemId)) {
+                                    interestArray.remove(Integer.valueOf(selectedItemId));
+                                }
+                            }
+                        })
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int which) {
+                                String items = "";
+                                for (int i = 0;i< interestArray.size();i++)
+                                {
+                                    items = items+interested[interestArray.get(i)];
+                                    if (i!= interestArray.size() -1)
+                                    {
+                                        items = items+ ",";
+                                    }
+                                }
+                                spinnerinter.setText(items);
+                               /* Intent intent = new Intent(Intent.ACTION_VIEW);
+                                startActivity(intent);*/
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                               dialogInterface.dismiss();
+                            }
+                        });
+                AlertDialog alertDialog  = alertDilaogBuilder.create();
+                alertDialog.show();
+            }
+        });
     }
 }

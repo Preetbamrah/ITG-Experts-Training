@@ -66,7 +66,11 @@
                     android:layout_marginHorizontal="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_25sdp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:passwordToggleDrawable="@drawable/show_password_selector"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#878181"
+                    >
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -75,7 +79,6 @@
                         android:layout_marginHorizontal="@dimen/_10sdp"
                         android:drawableTint="#000"
                         android:hint="Password"
-                        android:drawableRight="@drawable/key"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:paddingLeft="@dimen/_5sdp"
                         android:paddingRight="@dimen/_5sdp"

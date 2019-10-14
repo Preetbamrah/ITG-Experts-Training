@@ -92,13 +92,15 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_10sdp"
+                app:passwordToggleDrawable="@drawable/show_password_selector"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#bfbdbd">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/regpass"
                     android:inputType="textPassword"
-                    android:drawableTint="#817b7b"
                     android:paddingLeft="@dimen/_5sdp"
                     android:paddingRight="@dimen/_9sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -106,13 +108,15 @@
                     android:layout_marginRight="@dimen/_10sdp"
                     android:textSize="@dimen/_15ssp"
                     android:textColor="#000"
-                    android:hint="Password"
-                    android:drawableRight="@drawable/key"/>
+                    android:hint="Password"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_10sdp"
+                app:passwordToggleDrawable="@drawable/show_password_selector"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#bfbdbd">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

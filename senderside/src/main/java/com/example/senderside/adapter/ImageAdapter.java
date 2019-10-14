@@ -14,6 +14,7 @@ import com.example.senderside.R;
 
 import java.util.ArrayList;
 
+
 public class ImageAdapter extends PagerAdapter {
     ArrayList<ImageBean> imageBeanArrayList;
     public Context mContext;

@@ -84,6 +84,8 @@
         android:layout_marginTop="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:focusableInTouchMode="true"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/show_password_selector"
         >
 
         <EditText
@@ -91,10 +93,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:fitsSystemWindows="true"
-            android:drawableRight="@drawable/key"
             android:drawablePadding="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_20sdp"
-            android:drawableTint="#000"
             android:hint="Password"
             android:gravity="left"
             android:inputType="textPassword"

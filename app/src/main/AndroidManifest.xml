@@ -8,7 +8,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-feature android:name="android.hardware.sensor.compass"
+
+    <uses-feature
+        android:name="android.hardware.sensor.compass"
         android:required="true" />
 
     <application
@@ -43,7 +45,8 @@
         <activity android:name=".activities.LoginPage" />
         <activity android:name=".activities.UploadResumeActivity" />
         <activity android:name=".activities.ViewUploadActivity" />
-        <activity android:name=".activities.DemoActivity"></activity>
+        <activity android:name=".activities.DemoActivity" />
+        <activity android:name=".activities.PasswordConfiguration"></activity>
     </application>
 
 </manifest>
