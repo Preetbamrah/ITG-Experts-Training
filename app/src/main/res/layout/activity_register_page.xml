@@ -114,7 +114,10 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_10sdp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#d4cdcd"
+                app:passwordToggleDrawable="@drawable/show_password_selector">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

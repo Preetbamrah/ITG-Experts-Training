@@ -12,6 +12,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.itgexperttraining.R;
 
@@ -19,7 +20,7 @@ import java.util.Calendar;
 
 public class CreateResume extends AppCompatActivity {
     private static   final String TAB = "CreateResume";
-    private EditText mDisplayDate;
+    private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListenenr;
     Button button;
 RadioGroup radioGroup;
