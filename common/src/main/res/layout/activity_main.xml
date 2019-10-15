@@ -11,10 +11,8 @@
         android:layout_height="350dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
-        android:adjustViewBounds="true"
-        android:fadingEdge="vertical"
-        android:scaleX="1"
         android:scaleY="1.5"
+        android:padding="@dimen/_15sdp"
         android:layout_centerInParent="true"
         android:src="@drawable/itg"/>
 

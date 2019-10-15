@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +60,7 @@ public class Dashboard extends AppCompatActivity {
         mTextMessage = findViewById(R.id.message);
         loadFragment(new Home());
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
     private boolean loadFragment(Fragment fragment){
         if (fragment!= null)

@@ -8,13 +8,12 @@
     <ImageView
         android:id="@+id/itg_image"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginRight="15dp"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:scaleX="1"
-        android:scaleY="1.5"
+        android:layout_height="350dp"
         android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:scaleY="1.5"
+        android:padding="@dimen/_15sdp"
+        android:layout_centerInParent="true"
         android:src="@drawable/itgs"/>
 
     <ProgressBar

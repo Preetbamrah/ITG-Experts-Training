@@ -9,7 +9,9 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ import java.io.File;
 public class FacultyProfile extends AppCompatActivity {
     int SELECT_FILE = 0;
     ImageView img;
+    EditText editTextPass,et1,et2;
     private File image;
     TextView txt_name,txt_email,txt_mobile,txt_log;
     @Override
@@ -30,6 +33,7 @@ public class FacultyProfile extends AppCompatActivity {
         txt_email = findViewById(R.id.user_email);
         txt_mobile = findViewById(R.id.user_mobile);
         txt_log = findViewById(R.id.logout_confi);
+        editTextPass = (EditText)findViewById(R.id.change_pass);
         img = findViewById(R.id.profile);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +47,46 @@ public class FacultyProfile extends AppCompatActivity {
                 logConfiguration();
             }
         });
+        editTextPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChangePassDialog();
+            }
+        });
+    }
+    protected void   ChangePassDialog() {
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(FacultyProfile.this);
+        View promptView = layoutInflater.inflate(R.layout.activity_password_configuration, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FacultyProfile.this);
+        alertDialogBuilder.setView(promptView);
+        et1 = (EditText) promptView.findViewById(R.id.old_edit);
+        et2 = (EditText) promptView.findViewById(R.id.new_edit);
+
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                      /*  String user_id=UserSession.getInstance(getApplicationContext()).getUserId();
+                        String old_password=et1.getText().toString();
+                        String new_password=et2.getText().toString();
+                        changepassword(user_id,old_password,new_password);*/
+
+
+                    }
+                })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
     private  void SelectImage()
     {

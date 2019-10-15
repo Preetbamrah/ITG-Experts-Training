@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:scaleY="1.5"
-        android:scaleX="1"
+        android:padding="@dimen/_15sdp"
         android:layout_centerInParent="true"
         android:src="@drawable/itg"/>
 
