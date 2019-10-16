@@ -23,6 +23,7 @@
         android:id="@+id/update_card_view"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         app:cardElevation="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_5sdp"
@@ -37,26 +38,26 @@
             android:background="@drawable/roundbtndesign">
         <ImageView
             android:id="@+id/update_image"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_centerHorizontal="true"
+            android:padding="@dimen/_10sdp"
             android:src="@drawable/update"
             android:tint="@color/colorPrimary"
             android:layout_marginTop="@dimen/_15sdp"
-            android:padding="@dimen/_10sdp"
             />
         <TextView
             android:id="@+id/update_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/update_image"
-            android:layout_marginTop="@dimen/_5sdp"
             android:text="Update Your Status"
             android:textColor="#000"
             android:padding="@dimen/_10sdp"
-            android:textSize="@dimen/_15ssp"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center_horizontal"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -65,6 +66,7 @@
         android:layout_width="match_parent"
         app:cardElevation="@dimen/_5sdp"
         android:layout_weight="1"
+        app:cardCornerRadius="@dimen/_15sdp"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_dashboard"
         android:layout_toRightOf="@id/update_card_view"
@@ -77,25 +79,25 @@
             android:layout_height="match_parent">
         <ImageView
             android:id="@+id/view_image"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:tint="@color/colorPrimary"
             android:layout_centerHorizontal="true"
             android:src="@drawable/eye_icon"
-            android:padding="@dimen/_10sdp"
+            android:padding="@dimen/_7sdp"
             />
             <TextView
                 android:id="@+id/view_update_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/view_image"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:text="View Status"
                 android:padding="@dimen/_10sdp"
-                android:gravity="center_horizontal"
-                android:textSize="@dimen/_15sdp"
-                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="#000"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -110,6 +112,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/register_card_view"
         android:layout_weight="1"
+        app:cardCornerRadius="@dimen/_15sdp"
         android:layout_below="@id/linear_layout"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/_10sdp"
@@ -124,25 +127,25 @@
 
             <ImageView
                 android:id="@+id/registration_image"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_centerHorizontal="true"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_7sdp"
                 android:src="@drawable/register"
                 android:tint="@color/colorPrimary"/>
             <TextView
                 android:id="@+id/register_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/registration_image"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:text="View Registered Student"
                 android:textColor="#000"
                 android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_15ssp"
-                android:fontFamily="sans-serif-condensed"
-                android:gravity="center_horizontal"/>
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
@@ -153,6 +156,7 @@
         android:layout_below="@id/linear_layout"
         android:layout_toRightOf="@id/register_card_view"
         android:layout_marginLeft="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_5sdp">
@@ -162,24 +166,24 @@
             android:layout_height="match_parent">
         <ImageView
             android:id="@+id/other_app_image"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_15sdp"
             android:tint="@color/colorPrimary"
-            android:padding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/app_icon"/>
             <TextView
                 android:id="@+id/other_app_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/other_app_image"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:padding="@dimen/_10sdp"
                 android:text="Apps"
-                android:gravity="center_horizontal"
-                android:textSize="@dimen/_15sdp"
-                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
                 android:textColor="#000"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -195,30 +199,31 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         app:cardElevation="@dimen/_5sdp"
-        android:layout_width="@dimen/_150sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+        android:layout_width="@dimen/_140sdp"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/faculty_profile_image"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_7sdp"
                 android:tint="@color/colorPrimary"
                 android:src="@drawable/profile"/>
             <TextView
                 android:id="@+id/faculty_profile"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_height="match_parent"
                 android:text="Profile"
                 android:padding="@dimen/_10sdp"
-                android:gravity="center_horizontal"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="@dimen/_15sdp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
                 android:textColor="#000"
                 android:layout_below="@id/faculty_profile_image"/>
         </RelativeLayout>

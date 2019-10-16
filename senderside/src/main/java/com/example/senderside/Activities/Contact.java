@@ -2,25 +2,34 @@ package com.example.senderside.Activities;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.senderside.R;
 
 
 public class Contact extends Fragment implements View.OnClickListener {
 private View view;
+private Menu menuItem;
     Context context;
     private static final int MY_REQUEST_READ_CODE = 1;
     Toolbar toolbar;
@@ -29,7 +38,12 @@ private View view;
     public Contact(){
 
     }
-
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,6 +52,7 @@ private View view;
         hrtext = view.findViewById(R.id.hr);
         AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
         toolbar = view.findViewById(R.id.toolbar_contact);
+        appCompatActivity.setSupportActionBar(toolbar);
         itgtext = view.findViewById(R.id.itg);
         hr_contact_image = view.findViewById(R.id.image_no);
         itg_contact_img = view.findViewById(R.id.image_itg);

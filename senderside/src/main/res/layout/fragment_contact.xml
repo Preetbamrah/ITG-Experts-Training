@@ -14,9 +14,10 @@
             android:id="@+id/toolbar_contact"/>
         <android.support.v7.widget.CardView
             android:id="@+id/call_hr"
+            app:cardCornerRadius="@dimen/_10sdp"
             android:layout_below="@id/toolbar_contact"
             android:layout_marginTop="@dimen/_20sdp"
-            app:cardElevation="@dimen/_20sdp"
+            app:cardElevation="@dimen/_15sdp"
             android:paddingBottom="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
@@ -26,46 +27,44 @@
                 android:id="@+id/hr_relative"
                 android:layout_below="@+id/toolbar_contact"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_90sdp">
+                android:layout_height="@dimen/_85sdp">
                 <ImageView
                     android:id="@+id/image_no"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginLeft="@dimen/_30sdp"
                     android:layout_centerVertical="true"
-                    android:layout_marginBottom="15dp"
-                    android:backgroundTint="@color/whiteCardColor"
-                    android:padding="13dp"
+                    android:background="@drawable/circle_background"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="@dimen/_11sdp"
                     android:src="@drawable/contact"
-                    android:tint="@color/colorPrimary"/>
+                    android:tint="@color/whiteCardColor"/>
                 <TextView
                     android:id="@+id/text_callhr"
                     android:layout_width="match_parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_no"
                     android:gravity="center"
                     android:text="CALL NOW"
-                    android:layout_marginTop="30dp"
-                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textSize="@dimen/_13ssp"
                     android:textStyle="bold"
-                    android:textColor="#000"/>
+                    android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:id="@+id/hr"
                     android:layout_toRightOf="@id/image_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="9700009148"
                     android:textColor="#000"
                     android:layout_below="@+id/text_callhr"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="italic" />
 
 
             </RelativeLayout>
@@ -76,7 +75,8 @@
             android:layout_below="@id/call_hr"
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/_20sdp"
-            app:cardElevation="@dimen/_20sdp"
+            app:cardElevation="@dimen/_15sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
@@ -84,44 +84,42 @@
             <RelativeLayout
                 android:id="@+id/itg_rela"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_90sdp">
+                android:layout_height="@dimen/_85sdp">
                 <ImageView
                     android:id="@+id/image_itg"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
                     android:background="@drawable/circle_background"
-                    android:backgroundTint="@color/whiteCardColor"
+                    android:backgroundTint="@color/colorPrimary"
                     android:src="@drawable/contact"
-                    android:padding="13dp"
-                    android:tint="@color/colorPrimary"
+                    android:padding="@dimen/_11sdp"
+                    android:tint="@color/whiteCardColor"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="@dimen/_30sdp"
                     />
                 <TextView
                     android:id="@+id/text_callitg"
                     android:layout_width="match_parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_itg"
                     android:gravity="center"
                     android:text="CALL NOW"
-                    android:layout_marginTop="30dp"
-                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textSize="@dimen/_13ssp"
                     android:textStyle="bold"
-                    android:textColor="#000"/>
+                    android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:id="@+id/itg"
                     android:layout_width="match_parent"
-                    android:layout_marginRight="@dimen/_20sdp"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_itg"
                     android:layout_below="@id/text_callitg"
-                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_centerHorizontal="true"
                     android:text="8728039876"
-                    android:textSize="@dimen/_15sdp"
+                    android:textSize="@dimen/_12ssp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:textStyle="bold"
+                    android:textStyle="italic"
                     android:textColor="#000"
                     android:padding="5dp"
                     android:gravity="center"/>
@@ -132,10 +130,11 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_85sdp"
             android:layout_below="@id/call_institue"
             android:layout_marginTop="@dimen/_20sdp"
-            app:cardElevation="@dimen/_20sdp"
+            app:cardElevation="@dimen/_15sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp">
@@ -147,29 +146,26 @@
 
                 <ImageView
                     android:id="@+id/image_url"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginLeft="@dimen/_30sdp"
                     android:background="@drawable/circle_background"
-                    android:backgroundTint="@color/whiteCardColor"
-                    android:padding="0dp"
+                    android:backgroundTint="@color/colorPrimary"
                     android:layout_centerVertical="true"
-                    android:tint="@color/colorPrimary"
+                    android:tint="@color/whiteCardColor"
                     android:src="@drawable/broswer" />
                 <TextView
                     android:id="@+id/text_website"
                     android:layout_width="match_parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_url"
                     android:gravity="center"
                     android:text="GO TO WEBSITE"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:textSize="@dimen/_15sdp"
+                    android:textSize="@dimen/_13ssp"
                     android:textStyle="bold"
-                    android:textColor="#000"/>
+                    android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:id="@+id/url"
                     android:layout_width="match_parent"
@@ -177,11 +173,11 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_url"
                     android:text="www.itgmohali.com"
-                    android:textSize="@dimen/_15sdp"
+                    android:textSize="@dimen/_12ssp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:textStyle="bold"
+                    android:textStyle="italic"
                     android:textColor="#000"
-                    android:layout_marginLeft="20dp"
+                    android:layout_centerHorizontal="true"
                     android:padding="5dp"
                     android:gravity="center"/>
             </RelativeLayout>

@@ -19,11 +19,11 @@
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:backgroundTint="@color/colorPrimary"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_80sdp"
             android:text="ITG Training Experts"
             android:background="@drawable/roundbtndesign"
-            android:textSize="@dimen/_15ssp"
-            android:fontFamily="sans-serif"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="#FDFDFD"
             />
 
@@ -34,11 +34,11 @@
             android:elevation="@dimen/_15sdp"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_80sdp"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/roundbtndesign"
             android:text="ITG Development Experts"
-            android:textSize="@dimen/_15ssp"
-            android:fontFamily="sans-serif"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="#FDFDFD"/>
 </RelativeLayout>

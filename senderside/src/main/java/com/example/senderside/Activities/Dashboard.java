@@ -12,9 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +23,8 @@ public class Dashboard extends AppCompatActivity {
 
     private TextView mTextMessage;
     Toolbar toolbar;
+    private Fragment fragment;
+    private Menu menuItem;
     SwipeRefreshLayout swipeRefreshLayout;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -76,9 +76,7 @@ public class Dashboard extends AppCompatActivity {
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar,menu);
-        return true;
-      /*  menuInflater.inflate(R.menu.menu_toolbar, menu);
-        super.onCreateOptionsMenu(menu,menuInflater);*/
+        return  true;
     }
 
     @Override

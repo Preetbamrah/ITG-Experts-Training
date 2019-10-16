@@ -7,5 +7,24 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="NavigationDrawerStyle">
+
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:gravity">center</item>
+        <!-- text size in menu-->
+
+       <!-- &lt;!&ndash; item size in menu&ndash;&gt;
+        <item name="android:listPreferredItemHeightSmall">@dimen/_30sdp</item>
+        <item name="listPreferredItemHeightSmall">@dimen/_30sdp</item>
+
+        &lt;!&ndash; item padding left in menu&ndash;&gt;
+        <item name="android:listPreferredItemPaddingLeft">@dimen/_7sdp</item>
+        <item name="listPreferredItemPaddingLeft">@dimen/_7sdp</item>
+
+        &lt;!&ndash; item padding right in menu&ndash;&gt;
+        <item name="android:listPreferredItemPaddingRight">@dimen/_7sdp</item>
+        <item name="listPreferredItemPaddingRight">@dimen/_7sdp</item>-->
+    </style>
 
 </resources>

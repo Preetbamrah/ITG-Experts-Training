@@ -11,9 +11,10 @@
             android:id="@+id/action_electrical"/>
         <RelativeLayout
             android:id="@+id/net_rela"
+            android:elevation="@dimen/_20sdp"
             android:layout_below="@id/action_electrical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_85sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
@@ -27,22 +28,26 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_15sdp"
             android:gravity="center"
+            android:textStyle="bold"
             android:padding="@dimen/_5sdp"
             android:textColor="#000"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
             />
             <TextView
                 android:id="@+id/button_net"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:background="@color/colorPrimary"
                 android:text="Start"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_50sdp"
                 android:textColor="#fff"
-                android:textSize="@dimen/_15ssp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp"
                 android:layout_below="@id/textnet"/>
             <ImageView
                 android:id="@+id/image_net"
@@ -58,10 +63,11 @@
       <RelativeLayout
             android:id="@+id/plc_rela"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:elevation="@dimen/_20sdp"
+            android:layout_height="@dimen/_85sdp"
             android:layout_below="@id/net_rela"
             android:layout_marginTop="@dimen/_10sdp"
-          android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="#FEFFFE"
             android:layout_marginLeft="@dimen/_10sdp">
 
@@ -73,9 +79,11 @@
             android:layout_height="wrap_content"
             android:text="PLC / SCADA"
             android:gravity="center"
+            android:textStyle="bold"
             android:padding="@dimen/_7sdp"
             android:textColor="#000"
-            android:textSize="@dimen/_15ssp"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="@dimen/_12ssp"
             />
           <TextView
               android:id="@+id/button_plc"
@@ -85,10 +93,12 @@
               android:background="@color/colorPrimary"
               android:layout_marginTop="@dimen/_3sdp"
               android:text="Start"
-              android:padding="@dimen/_10sdp"
+              android:padding="@dimen/_12sdp"
+              android:textStyle="bold"
               android:layout_marginLeft="@dimen/_50sdp"
               android:textColor="#fff"
-              android:textSize="20dp"
+              android:textSize="@dimen/_12ssp"
+              android:fontFamily="serif"
               android:layout_below="@id/textplc"/>
           <ImageView
               android:id="@+id/image_plc"
@@ -103,8 +113,9 @@
         </RelativeLayout>
           <RelativeLayout
              android:id="@+id/matlab_rela"
+              android:elevation="@dimen/_20sdp"
               android:layout_width="match_parent"
-              android:layout_height="@dimen/_90sdp"
+              android:layout_height="@dimen/_85sdp"
              android:background="#FCFAFA"
              android:layout_below="@+id/plc_rela"
              android:layout_marginLeft="@dimen/_10sdp"
@@ -120,7 +131,9 @@
               android:gravity="center"
               android:padding="@dimen/_5sdp"
               android:textColor="#000"
-              android:textSize="@dimen/_15ssp"
+              android:textSize="@dimen/_12ssp"
+              android:fontFamily="sans-serif-medium"
+              android:textStyle="bold"
               />
 
               <TextView
@@ -132,10 +145,13 @@
                   android:layout_marginLeft="@dimen/_50sdp"
                   android:layout_marginTop="@dimen/_7sdp"
                   android:background="@color/colorPrimary"
-                  android:padding="@dimen/_10sdp"
+                  android:padding="@dimen/_12sdp"
+                  android:textStyle="bold"
                   android:text="Start"
                   android:textColor="#fff"
-                  android:textSize="@dimen/_15ssp" />
+                  android:textSize="@dimen/_12ssp"
+                  android:fontFamily="serif"
+                  />
               <ImageView
                   android:id="@+id/iamge_matlab"
                   android:layout_toRightOf="@id/textmat"
@@ -151,7 +167,8 @@
         <RelativeLayout
             android:id="@+id/system_rela"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_85sdp"
+            android:elevation="@dimen/_20sdp"
             android:background="#FCFAFA"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
@@ -159,18 +176,20 @@
             android:layout_marginLeft="@dimen/_10sdp"
             >
 
- <TextView
-     android:id="@+id/embedtext"
-     android:layout_width="@dimen/_170sdp"
-     android:layout_marginLeft="@dimen/_15sdp"
-     android:layout_height="wrap_content"
-     android:textColor="#000"
-     android:text="EMBEDDED SYSTEM"
-     android:layout_marginTop="@dimen/_9sdp"
-     android:gravity="center"
-     android:padding="@dimen/_9sdp"
-     android:textSize="@dimen/_15ssp"
-     />
+         <TextView
+             android:id="@+id/embedtext"
+             android:layout_width="@dimen/_170sdp"
+             android:layout_marginLeft="@dimen/_15sdp"
+             android:layout_height="wrap_content"
+             android:textColor="#000"
+             android:text="EMBEDDED SYSTEM"
+             android:layout_marginTop="@dimen/_9sdp"
+             android:gravity="center"
+             android:textStyle="bold"
+             android:padding="@dimen/_9sdp"
+             android:fontFamily="sans-serif-medium"
+             android:textSize="@dimen/_12ssp"
+             />
 
             <TextView
                 android:id="@+id/button_embedded"
@@ -179,12 +198,13 @@
                 android:layout_below="@+id/embedtext"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_2sdp"
                 android:background="@color/colorPrimary"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_12sdp"
                 android:text="Start"
+                android:fontFamily="serif"
+                android:textStyle="bold"
                 android:textColor="#fff"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_12ssp" />
             <ImageView
                 android:id="@+id/image_embedded"
                 android:layout_width="@dimen/_90sdp"
@@ -204,20 +224,23 @@
             android:layout_marginRight="@dimen/_10sdp"
             android:background="#FCFAFA"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_85sdp"
+            android:elevation="@dimen/_20sdp"
             >
-        <TextView
-            android:id="@+id/texttele"
-        android:layout_width="@dimen/_170sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:textColor="#000"
-        android:layout_height="wrap_content"
-        android:text="TELECOM"
-        android:gravity="center"
-        android:padding="@dimen/_9sdp"
-        android:textSize="@dimen/_15ssp"
-        />
+            <TextView
+                android:id="@+id/texttele"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:textColor="#000"
+                android:layout_height="wrap_content"
+                android:text="TELECOM"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp"
+            />
 
             <TextView
                 android:id="@+id/button_tele"
@@ -226,12 +249,13 @@
                 android:layout_below="@id/texttele"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_2sdp"
                 android:background="@color/colorPrimary"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
                 android:text="Start"
                 android:textColor="#fff"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_12ssp" />
             <ImageView
                 android:id="@+id/image_telecom"
                 android:layout_toRightOf="@id/texttele"
@@ -247,12 +271,13 @@
         <RelativeLayout
             android:id="@+id/internet_rela"
             android:layout_below="@+id/tele_rela"
+            android:elevation="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="#FCFAFA"
             android:layout_width="match_parent"
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_85sdp"
             >
         <TextView
             android:id="@+id/textiot"
@@ -262,8 +287,10 @@
             android:layout_marginLeft="@dimen/_15sdp"
             android:text="INTERNET OF THINGS"
             android:gravity="center"
-            android:padding="@dimen/_8sdp"
-            android:textSize="@dimen/_15ssp"
+            android:padding="@dimen/_7sdp"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"
             android:textColor="#000"
             />
 
@@ -275,11 +302,13 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:background="@color/colorPrimary"
                 android:layout_marginLeft="@dimen/_50sdp"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_12sdp"
                 android:gravity="center_horizontal"
                 android:text="Start"
                 android:textColor="#fff"
-                android:textSize="@dimen/_15sdp" />
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="serif"
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/image_internet"
@@ -293,8 +322,9 @@
         </RelativeLayout>
          <RelativeLayout
              android:id="@+id/robot_rela"
+             android:elevation="@dimen/_20sdp"
              android:layout_width="match_parent"
-             android:layout_height="@dimen/_90sdp"
+             android:layout_height="@dimen/_85sdp"
              android:layout_marginTop="@dimen/_10sdp"
              android:layout_marginRight="@dimen/_10sdp"
              android:background="#FCFAFA"
@@ -304,28 +334,32 @@
 
          <TextView
              android:id="@+id/textrobotics"
-         android:layout_width="@dimen/_170sdp"
-         android:layout_height="wrap_content"
-         android:text="ROBOTICS"
+             android:layout_width="@dimen/_170sdp"
+             android:layout_height="wrap_content"
+             android:text="ROBOTICS"
              android:layout_marginTop="@dimen/_10sdp"
              android:layout_marginLeft="@dimen/_15sdp"
-         android:gravity="center"
+             android:gravity="center"
              android:textColor="#000"
-         android:padding="@dimen/_10sdp"
-         android:textSize="@dimen/_15sdp"
+             android:padding="@dimen/_8sdp"
+             android:fontFamily="sans-serif-medium"
+             android:textStyle="bold"
+             android:textSize="@dimen/_12ssp"
          />
              <TextView
                  android:id="@+id/button_robotics"
                  android:layout_width="@dimen/_90sdp"
                  android:layout_height="wrap_content"
                  android:background="@color/colorPrimary"
-                 android:layout_marginTop="@dimen/_2sdp"
                  android:text="Start"
-                 android:padding="@dimen/_10sdp"
+                 android:fontFamily="serif"
+                 android:textStyle="bold"
+                 android:padding="@dimen/_12sdp"
                  android:gravity="center_horizontal"
+                 android:layout_marginTop="@dimen/_1sdp"
                  android:layout_marginLeft="@dimen/_50sdp"
                  android:textColor="#fff"
-                 android:textSize="@dimen/_15sdp"
+                 android:textSize="@dimen/_12ssp"
                  android:layout_below="@id/textrobotics"/>
 
              <ImageView
@@ -341,8 +375,9 @@
          </RelativeLayout>
         <RelativeLayout
             android:id="@+id/sap_rela"
+            android:elevation="@dimen/_20sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_85sdp"
             android:layout_below="@id/robot_rela"
             android:layout_marginBottom="@dimen/_20sdp"
             android:background="#FCFAFA"
@@ -360,20 +395,24 @@
                 android:gravity="center"
                 android:textColor="#000"
                 android:padding="@dimen/_8sdp"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/button_sap"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
-                android:layout_marginTop="@dimen/_2sdp"
                 android:text="Start"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_1sdp"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="@dimen/_50sdp"
                 android:textColor="#fff"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
                 android:layout_below="@id/textsap"/>
 
             <ImageView

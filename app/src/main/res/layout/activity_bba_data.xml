@@ -14,7 +14,7 @@
             android:id="@+id/marketing_rela"
             android:layout_width="match_parent"
             android:layout_below="@+id/action_toolbar"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_80sdp"
             android:background="#FDFDFD"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_10sdp"
@@ -38,10 +38,11 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:text="MARKETING"
             android:textStyle="bold"
+            android:fontFamily="sans-serif_-medium"
             android:gravity="center"
             android:padding="@dimen/_8sdp"
             android:layout_centerVertical="true"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
             />
             <ImageView
                 android:id="@+id/marketing_sign"
@@ -59,7 +60,7 @@
         <RelativeLayout
             android:id="@+id/digital_rela"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_80sdp"
             android:background="#FDFDFD"
             android:layout_below="@+id/marketing_rela"
             android:layout_marginTop="@dimen/_10sdp"
@@ -85,7 +86,8 @@
             android:text="DIGITAL MARKETING"
             android:gravity="center"
             android:padding="@dimen/_10sdp"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
             />
             <ImageView
                 android:id="@+id/digital_sign"
@@ -106,7 +108,7 @@
              android:layout_marginLeft="@dimen/_10sdp"
              android:layout_marginRight="@dimen/_10sdp"
              android:layout_width="match_parent"
-             android:layout_height="@dimen/_90sdp"
+             android:layout_height="@dimen/_80sdp"
              android:orientation="horizontal"
              android:layout_marginTop="@dimen/_10sdp"
              android:background="#FDFDFD"
@@ -131,7 +133,8 @@
              android:text="FINANCE"
              android:gravity="center"
              android:padding="@dimen/_10sdp"
-             android:textSize="@dimen/_15sdp"
+             android:textSize="@dimen/_12ssp"
+             android:fontFamily="sans-serif-medium"
              />
              <ImageView
                  android:id="@+id/finance_sign"
@@ -151,7 +154,7 @@
              android:id="@+id/hr_rela"
              android:layout_width="match_parent"
              android:layout_marginRight="@dimen/_10sdp"
-             android:layout_height="@dimen/_90sdp"
+             android:layout_height="@dimen/_80sdp"
              android:layout_below="@id/finance_rela"
              android:layout_marginTop="@dimen/_10sdp"
              android:background="#FDFDFD"
@@ -179,7 +182,8 @@
                  android:layout_centerVertical="true"
                  android:padding="@dimen/_10sdp"
                  android:text="HR"
-                 android:textSize="@dimen/_15sdp" />
+                 android:textSize="@dimen/_12ssp"
+                 android:fontFamily="sans-serif-medium"/>
              <ImageView
                  android:id="@+id/hr_sign"
                  android:layout_centerVertical="true"
@@ -199,7 +203,7 @@
             android:layout_below="@id/hr_rela"
             android:layout_width="match_parent"
             android:background="#FDFDFD"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp">
@@ -223,7 +227,8 @@
             android:textStyle="bold"
             android:gravity="center"
             android:padding="@dimen/_10sdp"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
             />
             <ImageView
                 android:id="@+id/seo_sign"
@@ -246,7 +251,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_80sdp"
             >
             <ImageView
                 android:id="@+id/image_accounting"
@@ -268,7 +273,8 @@
             android:layout_centerVertical="true"
             android:padding="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_5sdp"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-medium"
             />
             <ImageView
                 android:id="@+id/accounting_sign"
@@ -286,7 +292,7 @@
         <RelativeLayout
             android:id="@+id/tally_rela"
              android:layout_width="match_parent"
-             android:layout_height="@dimen/_90sdp"
+             android:layout_height="@dimen/_80sdp"
             android:layout_marginBottom="@dimen/_20sdp"
             android:layout_below="@id/accounting_rela"
             android:layout_marginTop="@dimen/_10sdp"
@@ -314,7 +320,8 @@
                  android:gravity="center"
                  android:padding="@dimen/_10sdp"
                  android:layout_centerVertical="true"
-                 android:textSize="@dimen/_15sdp"
+                 android:textSize="@dimen/_12ssp"
+                 android:fontFamily="sans-serif-medium"
                  />
             <ImageView
                 android:id="@+id/tally_sign"

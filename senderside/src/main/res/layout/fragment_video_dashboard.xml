@@ -18,7 +18,7 @@
         android:padding="@dimen/_20sdp"
         android:id="@+id/live_card_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_90sdp"
+        android:layout_height="@dimen/_85sdp"
         app:cardElevation="@dimen/_15sdp"
         app:cardCornerRadius="@dimen/_10sdp">
 <RelativeLayout
@@ -44,8 +44,9 @@
         android:background="#FDFDFD"
         android:layout_centerVertical="true"
         android:text="LIVE VIDEO"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:textSize="@dimen/_13ssp"
+        android:fontFamily="sans-serif"
         android:visibility="visible"
         android:textColor="#000"
         />
@@ -58,7 +59,7 @@
               android:padding="@dimen/_20sdp"
               android:layout_below="@+id/live_card_view"
               android:layout_width="match_parent"
-              android:layout_height="@dimen/_90sdp"
+              android:layout_height="@dimen/_85sdp"
               app:cardElevation="@dimen/_15sdp"
               app:cardCornerRadius="@dimen/_10sdp">
               <RelativeLayout
@@ -84,8 +85,9 @@
         android:background="#FDFDFD"
         android:layout_centerVertical="true"
         android:text="MOTIVATIONAL VIDEO"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="sans-serif-condensed"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
         android:visibility="visible"
         android:textColor="#000"
         />

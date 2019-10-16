@@ -26,7 +26,7 @@ import java.io.File;
 
 public class ProfileDetail extends AppCompatActivity {
     TextView txt1,txt2,txt3,txt4,txt5;
-    ImageView imageView, profile_image;
+    ImageView profile_image;
     private  final int MY_REQUEST_CODE_READ_STORAGE = 46;
     int SELECT_FILE = 0;
     EditText et1,et2;
@@ -44,7 +44,6 @@ public class ProfileDetail extends AppCompatActivity {
         txt3=findViewById(R.id.textlogout);
         txt4=findViewById(R.id.textusername);
         txt5 = findViewById(R.id.resume_text);
-        imageView = findViewById(R.id.right_image);
         profile_image = findViewById(R.id.user_image);
         toolbar = findViewById(R.id.toolbar_profile);
         setSupportActionBar(toolbar);
@@ -70,7 +69,7 @@ public class ProfileDetail extends AppCompatActivity {
 
             }
         });
-        imageView.setOnClickListener(new View.OnClickListener() {
+        txt5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent resume = new Intent(ProfileDetail.this,CreateResume.class);

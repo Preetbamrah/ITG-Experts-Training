@@ -28,8 +28,8 @@ public class Home extends Fragment {
      private static int current_page = 0;
     private static int NUM_PAGES = 0;
     Timer timer;
-    final long DELAY_MS = 4000;
-    final long PERIOD_MS = 2000;
+    final long DELAY_MS = 3000;
+    final long PERIOD_MS = 1500;
    ArrayList<ImageBean>  imageModelArrayList;
    private  int[] myImageList = new int[]{
             R.drawable.itgseminar, R.drawable.seminar,R.drawable.colgsemi ,R.drawable.itgwork,R.drawable.aryasemi,R.drawable.img,R.drawable.christmisprty

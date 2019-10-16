@@ -164,7 +164,7 @@ public class FacultyProfile extends AppCompatActivity {
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        dialog.dismiss();
                     }
                 });
         AlertDialog alertDialog1 = alertDialog.create();
