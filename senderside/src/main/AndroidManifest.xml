@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.senderside">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -14,7 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.StudentRegisteration"></activity>
         <activity android:name=".Activities.JobRegistrationForm" />
         <activity android:name=".Activities.PasswordConfiguration" />
         <activity android:name=".Activities.ProfileDetail" />
@@ -34,6 +36,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.AboutActivity" />
+        <activity android:name=".Activities.NextActivity" />
+        <activity android:name=".Activities.ListItems" />
+        <activity android:name=".Activities.MechanicalActivity" />
+        <activity android:name=".Activities.RecycleViewList" />
+        <activity android:name=".Activities.ComputerList" />
+        <activity android:name=".Activities.EclectricalList" />
+        <activity android:name=".Activities.BbaListData" />
+        <activity android:name=".Activities.CivilList">
+        </activity>
+        <activity android:name=".Activities.StudentRegistration"/>
     </application>
 
 </manifest>

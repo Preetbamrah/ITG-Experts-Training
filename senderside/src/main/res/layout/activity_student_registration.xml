@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".activities.StudentRegisteration">
+        tools:context=".activities.StudentRegisteration"
+        >
         <include
             android:id="@+id/toolbar_registration_form"
             layout="@layout/toolbar" />
@@ -127,9 +129,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_50sdp"
                 android:singleLine="true"
+                android:inputType="number"
                 android:textColor="#000"
                 android:fontFamily="sans-serif"
                 android:textSize="@dimen/_15ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/other_contact_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Contact"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:id="@+id/other_contact_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
         </LinearLayout>
 
         <LinearLayout
@@ -153,7 +183,32 @@
                 android:id="@+id/emailedit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_60sdp"
+                android:layout_marginLeft="@dimen/_65sdp"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/college_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="College Name"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:id="@+id/college_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="sans-serif"/>
         </LinearLayout>
@@ -166,92 +221,130 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/coursetext"
+                android:id="@+id/roll_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="University Roll no."
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:id="@+id/roll_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp">
+            <TextView
+                android:id="@+id/course_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 android:text="Course"
                 android:textColor="#000"
                 android:textSize="@dimen/_15ssp"
-                android:fontFamily="sans-serif"/>
-
-            <Spinner
-                android:id="@+id/spinnercourse"
-                android:layout_width="wrap_content"
+                android:fontFamily="sans-serif"
+                />
+            <EditText
+                android:id="@+id/course_edit"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_100sdp"
-                android:pointerIcon="alias">
-
-            </Spinner>
-
+                android:layout_marginLeft="@dimen/_55sdp"
+                android:textSize="@dimen/_15ssp"
+                android:drawableRight="@drawable/down_arrow_icon"
+                android:paddingRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:orientation="horizontal">
-
+            android:layout_marginHorizontal="@dimen/_15sdp">
             <TextView
-                android:id="@+id/branchtext"
+                android:id="@+id/branch_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 android:text="Branch"
                 android:textColor="#000"
                 android:textSize="@dimen/_15ssp"
-                android:fontFamily="sans-serif"/>
-
-            <Spinner
-                android:id="@+id/spinnerbranch"
-                android:layout_width="wrap_content"
+                android:fontFamily="sans-serif"
+                />
+            <EditText
+                android:id="@+id/branch_edit"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_100sdp"
-                android:pointerIcon="alias">
-
-            </Spinner>
+                android:layout_marginLeft="@dimen/_55sdp"
+                android:textSize="@dimen/_15ssp"
+                android:drawableRight="@drawable/down_arrow_icon"
+                android:paddingRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif"/>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:orientation="horizontal">
-
+            android:layout_marginHorizontal="@dimen/_15sdp">
             <TextView
-                android:id="@+id/batchtext"
+                android:id="@+id/batch_from_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Batch"
+                android:inputType="textEmailAddress"
+                android:text="Batch From"
                 android:textColor="#000"
                 android:textSize="@dimen/_15ssp"
-                android:fontFamily="sans-serif"/>
-
-            <Spinner
-                android:id="@+id/batchfirst"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_30sdp"
-                >
-
-            </Spinner>
-
+                android:fontFamily="sans-serif"
+                />
             <TextView
-                android:id="@+id/totext"
+                android:id="@+id/batch_from_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:textSize="@dimen/_15ssp"
+                android:drawableRight="@drawable/down_arrow_icon"
+                android:paddingRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp">
+            <TextView
+                android:id="@+id/batch_to_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="to"
+                android:inputType="textEmailAddress"
+                android:text="Batch to"
                 android:textColor="#000"
                 android:textSize="@dimen/_15ssp"
-                android:fontFamily="sans-serif"/>
-
-            <Spinner
-                android:id="@+id/batchsecond"
-                android:layout_width="wrap_content"
+                android:fontFamily="sans-serif"
+                />
+            <EditText
+                android:id="@+id/batch_to_edit"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_20sdp">
-
-            </Spinner>
+                android:layout_marginLeft="@dimen/_45sdp"
+                android:textSize="@dimen/_15ssp"
+                android:drawableRight="@drawable/down_arrow_icon"
+                android:paddingRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif"/>
         </LinearLayout>
 
         <LinearLayout
@@ -270,12 +363,12 @@
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="sans-serif"/>
 
-            <Spinner
-                android:id="@+id/spinnerinterest"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/interest_edit"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
-                android:pointerIcon="alias" />
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -306,17 +399,20 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/registerbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/registerbtn_stu"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_gravity="center"
-            android:layout_marginVertical="@dimen/_30sdp"
-            android:background="@color/colorPrimary"
-            android:padding="@dimen/_10sdp"
-            android:text="register"
-            android:textColor="#FDFDFD"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/roundbtndesign"
+            android:backgroundTint="@color/colorPrimary"
             android:fontFamily="serif"
-            android:textSize="@dimen/_15ssp" />
+            android:padding="5dp"
+            android:text="register"
+            android:textColor="#FFFCFC"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

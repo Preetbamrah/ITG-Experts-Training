@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -34,6 +36,9 @@ public class Dashboard extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     fragment = new Home();
+                    break;
+                case R.id.navigation_course:
+                    fragment = new CouseFragment();
                     break;
                 case R.id.navigation_dashboard:
                    fragment = new VideoDashboard();
@@ -142,5 +147,5 @@ public class Dashboard extends AppCompatActivity {
     {
         swipeRefreshLayout.setRefreshing(false);
     }
+    }
 
-}

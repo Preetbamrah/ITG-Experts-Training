@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/transitg"
-            android:backgroundTint="#27000000"
+            android:backgroundTint="#276b5f5f"
             android:orientation="vertical">
 
             <include
@@ -22,37 +23,40 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="cursive"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:text="Job Registration Form"
                 android:textColor="#D81313"
-                android:textSize="30dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/student_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Student Name"
+                    android:text="Employee Name"
                     android:textColor="#000"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"
+                    />
 
                 <EditText
                     android:id="@+id/studentedit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginLeft="@dimen/_2sdp"
                     android:singleLine="true"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"
 
                     />
             </LinearLayout>
@@ -60,9 +64,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -71,25 +74,26 @@
                     android:layout_height="wrap_content"
                     android:text="Father's Name"
                     android:textColor="#000"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
 
                 <EditText
                     android:id="@+id/fatheredit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/_7sdp"
                     android:singleLine="true"
-                    android:textSize="20dp"
-
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -98,23 +102,23 @@
                     android:layout_height="wrap_content"
                     android:text="Address"
                     android:textColor="#000"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
 
                 <EditText
                     android:id="@+id/addressedit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:singleLine="true"
-                    android:textSize="20dp" />
+                    android:layout_marginLeft="@dimen/_50sdp"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -123,23 +127,50 @@
                     android:layout_height="wrap_content"
                     android:text="Contact"
                     android:textColor="#000"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
 
                 <EditText
                     android:id="@+id/contactdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="@dimen/_50sdp"
                     android:singleLine="true"
-                    android:textSize="20dp" />
+                    android:inputType="number"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/othercontacttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other Contact"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
+
+                <EditText
+                    android:id="@+id/othercontactdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -149,178 +180,82 @@
                     android:inputType="textEmailAddress"
                     android:text="Email"
                     android:textColor="#000"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"/>
 
                 <EditText
                     android:id="@+id/emailedit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:singleLine="true"
-                    android:textSize="20dp" />
+                    android:layout_marginLeft="@dimen/_65sdp"
+                    android:fontFamily="sans-serif"
+                    android:textSize="@dimen/_15ssp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
-
                 <TextView
-                    android:id="@+id/coursetext"
+                    android:id="@+id/school_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course"
+                    android:text="School"
+                    android:fontFamily="sans-serif"
                     android:textColor="#000"
-                    android:textSize="20dp" />
-
-                <Spinner
-                    android:id="@+id/spinnercourse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="0dp"
-                    android:pointerIcon="alias">
-
-                </Spinner>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/branchtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Branch"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-
-                <Spinner
-                    android:id="@+id/spinnerbranch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="0dp"
-                    android:pointerIcon="alias">
-
-                </Spinner>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/batchtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Batch"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-
-                <Spinner
-                    android:id="@+id/batchfirst"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="0dp">
-
-                </Spinner>
-
-                <TextView
-                    android:id="@+id/totext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="to"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-
-                <Spinner
-                    android:id="@+id/batchsecond"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="0dp">
-
-                </Spinner>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/interesttext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Intereted in"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-
-                <Spinner
-                    android:id="@+id/spinnerinterest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginTop="0dp"
-                    android:pointerIcon="alias" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/semtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Semester"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-
+                    android:textSize="@dimen/_15ssp"/>
                 <EditText
-                    android:id="@+id/semedit"
+                    android:id="@+id/school_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:singleLine="true"
-                    android:textSize="20dp" />
+                    android:layout_marginLeft="@dimen/_60sdp"
+                    android:inputType="text"
+                    android:textSize="@dimen/_15sdp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/graduation_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Graduation"
+                    android:textSize="@dimen/_15ssp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"/>
+                <EditText
+                    android:id="@+id/graduation_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000"
+                    android:inputType="text"
+                    android:textSize="@dimen/_15ssp"
+                    />
             </LinearLayout>
 
             <Button
                 android:id="@+id/registerbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="55dp"
-                android:background="#1E88E5"
-                android:fontFamily="sans-serif-black"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/roundbtndesign"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="serif"
                 android:padding="5dp"
                 android:text="register"
                 android:textColor="#FFFCFC"
-                android:textSize="20dp"
+                android:textSize="@dimen/_15ssp"
                 android:textStyle="bold" />
 
 

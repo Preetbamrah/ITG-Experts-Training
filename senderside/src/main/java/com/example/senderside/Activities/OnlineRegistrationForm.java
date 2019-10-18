@@ -52,19 +52,11 @@ public class OnlineRegistrationForm extends Fragment implements View.OnClickList
             switch (view.getId())
             {
                 case R.id.studentregister_btn:
-                    Intent studentIntent = new Intent(getActivity(),StudentRegisteration.class);
+                    Intent studentIntent = new Intent(getActivity(),StudentRegistration.class);
                     startActivity(studentIntent);
                 case R.id.job_register_btn:
-                    Intent jobIntent = getActivity().getPackageManager().getLaunchIntentForPackage("com.example.itgexperttraining");
-                    if (jobIntent!= null)
-                    {
-                        startActivity(jobIntent);
-
-
-                    }
-                    /*Intent jobIntent = new Intent(getActivity(),JobRegistrationForm.class);
-                    startActivity(jobIntent);*/
-
+                    Intent jobIntent = new Intent(getActivity(),JobRegistrationForm.class);
+                   startActivity(jobIntent);
             }
         }
 }

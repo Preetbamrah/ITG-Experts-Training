@@ -22,7 +22,7 @@
             android:layout_height="@dimen/_85sdp"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/roundbtndesign"
-            android:text="ITG Training Experts"
+            android:text="STUDENT REGISTRATION FORM"
             android:textStyle="bold"
             android:textSize="@dimen/_12ssp"
             android:fontFamily="sans-serif"
@@ -38,7 +38,7 @@
             android:layout_height="@dimen/_85sdp"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/roundbtndesign"
-            android:text="ITG Development Experts"
+            android:text="JOB REGISTRATION FORM"
             android:textSize="@dimen/_12ssp"
             android:fontFamily="sans-serif"
             android:textColor="#FDFDFD"/>
