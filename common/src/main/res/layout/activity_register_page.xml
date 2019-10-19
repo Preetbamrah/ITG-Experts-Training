@@ -40,7 +40,7 @@
                     android:id="@+id/reguser"
                     android:hint="Username"
                     android:drawableTint="#817b7b"
-                    android:drawableRight="@drawable/user"
+                    android:drawableRight="@drawable/pro"
                     android:paddingLeft="@dimen/_5sdp"
                     android:layout_marginRight="@dimen/_10sdp"
                     android:layout_marginLeft="@dimen/_10sdp"
@@ -76,7 +76,6 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/regmobile"
                     android:drawableRight="@drawable/phone"
                     android:singleLine="true"
                     android:hint="Mobile Number"
@@ -120,7 +119,6 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/regrepass"
                     android:inputType="textPassword"
                     android:paddingLeft="@dimen/_5sdp"
                     android:paddingRight="@dimen/_9sdp"

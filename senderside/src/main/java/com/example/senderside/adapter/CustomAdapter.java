@@ -3,11 +3,13 @@ package com.example.senderside.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.senderside.Activities.BbaListData;
@@ -81,14 +83,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 }
             }
         });
-    }
 
+    }
+/*
+    private int dpToPx(int sdp){
+        float px = sdp * context.getResources().getDisplayMetrics().density;
+        return (int)px;
+    }*/
     @Override
     public int getItemCount() {
         return name.size();
     }
 
     public class MyViewHolder extends  RecyclerView.ViewHolder{
+        public CardView cardView;
         TextView name_txt;
         ImageView image_view;
         public MyViewHolder(@NonNull View itemView) {

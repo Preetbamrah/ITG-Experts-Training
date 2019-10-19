@@ -244,6 +244,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_10sdp"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginHorizontal="@dimen/_15sdp">
@@ -257,21 +258,19 @@
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="sans-serif"
                 />
-            <EditText
-                android:id="@+id/course_edit"
+            <Spinner
+                android:id="@+id/course_spinner"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_60sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_55sdp"
-                android:textSize="@dimen/_15ssp"
-                android:drawableRight="@drawable/down_arrow_icon"
-                android:paddingRight="@dimen/_10sdp"
-                android:fontFamily="sans-serif"/>
+                android:paddingRight="@dimen/_10sdp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingTop="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginHorizontal="@dimen/_15sdp">
             <TextView
@@ -284,67 +283,47 @@
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="sans-serif"
                 />
-            <EditText
-                android:id="@+id/branch_edit"
+            <Spinner
+                android:id="@+id/branch_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_55sdp"
-                android:textSize="@dimen/_15ssp"
-                android:drawableRight="@drawable/down_arrow_icon"
-                android:paddingRight="@dimen/_10sdp"
-                android:fontFamily="sans-serif"/>
+                android:layout_marginLeft="@dimen/_60sdp"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingTop="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginHorizontal="@dimen/_15sdp">
             <TextView
                 android:id="@+id/batch_from_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:text="Batch From"
+                android:text="Batch"
                 android:textColor="#000"
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="sans-serif"
                 />
-            <TextView
-                android:id="@+id/batch_from_edit"
-                android:layout_width="match_parent"
+            <Spinner
+                android:id="@+id/batch_from_spinner"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_25sdp"
-                android:textSize="@dimen/_15ssp"
-                android:drawableRight="@drawable/down_arrow_icon"
-                android:paddingRight="@dimen/_10sdp"
-                android:fontFamily="sans-serif"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp">
+                android:layout_marginLeft="@dimen/_40sdp"/>
             <TextView
                 android:id="@+id/batch_to_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:text="Batch to"
+                android:text="to"
                 android:textColor="#000"
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="sans-serif"
                 />
-            <EditText
-                android:id="@+id/batch_to_edit"
-                android:layout_width="match_parent"
+            <Spinner
+                android:id="@+id/batch_to_spinner"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_45sdp"
-                android:textSize="@dimen/_15ssp"
-                android:drawableRight="@drawable/down_arrow_icon"
-                android:paddingRight="@dimen/_10sdp"
-                android:fontFamily="sans-serif"/>
+                android:layout_marginLeft="@dimen/_8sdp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -368,6 +347,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
+                android:drawableRight="@drawable/down_arrow_icon"
                 />
         </LinearLayout>
 

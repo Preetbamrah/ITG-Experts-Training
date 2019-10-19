@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.StudentRegisteration"
+        >
+        <include
+            android:id="@+id/toolbar_registration_form"
+            layout="@layout/toolbar_activity" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Student Registration Form"
+            android:textColor="#D81313"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15ssp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student Name"
+                android:textColor="#000"
+                android:textSize="@dimen/_15sdp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:id="@+id/studentedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Father's Name"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/fatheredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/addressedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp"
+                />
+
+            <EditText
+                android:id="@+id/contactdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Contact"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="Email"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:id="@+id/emailedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_65sdp"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="College Name"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="University Roll no."
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="Course"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"
+                />
+            <Spinner
+                android:id="@+id/course_spinner"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_60sdp"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/_10sdp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="Branch"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"
+                />
+            <Spinner
+                android:id="@+id/branch_spinner"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_60sdp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Batch"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"
+                />
+            <Spinner
+                android:id="@+id/batch_from_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"
+                />
+            <Spinner
+                android:id="@+id/batch_to_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intereted in"
+                android:textColor="#000"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="sans-serif"/>
+
+            <EditText
+                android:id="@+id/interest_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:drawableRight="@drawable/down_arrow_icon"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semester"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/semedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_15ssp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/registerbtn_stu"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/roundbtndesign"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:text="register"
+            android:textColor="#FFFCFC"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

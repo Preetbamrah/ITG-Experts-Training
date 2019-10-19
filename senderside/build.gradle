@@ -6,7 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.senderside"
-        minSdkVersion 16
+        resConfigs 'en', 'th'
+        minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -14,18 +15,33 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
+        aaptOptions {
+            cruncherEnabled = false
+        }
 
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
         exclude 'META-INF/proguard/androidx-annotations.pro'
     }
+    splits {
+        abi {
+            enable true
+            reset()
+            // Specify a list of ABIs that Gradle should create APKs for
+            include 'x86', 'x86_64', 'arm64-v8a', 'armeabi-v7a'
+            // If you don’t want to generate a universal APK that includes all ABIs.
+            universalApk false
+        }
+    }
+
 
 }
 
@@ -78,6 +94,10 @@ dependencies {
 
     //space navigation view
     implementation 'com.github.armcha:SpaceNavigationView:1.6.0'
+
+    implementation 'com.google.android.gms:play-services-maps:10.2.0'
+    implementation 'com.google.android.gms:play-services-wearable:10.2.0'
+
 }
 apply plugin: 'com.google.gms.google-services'
 

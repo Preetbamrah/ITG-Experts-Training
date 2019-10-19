@@ -20,12 +20,13 @@ public class StudentRegistration extends AppCompatActivity {
    /* TextView textStu,textfath,textadd,textbran,textbat,textcou,textcon,textem,textsem,textin;
     Spinner spinnerbathfi,spinnerbathse,spinnerco,spinnerbran;
    */
+   Spinner batch_from_spinner,batch_to_spinner,branch_spinner,course_spinner;
    Button buttonreg;
     boolean[] checkedItems;
     TextView edit_batch_from;
-    EditText editTextst,editTextfa,editTextadd,editTextcon,editTextem,editTextsem,edit_interest, edit_other_contact,edit_college,edit_roll,edit_course,edit_branch,edit_batch_to;
-    String[] course = {"B.Tech","BBA","MBA","B.Com","IT"};
-    String[] branch = {"CSE","EE","ECE","ME","CE"};
+    EditText editTextst,editTextfa,editTextadd,editTextcon,editTextem,editTextsem,edit_interest;
+    String[] course = {"Select Course","B.Tech","HM","BBA","MCA","IT","B.COM","Other"};
+    String[] branch = {"Select Branch","CSE","EE","ECE","ME","CE","IT","NO ONE"};
     final String[] interested = {"Java", "Python", "Android", "Php", "C", "C++", "Networking", "3DS-MAX", "Autocad", "Revit Architecture Structure", "Staad-Pro","Marketing","Digital Marketing","Finance","HR","SEO","Accounting","Tally","Telecom","Robotics","Embedded System","PLC/SCADA","MATLAB","IOT","Solid Work","Catia","CNC","NX CAD/CAM"};
     Toolbar toolbar;
     @Override
@@ -39,9 +40,11 @@ public class StudentRegistration extends AppCompatActivity {
         editTextcon = findViewById(R.id.contactdit);
         editTextem = findViewById(R.id.emailedit);
         editTextsem = findViewById(R.id.semedit);
-        edit_batch_from = (TextView) findViewById(R.id.batch_from_edit);
-        edit_batch_to = (EditText)findViewById(R.id.batch_to_edit);
         edit_interest = findViewById(R.id.interest_edit);
+        batch_to_spinner = (Spinner)findViewById(R.id.batch_to_spinner);
+        branch_spinner = (Spinner)findViewById(R.id.branch_spinner);
+        course_spinner = (Spinner)findViewById(R.id.course_spinner);
+        batch_from_spinner = (Spinner)findViewById(R.id.batch_from_spinner);
         toolbar  = findViewById(R.id.toolbar_registration_form);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -60,7 +63,13 @@ public class StudentRegistration extends AppCompatActivity {
         {
             years.add(Integer.toString(i+3));
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_list_item_1,years);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,years);
+        batch_to_spinner.setAdapter(arrayAdapter);
+        batch_from_spinner.setAdapter(arrayAdapter);
+        ArrayAdapter courseAdapter = new ArrayAdapter(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,course);
+        course_spinner.setAdapter(courseAdapter);
+        ArrayAdapter branchAdapter = new ArrayAdapter(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,branch);
+        branch_spinner.setAdapter(branchAdapter);
         //Interested Spinner
        final ArrayList<Integer> interestArray = new ArrayList<>();//<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,interested);
       //  spinnerinter.setAdapter(interestArray);
@@ -163,35 +172,3 @@ public class StudentRegistration extends AppCompatActivity {
         });
     }
 }
-
-
-
-/*
-
-textStu = findViewById(R.id.student_text);
-        textfath = findViewById(R.id.fathertext);
-        textadd = findViewById(R.id.addresstext);
-        textbat = findViewById(R.id.batchtext);
-        textbran = findViewById(R.id.branchtext);
-        textcon = findViewById(R.id.contacttext);
-        textcou = findViewById(R.id.coursetext);
-        textem = findViewById(R.id.emailtext);
-        textsem = findViewById(R.id.semtext);
-        textin = findViewById(R.id.interesttext);
-        spinnerbathfi = findViewById(R.id.batchfirst);
-        spinnerbathse = findViewById(R.id.batchsecond);
-        spinnerco = findViewById(R.id.spinnercourse);
-        spinnerbran = findViewById(R.id.spinnerbranch);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(StudentRegistration.this, android.R.layout.simple_spinner_dropdown_item, years);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,years);
-        spinnerbathfi.setAdapter(adapter);
-        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        spinnerbathse.setAdapter(arrayAdapter);
-
-        // course Spinner
-        ArrayAdapter<String> courseArray = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,course);
-        spinnerco.setAdapter(courseArray);
-
-        //Branch Spinner
-        ArrayAdapter<String> branchArray = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,branch);
-        spinnerbran.setAdapter(branchArray);*/

@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AppActivity" />
         <activity android:name=".activities.FacultyProfile" />
-        <activity android:name=".activities.RegisteredStudentActivity" />
-        <activity android:name=".activities.ViewStatusActivity" />
-        <activity android:name=".activities.StatusUpdate" />
         <activity android:name=".activities.Dashboard" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
@@ -24,10 +20,14 @@
         </activity>
         <activity android:name=".activities.LoginPage" />
         <activity android:name=".activities.RegisterPage" />
-        <activity android:name=".activities.Faculty_status" />
-        <activity android:name=".activities.ViewStatusList" />
+        <activity android:name=".activities.StudentRegistration" />
         <activity android:name=".activities.PasswordConfiguration" />
-        <activity android:name=".activities.ViewRegisterStudent"></activity>
+        <activity android:name=".activities.DashboardListItems" />
+        <activity android:name=".activities.ViewRegisterStu" />
+        <activity android:name=".activities.RegistrationFormActivity" />
+        <activity android:name=".activities.ReferenceList" />
+        <activity android:name=".activities.TeacherReferAlert" />
+        <activity android:name=".activities.FriendReferAlert"></activity>
     </application>
 
 </manifest>
