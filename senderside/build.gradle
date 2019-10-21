@@ -1,6 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     compileSdkVersion 28
 
 
@@ -25,12 +31,10 @@ android {
         release {
             shrinkResources true
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
-    packagingOptions {
-        exclude 'META-INF/proguard/androidx-annotations.pro'
-    }
+
     splits {
         abi {
             enable true
@@ -95,8 +99,7 @@ dependencies {
     //space navigation view
     implementation 'com.github.armcha:SpaceNavigationView:1.6.0'
 
-    implementation 'com.google.android.gms:play-services-maps:10.2.0'
-    implementation 'com.google.android.gms:play-services-wearable:10.2.0'
+   // implementation 'com.google.firebase:firebase-ads:18.2.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

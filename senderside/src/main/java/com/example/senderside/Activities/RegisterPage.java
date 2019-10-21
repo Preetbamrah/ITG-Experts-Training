@@ -31,7 +31,7 @@ private FirebaseAuth mauth;
         passEdit = findViewById(R.id.regpass);
         mobileEdit = findViewById(R.id.regmobile);
         repassEdit = findViewById(R.id.regrepass);
-        mauth = FirebaseAuth.getInstance();
+       // mauth = FirebaseAuth.getInstance();
         button.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view) {

@@ -148,7 +148,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/othercontacttext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Other Contact"
@@ -199,7 +198,6 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/school_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="School"
@@ -223,7 +221,6 @@
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp">
                 <TextView
-                    android:id="@+id/graduation_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Graduation"

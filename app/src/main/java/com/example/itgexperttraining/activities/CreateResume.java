@@ -113,7 +113,8 @@ public class CreateResume extends AppCompatActivity {
                                 String items = "";
                                 for (int i=0;i<technicalArray.size();i++)
                                 {
-                                    items = items+technicalSkill[technicalArray.get(i)];
+                                    items = items
+                                            +technicalSkill[technicalArray.get(i)];
                                     if (i!= technicalArray.size() -1)
                                     {
                                         items = items+ ",";
