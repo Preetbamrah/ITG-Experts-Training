@@ -15,7 +15,7 @@ import com.example.senderside.R;
 
 import java.util.ArrayList;
 
-public class ArrayListAdapter extends RecyclerView.Adapter<ArrayListAdapter.MyViewHolder> {
+public class ArrayListAdapter extends RecyclerView.Adapter<ArrayListAdapter.ArrayViewHolder> {
     ArrayList name;
     ArrayList image;
     Context context;
@@ -28,19 +28,19 @@ public class ArrayListAdapter extends RecyclerView.Adapter<ArrayListAdapter.MyVi
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ArrayViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_recycle_view_list, viewGroup, false);
         // set the view's size, margins, paddings and layout parameters
-        MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
+        ArrayViewHolder vh = new ArrayViewHolder(v); // pass the view to View Holder
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder,final int position) {
-        myViewHolder.name_txt.setText((CharSequence) name.get(position));
-        myViewHolder.image_view.setImageResource((Integer) image.get(position));
+    public void onBindViewHolder(@NonNull ArrayViewHolder arrayViewHolder,final int position) {
+        arrayViewHolder.name_txt.setText((CharSequence) name.get(position));
+        arrayViewHolder.image_view.setImageResource((Integer) image.get(position));
         // implement setOnClickListener event on item view.
-        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        arrayViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // open another activity on item click
@@ -87,10 +87,10 @@ public class ArrayListAdapter extends RecyclerView.Adapter<ArrayListAdapter.MyVi
         return name.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class ArrayViewHolder extends RecyclerView.ViewHolder {
         ImageView image_view;
         TextView name_txt;
-        public MyViewHolder(@NonNull View itemView) {
+        public ArrayViewHolder(@NonNull View itemView) {
             super(itemView);
             name_txt = (TextView) itemView.findViewById(R.id.text);
             image_view= (ImageView) itemView.findViewById(R.id.image_views);

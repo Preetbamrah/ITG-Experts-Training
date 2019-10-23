@@ -15,7 +15,7 @@ import com.example.senderside.R;
 
 import java.util.ArrayList;
 
-public class ElectricalAdapter extends RecyclerView.Adapter<ElectricalAdapter.MyViewHolder> {
+public class ElectricalAdapter extends RecyclerView.Adapter<ElectricalAdapter.ElectricalViewHolder> {
     ArrayList images;
     ArrayList name;
     Context context;
@@ -28,17 +28,17 @@ public class ElectricalAdapter extends RecyclerView.Adapter<ElectricalAdapter.My
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ElectricalViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_recycle_view_list,viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
-        return  myViewHolder;
+        ElectricalViewHolder electricalViewHolder = new ElectricalViewHolder(view);
+        return  electricalViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int position) {
-        myViewHolder.textView.setText((CharSequence) name.get(position));
-        myViewHolder.imageView.setImageResource((Integer)images.get(position));
-        myViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+    public void onBindViewHolder(@NonNull ElectricalViewHolder xViewHolder, final int position) {
+        xViewHolder.textView.setText((CharSequence) name.get(position));
+        xViewHolder.imageView.setImageResource((Integer)images.get(position));
+        xViewHolder.itemView.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
             {
@@ -101,10 +101,10 @@ public class ElectricalAdapter extends RecyclerView.Adapter<ElectricalAdapter.My
         return name.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class ElectricalViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
-        public MyViewHolder(View itemView)
+        public ElectricalViewHolder(View itemView)
         {
             super(itemView);
             imageView = (ImageView)itemView.findViewById(R.id.image_views);

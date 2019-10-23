@@ -15,7 +15,7 @@ import com.example.senderside.R;
 
 import java.util.ArrayList;
 
-public class CivilAdapter extends RecyclerView.Adapter<CivilAdapter.MyViewHolder> {
+public class CivilAdapter extends RecyclerView.Adapter<CivilAdapter.CivilViewHolder> {
 ArrayList image;
 ArrayList name;
 Context context;
@@ -29,17 +29,17 @@ Context context;
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public CivilViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_recycle_view_list,viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
-        return  myViewHolder;
+        CivilViewHolder civilViewHolder = new CivilViewHolder(view);
+        return  civilViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int position) {
-        myViewHolder.textView.setText((CharSequence)name.get(position));
-        myViewHolder.imageView.setImageResource((Integer)image.get(position));
-        myViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+    public void onBindViewHolder(@NonNull CivilViewHolder nViewHolder, final int position) {
+        nViewHolder.textView.setText((CharSequence)name.get(position));
+        nViewHolder.imageView.setImageResource((Integer)image.get(position));
+        nViewHolder.itemView.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
             {
@@ -77,11 +77,11 @@ Context context;
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder
+    public class CivilViewHolder extends RecyclerView.ViewHolder
     {
         ImageView imageView;
         TextView textView;
-        public MyViewHolder(View itemView)
+        public CivilViewHolder(View itemView)
         {
             super(itemView);
             imageView = (ImageView)itemView.findViewById(R.id.image_views);

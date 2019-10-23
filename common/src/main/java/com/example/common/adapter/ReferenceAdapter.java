@@ -17,7 +17,7 @@ import com.example.common.activities.StudentRegistration;
 
 import java.util.ArrayList;
 
-public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.MyViewHolder> {
+public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.ReferenceViewHolder> {
     ArrayList name;
     Context context;
 
@@ -28,16 +28,16 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.MyVi
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+    public ReferenceViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_reference_list,viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
-        return myViewHolder;
+        ReferenceViewHolder referenceViewHolder = new ReferenceViewHolder(view);
+        return referenceViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder,final int position) {
-    holder.textView.setText((CharSequence)name.get(position));
-    holder.itemView.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull ReferenceViewHolder viewholder,final int position) {
+    viewholder.textView.setText((CharSequence)name.get(position));
+    viewholder.itemView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if (position==0)
@@ -95,10 +95,10 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.MyVi
         return name.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder
+    public class ReferenceViewHolder extends RecyclerView.ViewHolder
     {
         TextView textView;
-        public MyViewHolder(View itemView)
+        public ReferenceViewHolder(View itemView)
         {
             super(itemView);
             textView = (TextView)itemView.findViewById(R.id.text_reference);

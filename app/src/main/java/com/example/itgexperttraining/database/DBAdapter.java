@@ -1,5 +1,6 @@
 package com.example.itgexperttraining.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,6 +10,7 @@ import android.util.Log;
 import com.example.itgexperttraining.bean.UserBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBAdapter extends SQLiteOpenHelper {
 
@@ -77,10 +79,10 @@ public class DBAdapter extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         String query = "INSERT INTO user_table (user_name,user_email,user_mo_no,user_pass) values ('"+
-                        userBean.getUser_name()+"','"+
-                        userBean.getUser_email()+"','"+
-                        userBean.getUser_mo_no()+"','"+
-                        userBean.getUser_password()+")";
+                userBean.getUser_name()+"','"+
+                userBean.getUser_email()+"','"+
+                userBean.getUser_mo_no()+"','"+
+                userBean.getUser_password()+")";
         Log.d("query",query);
         db.execSQL(query);
         db.close();

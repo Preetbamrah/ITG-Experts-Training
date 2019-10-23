@@ -15,7 +15,7 @@ import com.example.senderside.R;
 
 import java.util.ArrayList;
 
-public class BbaAdapter extends RecyclerView.Adapter<BbaAdapter.MyViewHolder> {
+public class BbaAdapter extends RecyclerView.Adapter<BbaAdapter.BbaViewHolder> {
     ArrayList image;
     ArrayList name;
     Context context;
@@ -27,17 +27,17 @@ public class BbaAdapter extends RecyclerView.Adapter<BbaAdapter.MyViewHolder> {
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public BbaViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_recycle_view_list,viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
-        return myViewHolder;
+        BbaViewHolder bbaViewHolder = new BbaViewHolder(view);
+        return bbaViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final  int position) {
-        myViewHolder.textView.setText((CharSequence) name.get(position));
-        myViewHolder.imageView.setImageResource((Integer)image.get(position));
-        myViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+    public void onBindViewHolder(@NonNull BbaViewHolder mViewHolder, final  int position) {
+        mViewHolder.textView.setText((CharSequence) name.get(position));
+        mViewHolder.imageView.setImageResource((Integer)image.get(position));
+        mViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view)
             {
                 if (position==0)
@@ -91,11 +91,11 @@ public class BbaAdapter extends RecyclerView.Adapter<BbaAdapter.MyViewHolder> {
         return name.size();
     }
 
-    public class MyViewHolder extends  RecyclerView.ViewHolder
+    public class BbaViewHolder extends  RecyclerView.ViewHolder
     {
         ImageView imageView;
         TextView textView;
-        public MyViewHolder(View itemView)
+        public BbaViewHolder(View itemView)
         {
             super(itemView);
             imageView = (ImageView)itemView.findViewById(R.id.image_views);

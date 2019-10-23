@@ -16,7 +16,7 @@ import com.example.senderside.R;
 import java.nio.CharBuffer;
 import java.util.ArrayList;
 
-public class ComputerAdapter extends RecyclerView.Adapter<ComputerAdapter.MyViewHolder> {
+public class ComputerAdapter extends RecyclerView.Adapter<ComputerAdapter.ComputerViewHolder> {
     ArrayList image;
     ArrayList name;
     Context context;
@@ -28,17 +28,17 @@ public class ComputerAdapter extends RecyclerView.Adapter<ComputerAdapter.MyView
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ComputerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_recycle_view_list, viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(v);
-        return myViewHolder;
+        ComputerViewHolder computerViewHolder = new ComputerViewHolder(v);
+        return computerViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int position) {
-        myViewHolder.textView.setText((CharSequence)name.get(position));
-        myViewHolder.imageView.setImageResource((Integer) image.get(position));
-        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull ComputerViewHolder comViewHolder, final int position) {
+        comViewHolder.textView.setText((CharSequence)name.get(position));
+        comViewHolder.imageView.setImageResource((Integer) image.get(position));
+        comViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (position==0)
@@ -92,10 +92,10 @@ public class ComputerAdapter extends RecyclerView.Adapter<ComputerAdapter.MyView
         return name.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class ComputerViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
-        public MyViewHolder(@NonNull View itemView) {
+        public ComputerViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = (ImageView)itemView.findViewById(R.id.image_views);
             textView = (TextView)itemView.findViewById(R.id.text);
