@@ -3,20 +3,22 @@ package com.example.common.bean;
 import java.io.Serializable;
 
 public class FacultyBean implements Serializable {
+    private int userId;
     private String userName;
-    private String userId;
     private String userMobile;
     private String userPass;
+    private String userRePass;
     private String userEmail;
 
-    public FacultyBean(String userId,String userName,String userMobile, String userPass, String userEmail)
+    /*public FacultyBean(int userId,String userName,String userMobile, String userPass, String userEmail,String userRePass)
     {
-            this.setUserId(userId);
-            this.setUserEmail(userEmail);
-            this.setUserMobile(userMobile);
-            this.setUserName(userName);
-            this.setUserPass(userPass);
-    }
+        this.userId = userId;
+        this.userName = userName;
+        this.userMobile = userMobile;
+        this.userPass = userPass;
+        this.userEmail = userEmail;
+        this.userRePass = userRePass;
+    }*/
     public String getUserName() {
         return userName;
     }
@@ -26,13 +28,12 @@ public class FacultyBean implements Serializable {
        return;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
-        return;
     }
 
     public String getUserMobile() {
@@ -62,6 +63,14 @@ public class FacultyBean implements Serializable {
         return;
     }
 
+    public String getUserRePass() {
+        return userRePass;
+    }
+
+    public void setUserRePass(String userRePass) {
+        this.userRePass = userRePass;
+        return;
+    }
 
 
 
