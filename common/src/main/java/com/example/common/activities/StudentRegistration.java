@@ -33,7 +33,7 @@ public class StudentRegistration extends AppCompatActivity {
     String[] branch = {"Select Branch","CSE","EE","ECE","ME","CE","IT","NO ONE"};
     final String[] interested = {"Java", "Python", "Android", "Php", "C", "C++", "Networking", "3DS-MAX", "Autocad", "Revit Architecture Structure", "Staad-Pro","Marketing","Digital Marketing","Finance","HR","SEO","Accounting","Tally","Telecom","Robotics","Embedded System","PLC/SCADA","MATLAB","IOT","Solid Work","Catia","CNC","NX CAD/CAM"};
     Toolbar toolbar;
-    String batch_from,batch_to,courseSt,branchSt,interest;
+    String batch_from,batch_to,courseSt,branchSt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -161,7 +161,6 @@ public class StudentRegistration extends AppCompatActivity {
                 String rollno = edit_roll.getText().toString();
                 String reference = edit_reference.getText().toString();
                 String semester = editTextsem.getText().toString().trim();
-                String interested = edit_interest.getText().toString();
                 if (name.isEmpty())
                 {
                     editTextst.setError("Enter your name");
@@ -217,35 +216,31 @@ public class StudentRegistration extends AppCompatActivity {
                     edit_reference.setError("Enter your Semester");
                     edit_reference.requestFocus();
                 }
-               else if (interest.isEmpty())
-                {
-                    edit_interest.setError("Enter your Semester");
-                    edit_interest.requestFocus();
-                }
                 else {
 
                     StudentBean studentBean = new StudentBean();
 
-                    studentBean.setStudentName(name);
-                    studentBean.setStudentFatherName(fatherName);
-                    studentBean.setStudentAddress(address);
-                    studentBean.setStudentEmail(emailAddress);
-                    studentBean.setStudentContact(contact);
-                    studentBean.setStudentOtherContact(otherContact);
-                    studentBean.setStudentCollege(college);
-                    studentBean.setStudentRollno(rollno);
-                    studentBean.setStudentBranch(branchSt);
-                    studentBean.setStudentCourse(courseSt);
-                    studentBean.setStudentBatch(batch_from);
-                    studentBean.setStudentBatch(batch_to);
-                    studentBean.setStudentSem(semester);
-                    studentBean.setStudentReference(reference);
+                    studentBean.setStudent_firstname(name);
+                    studentBean.setStudent_fathername(fatherName);
+                    studentBean.setStudent_mobilenumber(contact);
+                    studentBean.setStudent_address(address);
+                    studentBean.setStudent_course(courseSt);
+                    studentBean.setStudent_batch_to(batch_to);
+                    studentBean.setStudent_batch_from(batch_from);
+                    //studentBean.setStudent_interested(interested);
+                    studentBean.setStudent_contact(otherContact);
+                    studentBean.setStudent_college(college);
+                    studentBean.setStudent_reference(reference);
+                    studentBean.setStudent_email(emailAddress);
+                    studentBean.setStudent_sem(semester);
+                    studentBean.setStudent_rollno(rollno);
+                    studentBean.setStudent_branch(branchSt);
 
                     MyDbHelper dbAdapter= new MyDbHelper(StudentRegistration.this);
                     dbAdapter.addStudent(studentBean);
 
-                    Intent intent =new Intent(StudentRegistration.this,ReferencedFragment.class);
-                    startActivity(intent);
+                    /*Intent intent =new Intent(StudentRegistration.this,ReferencedFragment.class);
+                    startActivity(intent);*/
                     Toast.makeText(getApplicationContext(), "student added successfully", Toast.LENGTH_SHORT).show();
 
                 }

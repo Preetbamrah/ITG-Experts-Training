@@ -1,176 +1,143 @@
 package com.example.common.bean;
 
 public class StudentBean {
-    private  int studentId;
-    private  String studentName;
-    private  String studentFatherName;
-    private  String studentAddress;
-    private  String studentEmail;
-    private  String studentContact;
-    private  String studentOtherContact;
-    private  String studentCollege;
-    private  String studentRollno;
-    private  String studentCourse;
-    private  String studentBranch;
-    private  String studentBatch;
-    private  String studentInterested;
-    private  String studentSem;
-    private  String studentReference;
-/*
-    public StudentBean(int studentId, String studentName, String studentFatherName, String studentAddress, String studentEmail,
-            String studentContact, String studentOtherContact, String studentCollege, String studentRollno, String studentCourse,
-            String studentBranch, String studentBatch, String studentInterested, String studentSem, String studentReference)
-    {
-        this.setStudentAddress(studentAddress);
-        this.setStudentBatch(studentBatch);
-        this.setStudentBranch(studentBranch);
-        this.setStudentCollege(studentCollege);
-        this.setStudentContact(studentContact);
-        this.setStudentCourse(studentCourse);
-        this.setStudentEmail(studentEmail);
-        this.setStudentFatherName(studentFatherName);
-        this.setStudentId(studentId);
-        this.setStudentInterested(studentInterested);
-        this.setStudentName(studentName);
-        this.setStudentOtherContact(studentOtherContact);
-        this.setStudentReference(studentReference);
-        this.setStudentRollno(studentRollno);
-        this.setStudentSem(studentSem);
+    private int student_id;
+    private String student_firstname;
+    private String student_fathername;
+    private String student_mobilenumber;
+    private String student_address;
+    private String student_batch_to;
+    private String student_batch_from;
+    private String student_branch;
+    private String student_course;
+    private String student_contact;
+    private String student_interested;
+    private String student_reference;
+    private  String student_email;
+    private String student_rollno;
+    private String student_sem;
+    private String student_college;
 
-
-    }*/
-    public int getStudentId() {
-        return studentId;
+    public String getStudent_batch_to() {
+        return student_batch_to;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-        return;
+    public void setStudent_batch_to(String student_batch_to) {
+        this.student_batch_to = student_batch_to;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getStudent_batch_from() {
+        return student_batch_from;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-        return;
+    public void setStudent_batch_from(String student_batch_from) {
+        this.student_batch_from = student_batch_from;
     }
 
-    public String getStudentFatherName() {
-        return studentFatherName;
+    public String getStudent_branch() {
+        return student_branch;
     }
 
-    public void setStudentFatherName(String studentFatherName) {
-        this.studentFatherName = studentFatherName;
-        return;
+    public void setStudent_branch(String student_branch) {
+        this.student_branch = student_branch;
     }
 
-    public String getStudentAddress() {
-        return studentAddress;
+    public String getStudent_course() {
+        return student_course;
     }
 
-    public void setStudentAddress(String studentAddress) {
-        this.studentAddress = studentAddress;
-        return;
+    public void setStudent_course(String student_course) {
+        this.student_course = student_course;
     }
 
-    public String getStudentEmail() {
-        return studentEmail;
+    public String getStudent_contact() {
+        return student_contact;
     }
 
-    public void setStudentEmail(String studentEmail) {
-        this.studentEmail = studentEmail;
-        return;
+    public void setStudent_contact(String student_contact) {
+        this.student_contact = student_contact;
     }
 
-    public String getStudentContact() {
-        return studentContact;
+    public String getStudent_interested() {
+        return student_interested;
     }
 
-    public void setStudentContact(String studentContact) {
-        this.studentContact = studentContact;
-        return;
+    public void setStudent_interested(String student_interested) {
+        this.student_interested = student_interested;
     }
 
-    public String getStudentOtherContact() {
-        return studentOtherContact;
+    public String getStudent_reference() {
+        return student_reference;
     }
 
-    public void setStudentOtherContact(String studentOtherContact) {
-        this.studentOtherContact = studentOtherContact;
-        return;
+    public void setStudent_reference(String student_reference) {
+        this.student_reference = student_reference;
     }
 
-    public String getStudentCollege() {
-        return studentCollege;
+    public String getStudent_email() {
+        return student_email;
     }
 
-    public void setStudentCollege(String studentCollege) {
-        this.studentCollege = studentCollege;
-        return;
+    public void setStudent_email(String student_email) {
+        this.student_email = student_email;
     }
 
-    public String getStudentRollno() {
-        return studentRollno;
+    public String getStudent_rollno() {
+        return student_rollno;
     }
 
-    public void setStudentRollno(String studentRollno) {
-        this.studentRollno = studentRollno;
-        return;
+    public void setStudent_rollno(String student_rollno) {
+        this.student_rollno = student_rollno;
     }
 
-    public String getStudentCourse() {
-        return studentCourse;
+    public String getStudent_sem() {
+        return student_sem;
     }
 
-    public void setStudentCourse(String studentCourse) {
-        this.studentCourse = studentCourse;
-         return;
+    public void setStudent_sem(String student_sem) {
+        this.student_sem = student_sem;
     }
 
-    public String getStudentBranch() {
-        return studentBranch;
+    public String getStudent_college() {
+        return student_college;
     }
 
-    public void setStudentBranch(String studentBranch) {
-        this.studentBranch = studentBranch;
-        return;
+    public void setStudent_college(String student_college) {
+        this.student_college = student_college;
     }
 
-    public String getStudentBatch() {
-        return studentBatch;
+    public int getStudent_id() {
+        return student_id;
+    }
+    public void setStudent_id(int student_id) {
+        this.student_id = student_id;
+    }
+    public String getStudent_firstname() {
+        return student_firstname;
+    }
+    public void setStudent_firstname(String student_firstname) {
+        this.student_firstname = student_firstname;
+    }
+    public String getStudent_fathername() {
+        return student_fathername;
+    }
+    public void setStudent_fathername(String student_fathername) {
+        this.student_fathername = student_fathername;
+    }
+    public String getStudent_mobilenumber() {
+        return student_mobilenumber;
+    }
+    public void setStudent_mobilenumber(String student_mobilenumber) {
+        this.student_mobilenumber = student_mobilenumber;
+    }
+    public String getStudent_address() {
+        return student_address;
+    }
+    public void setStudent_address(String student_address) {
+        this.student_address = student_address;
     }
 
-    public void setStudentBatch(String studentBatch) {
-        this.studentBatch = studentBatch;
-        return;
-    }
 
-    public String getStudentInterested() {
-        return studentInterested;
-    }
 
-    public void setStudentInterested(String studentInterested) {
-        this.studentInterested = studentInterested;
-        return;
-    }
 
-    public String getStudentSem() {
-        return studentSem;
-    }
-
-    public void setStudentSem(String studentSem) {
-        this.studentSem = studentSem;
-        return;
-    }
-
-    public String getStudentReference() {
-        return studentReference;
-    }
-
-    public void setStudentReference(String studentReference) {
-        this.studentReference = studentReference;
-        return;
-    }
 }
