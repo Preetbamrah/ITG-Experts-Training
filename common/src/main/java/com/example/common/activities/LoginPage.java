@@ -9,11 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.common.R;
+import com.example.common.bean.FirebaseApplication;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginPage extends AppCompatActivity {
     EditText et1,et2;
     TextView textView;
     Button button;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,8 @@ public class LoginPage extends AppCompatActivity {
         et2 = findViewById(R.id.logpassword);
         button = findViewById(R.id.loginbtn);
         textView = findViewById(R.id.logreg);
+        mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
+        ((FirebaseApplication)getApplication()).checkUserLogin(LoginPage.this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +51,10 @@ public class LoginPage extends AppCompatActivity {
                     et2.setError("Password can't be balnk");
                     et2.requestFocus();
                 }
-                Intent intent = new Intent(LoginPage.this, Dashboard.class);
-                startActivity(intent);
+                else  {
+                    ((FirebaseApplication) getApplication()).loginAUser(LoginPage.this, email, password);
+
+                }
                 /*else {
                     login(email, password);
                 }*/

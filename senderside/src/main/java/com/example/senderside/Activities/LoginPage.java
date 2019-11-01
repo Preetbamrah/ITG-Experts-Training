@@ -3,11 +3,13 @@ package com.example.senderside.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.senderside.Bean.FirebaseApplication;
 import com.example.senderside.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,6 +19,7 @@ Button button;
 TextView textView;
 EditText emailEdit,passEdit;
 private int textSize = 0;
+private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,9 @@ private int textSize = 0;
         textView = findViewById(R.id.logreg);
         emailEdit = findViewById(R.id.logemail);
         passEdit = findViewById(R.id.logpassword);
+        mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
+        ((FirebaseApplication)getApplication()).checkUserLogin(LoginPage.this);
+
         button.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
@@ -52,8 +58,11 @@ private int textSize = 0;
                     emailEdit.setError("Email can't be blank");
                     emailEdit.requestFocus();
                 }
-                Intent intent = new Intent(LoginPage.this, Dashboard.class);
-                startActivity(intent);
+                else  {
+                    ((FirebaseApplication) getApplication()).loginAUser(LoginPage.this, email, pass);
+
+                }
+
             }
         });
         textView.setOnClickListener(new View.OnClickListener()
@@ -65,5 +74,17 @@ private int textSize = 0;
             }
         });
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        //mAuth.addAuthStateListener(((FirebaseApplication)getApplication()).mAuthListener);
+    }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (((FirebaseApplication)getApplication()).mAuthListener != null) {
+            //mAuth.removeAuthStateListener(((FirebaseApplication)getApplication()).mAuthListener);
+        }
+    }
 }

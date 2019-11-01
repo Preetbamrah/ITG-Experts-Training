@@ -1,6 +1,5 @@
 package com.example.itgexperttraining.database;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +9,6 @@ import android.util.Log;
 import com.example.itgexperttraining.bean.UserBean;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DBAdapter extends SQLiteOpenHelper {
 
@@ -97,14 +95,13 @@ public class DBAdapter extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst())
         {
-
-            UserBean userBean = new UserBean();
+           /* UserBean userBean = new UserBean();
             userBean.setUser_id(Integer.parseInt(cursor.getString(0)));
             userBean.setUser_name(cursor.getString(1));
             userBean.setUser_email(cursor.getString(2));
             userBean.setUser_mo_no(cursor.getString(3));
             userBean.setUser_password(cursor.getString(4));
-            return userBean;
+            return userBean;*/
         }
         return null;
 
@@ -122,13 +119,13 @@ public class DBAdapter extends SQLiteOpenHelper {
         if(cursor.moveToFirst())
         {
             do{
-                UserBean userBean = new UserBean();
+                /*UserBean userBean = new UserBean(, editEmail, editPass, editMobile, editUser, editRePass);
                 userBean.setUser_id(Integer.parseInt(cursor.getString(0)));
                 userBean.setUser_name(cursor.getString(1));
                 userBean.setUser_email(cursor.getString(2));
                 userBean.setUser_mo_no(cursor.getString(3));
                 userBean.setUser_password(cursor.getString(4));
-                list.add(userBean);
+                list.add(userBean);*/
 
             }while(cursor.moveToNext());
         }

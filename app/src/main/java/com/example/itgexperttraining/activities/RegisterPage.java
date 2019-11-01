@@ -2,19 +2,28 @@ package com.example.itgexperttraining.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.itgexperttraining.R;
+import com.example.itgexperttraining.bean.UserBean;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RegisterPage extends AppCompatActivity {
 EditText editUser,editEmail,editPass,editMobile, editRePass;
@@ -22,6 +31,7 @@ Button button;
 TextInputLayout textInputLayout;
 TextView textView;
 private FirebaseAuth mAuth;
+DatabaseReference databaseReference;
 
 
     @Override
@@ -35,13 +45,14 @@ private FirebaseAuth mAuth;
         editMobile = findViewById(R.id.regmobile);
         button = findViewById(R.id.signupbtn);
         textInputLayout = findViewById(R.id.text__input_password);
+        databaseReference= FirebaseDatabase.getInstance().getReference("Fculty");
        // textView = findViewById(R.id.text_login);
         mAuth = FirebaseAuth.getInstance();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = editUser.getText().toString().trim();
-                String email = editEmail.getText().toString().trim();
+                final String user = editUser.getText().toString();
+                final String email = editEmail.getText().toString().trim();
                 String pass = editPass.getText().toString().trim();
                 String mobile = editMobile.getText().toString().trim();
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -80,8 +91,16 @@ private FirebaseAuth mAuth;
                     editMobile.setError("Enter valid mobile number");
                     editMobile.requestFocus();
                 }
-                Intent intent = new Intent(RegisterPage.this, LoginPage.class);
-                startActivity(intent);
+                if (!TextUtils.isEmpty(user)) {
+                    String userId = databaseReference.push().getKey();
+                    UserBean userBean = new UserBean(userId, editEmail, editPass, editMobile, editUser, editRePass);
+                    databaseReference.child(userId).setValue(userBean);
+//                Intent intent = new Intent(RegisterPage.this, LoginPage.class);
+//                startActivity(intent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"set your name",Toast.LENGTH_LONG).show();
+                }
             }
         });
 

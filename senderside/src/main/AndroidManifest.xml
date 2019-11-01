@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString">
+        android:appComponentFactory="whateverString"
+        android:name = "com.example.senderside.Bean.FirebaseApplication" >
         <activity android:name=".Activities.JobRegistrationForm" />
         <activity android:name=".Activities.PasswordConfiguration" />
         <activity android:name=".Activities.ProfileDetail" />
