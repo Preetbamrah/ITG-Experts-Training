@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activities.OnlineRegistrationForm">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,41 +13,20 @@
         <include
             layout="@layout/toolbar"
             android:id="@+id/registration_toolbar"/>
-        <Button
-            android:id="@+id/studentregister_btn"
-            android:layout_width="match_parent"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/form_tab"
             android:layout_below="@id/registration_toolbar"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:elevation="@dimen/_15sdp"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_height="@dimen/_85sdp"
-            android:backgroundTint="@color/colorPrimary"
-            android:background="@drawable/roundbtndesign"
-            android:text="STUDENT REGISTRATION FORM"
-            android:textStyle="bold"
-            android:textSize="@dimen/_12ssp"
-            android:fontFamily="sans-serif"
-            android:textColor="#FDFDFD"/>
-        <Button
-            android:id="@+id/job_register_btn"
-            android:layout_below="@id/studentregister_btn"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:elevation="@dimen/_15sdp"
-            android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_height="@dimen/_85sdp"
-            android:backgroundTint="@color/colorPrimary"
-            android:background="@drawable/roundbtndesign"
-            android:text="JOB REGISTRATION FORM"
-            android:textSize="@dimen/_12ssp"
-            android:fontFamily="sans-serif"
-            android:textColor="#FDFDFD"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabMode="fixed">
 
-
-
-
-
-
+        </android.support.design.widget.TabLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/form_pager"
+            android:layout_width="match_parent"
+            android:layout_below="@id/form_tab"
+            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
     </RelativeLayout>
 </FrameLayout>

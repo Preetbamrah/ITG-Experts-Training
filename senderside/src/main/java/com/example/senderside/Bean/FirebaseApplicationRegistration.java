@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.example.senderside.Activities.Dashboard;
 import com.example.senderside.Activities.LoginPage;
 import com.example.senderside.Activities.RegisterPage;
@@ -16,8 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class FirebaseApplication extends Application {
-
+public class FirebaseApplicationRegistration extends Application {
     private static final String TAG = FirebaseApplication.class.getSimpleName();
 
     public FirebaseAuth firebaseAuth;
@@ -37,14 +37,14 @@ public class FirebaseApplication extends Application {
     }
 
     public void checkUserLogin(final Context context){
-        if(firebaseAuth.getCurrentUser() != null){
+        /*if(firebaseAuth.getCurrentUser() != null){
             Intent profileIntent = new Intent(context, Dashboard.class);
             context.startActivity(profileIntent);
-        }
+        }*/
     }
 
     public void isUserCurrentlyLogin(final Context context){
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+      /*  mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -56,11 +56,11 @@ public class FirebaseApplication extends Application {
                     context.startActivity(loginIntent);
                 }
             }
-        };
+        };*/
     }
 
-    public void createNewUser(final Context context, String email, String password){
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+    public void createNewUser(final Context context,String StudentName, String FatherName,String Course, String College ,String Rollno, String Branch, String Batch, String Address, String Contact, String OtherContact, String Email, String InterestediSem, String Reference){
+        /*firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener((Activity) context, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -73,7 +73,7 @@ public class FirebaseApplication extends Application {
                             startActivity(intent);
                         }
                     }
-                });
+                });*/
     }
 
     public void loginAUser(final Context context, String email, String password){

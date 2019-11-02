@@ -3,9 +3,12 @@ package com.example.senderside.Activities;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -18,17 +21,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.senderside.R;
+import com.example.senderside.adapter.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
 
-public class OnlineRegistrationForm extends Fragment implements View.OnClickListener {
+public class OnlineRegistrationForm extends Fragment {
     private View view;
-    private Button student_reg_btn,job_reg_btn;
-    private Toolbar toolbar;
-    public  OnlineRegistrationForm()
-    {
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    ViewPagerAdapter viewPagerAdapter;
+
+    public OnlineRegistrationForm() {
     }
 
 
@@ -37,26 +42,15 @@ public class OnlineRegistrationForm extends Fragment implements View.OnClickList
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_online_registration_form, container, false);
-        AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
-        toolbar = view.findViewById(R.id.toolbar_registration_form);
-        appCompatActivity.setSupportActionBar(toolbar);
-        student_reg_btn = view.findViewById(R.id.studentregister_btn);
-        job_reg_btn = view.findViewById(R.id.job_register_btn);
-        student_reg_btn.setOnClickListener(this);
-        job_reg_btn.setOnClickListener(this);
-         return view;
-
+        AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
+        viewPager = (ViewPager) view.findViewById(R.id.form_pager);
+        tabLayout = (TabLayout) view.findViewById(R.id.form_tab);
+        viewPagerAdapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FDFDFD"));
+        tabLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
+        tabLayout.setTabTextColors(Color.parseColor("#e96464"), Color.parseColor("#ffffff"));
+        return view;
     }
-        public void onClick(View view)
-        {
-            switch (view.getId())
-            {
-                case R.id.studentregister_btn:
-                    Intent studentIntent = new Intent(getActivity(),StudentRegistration.class);
-                    startActivity(studentIntent);
-                case R.id.job_register_btn:
-                    Intent jobIntent = new Intent(getActivity(),JobRegistrationForm.class);
-                   startActivity(jobIntent);
-            }
-        }
 }

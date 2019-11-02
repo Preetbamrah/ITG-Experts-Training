@@ -109,7 +109,7 @@ dependencies {
     //space navigation view
     implementation 'com.github.armcha:SpaceNavigationView:1.6.0'
 
-   // implementation 'com.google.firebase:firebase-ads:18.2.0'
+    // implementation 'com.google.firebase:firebase-ads:18.2.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -55,7 +55,7 @@ public class RegisterPage extends AppCompatActivity {
         mobileEdit = findViewById(R.id.regmobile);
         repassEdit = findViewById(R.id.regrepass);
         mAuth = ((FirebaseApplication) getApplication()).getFirebaseAuth();
-        ((FirebaseApplication) getApplication()).checkUserLogin(RegisterPage.this);
+        ((FirebaseApplication) getApplication()).checkUserLogin(getApplicationContext());
 
         // mauth = FirebaseAuth.getInstance();
         button.setOnClickListener(new View.OnClickListener() {

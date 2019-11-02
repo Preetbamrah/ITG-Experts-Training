@@ -11,21 +11,6 @@
         android:orientation="vertical"
         tools:context=".activities.StudentRegisteration"
         >
-        <include
-            android:id="@+id/toolbar_registration_form"
-            layout="@layout/toolbar" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:text="Student Registration Form"
-            android:textColor="#D81313"
-            android:textSize="@dimen/_18sdp"
-            android:textStyle="bold" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,7 +132,6 @@
                 android:fontFamily="sans-serif"/>
 
             <EditText
-                android:id="@+id/editOther"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -198,7 +182,6 @@
                 android:fontFamily="sans-serif"/>
 
             <EditText
-                android:id="@+id/college"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -223,7 +206,6 @@
                 android:fontFamily="sans-serif"/>
 
             <EditText
-                android:id="@+id/rollno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
@@ -363,31 +345,6 @@
                 android:fontFamily="sans-serif"
                 android:textSize="@dimen/_15ssp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reference By"
-                android:textColor="#000"
-                android:fontFamily="sans-serif"
-                android:textSize="@dimen/_15ssp" />
-
-            <EditText
-                android:id="@+id/referenceedit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_15sdp"
-                android:singleLine="true"
-                android:textColor="#000"
-                android:fontFamily="sans-serif"
-                android:textSize="@dimen/_15ssp" />
-        </LinearLayout>
 
         <Button
             android:id="@+id/registerbtn_stu"
@@ -395,7 +352,7 @@
             android:layout_height="@dimen/_50sdp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
             android:background="@drawable/roundbtndesign"
             android:backgroundTint="@color/colorPrimary"
             android:fontFamily="serif"

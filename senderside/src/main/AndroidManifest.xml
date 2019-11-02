@@ -5,21 +5,21 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".Bean.FirebaseApplication"
         android:allowBackup="true"
+        android:appComponentFactory="whateverString"
         android:icon="@drawable/itglogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString"
-        android:name = "com.example.senderside.Bean.FirebaseApplication" >
+        tools:replace="android:appComponentFactory">
         <activity android:name=".Activities.JobRegistrationForm" />
         <activity android:name=".Activities.PasswordConfiguration" />
         <activity android:name=".Activities.ProfileDetail" />
@@ -46,9 +46,9 @@
         <activity android:name=".Activities.ComputerList" />
         <activity android:name=".Activities.EclectricalList" />
         <activity android:name=".Activities.BbaListData" />
-        <activity android:name=".Activities.CivilList">
-        </activity>
-        <activity android:name=".Activities.StudentRegistration"/>
+        <activity android:name=".Activities.CivilList"></activity>
+        <activity android:name=".Activities.StudentRegistration" />
+        <activity android:name=".Activities.ReferList"></activity>
     </application>
 
 </manifest>

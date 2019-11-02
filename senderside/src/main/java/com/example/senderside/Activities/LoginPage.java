@@ -29,7 +29,7 @@ private FirebaseAuth mAuth;
         emailEdit = findViewById(R.id.logemail);
         passEdit = findViewById(R.id.logpassword);
         mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
-        ((FirebaseApplication)getApplication()).checkUserLogin(LoginPage.this);
+        ((FirebaseApplication)getApplication()).checkUserLogin(getApplicationContext());
 
         button.setOnClickListener(new View.OnClickListener()
         {
