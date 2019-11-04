@@ -132,6 +132,7 @@
                 android:fontFamily="sans-serif"/>
 
             <EditText
+                android:id="@+id/editOther"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -182,6 +183,7 @@
                 android:fontFamily="sans-serif"/>
 
             <EditText
+                android:id="@+id/college"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -206,6 +208,7 @@
                 android:fontFamily="sans-serif"/>
 
             <EditText
+                android:id="@+id/rollno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
@@ -316,7 +319,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
-                android:drawableRight="@drawable/down_arrow_icon"
                 />
         </LinearLayout>
 

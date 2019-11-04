@@ -161,6 +161,7 @@ public class StudentRegistration extends AppCompatActivity {
                 String rollno = edit_roll.getText().toString();
                 String reference = edit_reference.getText().toString();
                 String semester = editTextsem.getText().toString().trim();
+                String interestedin = edit_interest.getText().toString().trim();
                 if (name.isEmpty())
                 {
                     editTextst.setError("Enter your name");
@@ -206,6 +207,11 @@ public class StudentRegistration extends AppCompatActivity {
                     edit_roll.setError("Enter your Semester");
                     edit_roll.requestFocus();
                 }
+                else if (interestedin.isEmpty())
+                {
+                    edit_interest.setError("Please enter interested course");
+                    edit_interest.requestFocus();
+                }
                 else if (semester.isEmpty())
                 {
                     editTextsem.setError("Enter your Semester");
@@ -224,17 +230,18 @@ public class StudentRegistration extends AppCompatActivity {
                     studentBean.setStudent_fathername(fatherName);
                     studentBean.setStudent_mobilenumber(contact);
                     studentBean.setStudent_address(address);
-                    studentBean.setStudent_course(courseSt);
-                    studentBean.setStudent_batch_to(batch_to);
                     studentBean.setStudent_batch_from(batch_from);
-                    //studentBean.setStudent_interested(interested);
-                    studentBean.setStudent_contact(otherContact);
+                    studentBean.setStudent_batch_to(batch_to);
+                    studentBean.setStudent_branch(branchSt);
                     studentBean.setStudent_college(college);
+                    studentBean.setStudent_course(courseSt);
+                    studentBean.setStudent_contact(otherContact);
                     studentBean.setStudent_reference(reference);
+                    studentBean.setStudent_rollno(rollno);
+                    studentBean.setStudent_interested(interestedin);
                     studentBean.setStudent_email(emailAddress);
                     studentBean.setStudent_sem(semester);
-                    studentBean.setStudent_rollno(rollno);
-                    studentBean.setStudent_branch(branchSt);
+
 
                     MyDbHelper dbAdapter= new MyDbHelper(StudentRegistration.this);
                     dbAdapter.addStudent(studentBean);
@@ -244,53 +251,6 @@ public class StudentRegistration extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "student added successfully", Toast.LENGTH_SHORT).show();
 
                 }
-            }
-        });
-        edit_interest.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder alertDilaogBuilder = new AlertDialog.Builder(StudentRegistration.this);
-                alertDilaogBuilder.setTitle("Choose Courses")
-                        .setMultiChoiceItems(interested, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int selectedItemId, boolean isSelected) {
-                                if (isSelected) {
-                                    if (!interestArray.contains(selectedItemId))
-                                    {
-                                        interestArray.add(selectedItemId);
-                                    }
-                                } else if (interestArray.contains(selectedItemId)) {
-                                    interestArray.remove(Integer.valueOf(selectedItemId));
-                                }
-                            }
-                        })
-                        .setCancelable(false)
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int which) {
-                                String items = "";
-                                for (int i = 0;i< interestArray.size();i++)
-                                {
-                                    items = items+interested[interestArray.get(i)];
-                                    if (i!= interestArray.size() -1)
-                                    {
-                                        items = items+ ",";
-                                    }
-                                }
-                                edit_interest.setText(items);
-                               /* Intent intent = new Intent(Intent.ACTION_VIEW);
-                                startActivity(intent);*/
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                               dialogInterface.dismiss();
-                            }
-                        });
-                AlertDialog alertDialog  = alertDilaogBuilder.create();
-                alertDialog.show();
             }
         });
     }

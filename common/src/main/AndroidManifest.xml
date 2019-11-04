@@ -28,7 +28,8 @@
         <activity android:name=".activities.RegistrationFormActivity" />
         <activity android:name=".activities.ReferenceList" />
         <activity android:name=".activities.TeacherReferAlert" />
-        <activity android:name=".activities.FriendReferAlert"></activity>
+        <activity android:name=".activities.FriendReferAlert">
+        </activity>
     </application>
 
 </manifest>

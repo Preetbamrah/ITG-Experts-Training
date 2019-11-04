@@ -1,21 +1,18 @@
-package com.example.common.database;
+package com.example.senderside.database;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.common.bean.FacultyBean;
-import com.example.common.bean.ReferenceBean;
-import com.example.common.bean.StudentBean;
+import com.example.senderside.Bean.FacultyBean;
+import com.example.senderside.Bean.ReferenceBean;
+import com.example.senderside.Bean.StudentBean;
 
 import java.util.ArrayList;
 
-public class MyDbHelper extends SQLiteOpenHelper {
-
+public class MyDatabase extends SQLiteOpenHelper {
     private static final  String DATABASE_NAME = "ITG";
     private static  final int DATABASE_VERSION = 3;
 
@@ -57,7 +54,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
     private static final String KEY_FRIEND = "student_friend";
     private static final String KEY_COURSE = "friend_cousre";
 
-    public MyDbHelper(Context context) {
+    public MyDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -99,7 +96,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 KEY_STUDENT_REFER_ID + " INTERGER PRIMARY KEY AUTOINCREMENT, "+
                 KEY_TEACHER + " TEXT,"+
                 KEY_DESIGNATION + " TEXT,"+
-                 KEY_FRIEND + " TEXT,"+
+                KEY_FRIEND + " TEXT,"+
                 KEY_COURSE + " TEXT "+ ")";
         Log.d("queryReference",queryReference);
         try
@@ -149,12 +146,12 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 KEY_STUDENT_EMAIL + " TEXT," +
                 KEY_STUDENT_SEM + " TEXT " + ")";
         Log.d("queryStudent",queryStudent );
-        String queryReference = " CREATE TABLE "+ STUDENT_REFEREENCE_TABLE +"("+
+        String queryReference = " CREATE TABLE "+STUDENT_REFEREENCE_TABLE+"("+
                 KEY_STUDENT_REFER_ID + " INTERGER PRIMARY KEY AUTOINCREMENT, "+
                 KEY_TEACHER + " TEXT,"+
                 KEY_DESIGNATION + " TEXT,"+
                 KEY_FRIEND + " TEXT,"+
-                KEY_COURSE + " TEXT " + ")";
+                KEY_COURSE + " TEXT "+ ")";
         Log.d("queryReference",queryReference);
         try
         {
@@ -242,7 +239,6 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL(query);
         db.close();
     }
-
 
     //student crud
     public void addStudent(StudentBean studentBean) {

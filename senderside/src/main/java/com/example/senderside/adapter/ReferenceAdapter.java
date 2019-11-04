@@ -9,7 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.senderside.Activities.StudentRegistration;
 import com.example.senderside.R;
 
@@ -41,15 +44,29 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
             if (position==0)
             {
                 LayoutInflater layoutInflater = LayoutInflater.from(context);
-                View promptView = layoutInflater.inflate(R.layout.activity_teacher_refer_alert,null);
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                final View promptView = layoutInflater.inflate(R.layout.activity_teacher_refer_alert,null);
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                 alertDialog.setView(promptView)
-                        .setTitle("Reference By Techer")
                         .setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent = new Intent(context,StudentRegistration.class);
-                                context.startActivity(intent);
+                                EditText teacher_edit = promptView.findViewById(R.id.teacher_edit);
+                                EditText designation = promptView.findViewById(R.id.designation_edit);
+                                String teachername = teacher_edit.getText().toString();
+                                String designationTeacher = designation.getText().toString();
+                                if (teachername.isEmpty())
+                                {
+                                    Toast.makeText(context,"Please enter the teacher name",Toast.LENGTH_LONG).show();
+                                }
+                                else if ( designationTeacher.isEmpty())
+                                {
+                                    Toast.makeText(context,"Please enter the teacher designation",Toast.LENGTH_LONG).show();
+                                }
+                                else
+                                {
+                                    Intent intent = new Intent(context,StudentRegistration.class);
+                                    context.startActivity(intent);
+                                }
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -64,15 +81,29 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
             if (position==1)
             {
                 LayoutInflater layoutInflater = LayoutInflater.from(context);
-                View promptView = layoutInflater.inflate(R.layout.activity_friend_refer_alert,null);
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                final View promptView = layoutInflater.inflate(R.layout.activity_friend_refer_alert,null);
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                 alertDialog.setView(promptView)
-                        .setTitle("Reference By Friend")
                         .setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent = new Intent(context,StudentRegistration.class);
-                                context.startActivity(intent);
+                                EditText frd_edit = promptView.findViewById(R.id.name_edit);
+                                EditText course = promptView.findViewById(R.id.frd_course);
+                                String frdname = frd_edit.getText().toString();
+                                String coursename = course.getText().toString();
+                                if (frdname.isEmpty())
+                                {
+                                    Toast.makeText(context,"Please enter the friend name",Toast.LENGTH_LONG).show();
+                                }
+                                else if ( coursename.isEmpty())
+                                {
+                                    Toast.makeText(context,"Please enter the friend course",Toast.LENGTH_LONG).show();
+                                }
+                                else
+                                {
+                                    Intent intent = new Intent(context,StudentRegistration.class);
+                                    context.startActivity(intent);
+                                }
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
