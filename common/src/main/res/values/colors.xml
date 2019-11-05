@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#bf1212</color>
     <color name="colorAccent">#3345B1</color>
     <color name="whiteCardColor">#fff</color>
+    <color name="abc">#00afff</color>
 </resources>

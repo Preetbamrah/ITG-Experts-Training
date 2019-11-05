@@ -67,12 +67,12 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
                                 }
                                 else
                                 {
-                                    ReferenceBean referenceBean = new ReferenceBean();
+                                   /* ReferenceBean referenceBean = new ReferenceBean();
                                     referenceBean.setStudent_teacher(teachername);
                                     referenceBean.setTeacher_designation(designationTeacher);
 
-                                    MyDbHelper myDbHelper = new MyDbHelper(context);
-                                    myDbHelper.addReference(referenceBean);
+                                    MyDbHelper myDbHelper = new MyDbHelper(promptView.getContext());
+                                    myDbHelper.addReference(referenceBean);*/
 
                                     Toast.makeText(context,"Register reference",Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(context,StudentRegistration.class);
@@ -112,13 +112,13 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
                                 }
                                 else
                                 {
-                                    ReferenceBean referenceBean = new ReferenceBean();
+                                    /*ReferenceBean referenceBean = new ReferenceBean();
                                     referenceBean.setStudent_friend(frdname);
                                     referenceBean.setFriend_cousre(coursename);
 
                                     MyDbHelper myDbHelper = new MyDbHelper(context);
                                     myDbHelper.addReference(referenceBean);
-
+*/
                                     Intent intent = new Intent(context,StudentRegistration.class);
                                     context.startActivity(intent);
                                 }

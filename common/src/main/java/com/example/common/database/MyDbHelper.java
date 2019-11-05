@@ -1,15 +1,12 @@
 package com.example.common.database;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.common.bean.FacultyBean;
-import com.example.common.bean.ReferenceBean;
 import com.example.common.bean.StudentBean;
 
 import java.util.ArrayList;
@@ -17,7 +14,7 @@ import java.util.ArrayList;
 public class MyDbHelper extends SQLiteOpenHelper {
 
     private static final  String DATABASE_NAME = "ITG";
-    private static  final int DATABASE_VERSION = 3;
+    private static  final int DATABASE_VERSION = 7;
 
     private static final String FACULTY_INFO_TABLE = "faculty_table";
     private static final String STUDENT_INFO_TABLE = "student_table";
@@ -95,18 +92,19 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 KEY_STUDENT_EMAIL + " TEXT," +
                 KEY_STUDENT_SEM + " TEXT " + ")";
         Log.d("queryStudent",queryStudent );
-        String queryReference = "CREATE TABLE "+STUDENT_REFEREENCE_TABLE+"("+
+
+       /* String queryReference = "CREATE TABLE "+STUDENT_REFEREENCE_TABLE+"("+
                 KEY_STUDENT_REFER_ID + " INTERGER PRIMARY KEY AUTOINCREMENT, "+
                 KEY_TEACHER + " TEXT,"+
                 KEY_DESIGNATION + " TEXT,"+
                  KEY_FRIEND + " TEXT,"+
                 KEY_COURSE + " TEXT "+ ")";
-        Log.d("queryReference",queryReference);
+        Log.d("queryReference",queryReference);*/
         try
         {
             db.execSQL(queryFaculty);
             db.execSQL(queryStudent);
-            db.execSQL(queryReference);
+            //db.execSQL(queryReference);
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -149,18 +147,19 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 KEY_STUDENT_EMAIL + " TEXT," +
                 KEY_STUDENT_SEM + " TEXT " + ")";
         Log.d("queryStudent",queryStudent );
-        String queryReference = " CREATE TABLE "+ STUDENT_REFEREENCE_TABLE +"("+
+
+       /* String queryReference = " CREATE TABLE "+ STUDENT_REFEREENCE_TABLE +"("+
                 KEY_STUDENT_REFER_ID + " INTERGER PRIMARY KEY AUTOINCREMENT, "+
                 KEY_TEACHER + " TEXT,"+
                 KEY_DESIGNATION + " TEXT,"+
                 KEY_FRIEND + " TEXT,"+
                 KEY_COURSE + " TEXT " + ")";
-        Log.d("queryReference",queryReference);
+        Log.d("queryReference",queryReference);*/
         try
         {
             db.execSQL(queryFaculty);
             db.execSQL(queryStudent);
-            db.execSQL(queryReference);
+            //db.execSQL(queryReference);
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -380,7 +379,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.close();
     }
     //facult crud
-    public void addReference(ReferenceBean referenceBean) {
+   /* public void addReference(ReferenceBean referenceBean) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         String queryRef = "INSERT INTO student_ref_table (student_teacher,teacher_designation,student_friend,friend_cousre) values ('"+
@@ -411,5 +410,5 @@ public class MyDbHelper extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
         }
         return referenceBean;
-    }
+    }*/
 }

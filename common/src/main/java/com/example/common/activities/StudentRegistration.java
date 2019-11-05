@@ -4,9 +4,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,15 +21,25 @@ import android.widget.Toast;
 import com.example.common.R;
 import com.example.common.bean.StudentBean;
 import com.example.common.database.MyDbHelper;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class StudentRegistration extends AppCompatActivity {
    Spinner batch_from_spinner,batch_to_spinner,branch_spinner,course_spinner;
    Button buttonreg;
     boolean[] checkedItems;
+    DatabaseReference  mDatabaseReference;
+    DatabaseReference reference;
     TextView edit_batch_from;
+    ArrayList<StudentBean> student;
     EditText editTextst,editTextfa,editTextadd,editTextcon,edit_roll,editTextem,editTextsem,edit_interest,edit_reference,editOther,edit_college;
     String[] course = {"Select Course","B.Tech","HM","BBA","MCA","IT","B.COM","Other"};
     String[] branch = {"Select Branch","CSE","EE","ECE","ME","CE","IT","NO ONE"};
@@ -40,25 +52,28 @@ public class StudentRegistration extends AppCompatActivity {
         setContentView(R.layout.activity_student_registration);
         buttonreg = findViewById(R.id.registerbtn_stu);
         editTextadd = findViewById(R.id.addressedit);
+        student = new ArrayList<>();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        reference = mDatabaseReference.child("Student").child("studentId");
         editTextst = findViewById(R.id.studentedit);
         editTextfa = findViewById(R.id.fatheredit);
         editTextcon = findViewById(R.id.contactdit);
-        edit_roll = (EditText)findViewById(R.id.rollno);
-        editOther = (EditText)findViewById(R.id.editOther);
+        edit_roll = (EditText) findViewById(R.id.rollno);
+        editOther = (EditText) findViewById(R.id.editOther);
         editTextem = findViewById(R.id.emailedit);
         editTextsem = findViewById(R.id.semedit);
-        edit_college = (EditText)findViewById(R.id.college);
+        edit_college = (EditText) findViewById(R.id.college);
         edit_interest = findViewById(R.id.interest_edit);
-        edit_reference = (EditText)findViewById(R.id.referenceedit);
-        batch_to_spinner = (Spinner)findViewById(R.id.batch_to_spinner);
-        branch_spinner = (Spinner)findViewById(R.id.branch_spinner);
-        course_spinner = (Spinner)findViewById(R.id.course_spinner);
-        batch_from_spinner = (Spinner)findViewById(R.id.batch_from_spinner);
-        toolbar  = findViewById(R.id.toolbar_registration_form);
+        edit_reference = (EditText) findViewById(R.id.referenceedit);
+        batch_to_spinner = (Spinner) findViewById(R.id.batch_to_spinner);
+        branch_spinner = (Spinner) findViewById(R.id.branch_spinner);
+        course_spinner = (Spinner) findViewById(R.id.course_spinner);
+        batch_from_spinner = (Spinner) findViewById(R.id.batch_from_spinner);
+        toolbar = findViewById(R.id.toolbar_registration_form);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        checkedItems =  new boolean[interested.length];
+        checkedItems = new boolean[interested.length];
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,20 +83,19 @@ public class StudentRegistration extends AppCompatActivity {
         // year Spinner
         ArrayList<String> years = new ArrayList<String>();
         int thisyear = Calendar.getInstance().get(Calendar.YEAR);
-        for (int i= 2009;i<=thisyear;i++)
-        {
-            years.add(Integer.toString(i+3));
+        for (int i = 2009; i <= thisyear; i++) {
+            years.add(Integer.toString(i + 3));
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,years);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StudentRegistration.this, android.R.layout.simple_spinner_dropdown_item, years);
         batch_to_spinner.setAdapter(arrayAdapter);
         batch_from_spinner.setAdapter(arrayAdapter);
-        ArrayAdapter courseAdapter = new ArrayAdapter(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,course);
+        ArrayAdapter courseAdapter = new ArrayAdapter(StudentRegistration.this, android.R.layout.simple_spinner_dropdown_item, course);
         course_spinner.setAdapter(courseAdapter);
-        ArrayAdapter branchAdapter = new ArrayAdapter(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,branch);
+        ArrayAdapter branchAdapter = new ArrayAdapter(StudentRegistration.this, android.R.layout.simple_spinner_dropdown_item, branch);
         branch_spinner.setAdapter(branchAdapter);
         //Interested Spinner
-       final ArrayList<Integer> interestArray = new ArrayList<>();//<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,interested);
-      //  spinnerinter.setAdapter(interestArray);
+        final ArrayList<Integer> interestArray = new ArrayList<>();//<String>(StudentRegistration.this,android.R.layout.simple_spinner_dropdown_item,interested);
+        //  spinnerinter.setAdapter(interestArray);
         batch_from_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> arg0, View view,
@@ -145,10 +159,8 @@ public class StudentRegistration extends AppCompatActivity {
         });
 
 
-
-        buttonreg.setOnClickListener(new View.OnClickListener(){
-            public  void onClick(View view)
-            {
+        buttonreg.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 String name = editTextst.getText().toString().trim();
                 String fatherName = editTextfa.getText().toString().trim();
                 String address = editTextadd.getText().toString().trim();
@@ -162,68 +174,43 @@ public class StudentRegistration extends AppCompatActivity {
                 String reference = edit_reference.getText().toString();
                 String semester = editTextsem.getText().toString().trim();
                 String interestedin = edit_interest.getText().toString().trim();
-                if (name.isEmpty())
-                {
+                if (name.isEmpty()) {
                     editTextst.setError("Enter your name");
                     editTextst.requestFocus();
-                }
-                else if (fatherName.isEmpty())
-                {
+                } else if (fatherName.isEmpty()) {
                     editTextfa.setError("Enter your Father Name");
                     editTextfa.requestFocus();
-                }
-                else if (address.isEmpty())
-                {
+                } else if (address.isEmpty()) {
                     editTextadd.setError("Enter Your Address");
                     editTextadd.requestFocus();
-                }
-                else if (emailAddress.isEmpty())
-                {
+                } else if (emailAddress.isEmpty()) {
                     editTextem.setError("Enter Email Address");
                     editTextem.requestFocus();
-                }
-                else if (!emailAddress.matches(emailPattern))
-                {
+                } else if (!emailAddress.matches(emailPattern)) {
                     editTextem.setError("Enter valid email");
                     editTextem.requestFocus();
-                }
-                else if (!contact.matches(contactPattern))
-                {
+                } else if (!contact.matches(contactPattern)) {
                     editTextcon.setError("Enter Valid Contact");
                     editTextcon.requestFocus();
-                }
-                else if (!otherContact.matches(contactPattern))
-                {
+                } else if (!otherContact.matches(contactPattern)) {
                     editOther.setError("Enter Valid Contact");
                     editOther.requestFocus();
-                }
-                else if (college.isEmpty())
-                {
+                } else if (college.isEmpty()) {
                     edit_college.setError("Enter your College Name");
                     edit_college.requestFocus();
-                }
-                else if (rollno.isEmpty())
-                {
+                } else if (rollno.isEmpty()) {
                     edit_roll.setError("Enter your Semester");
                     edit_roll.requestFocus();
-                }
-                else if (interestedin.isEmpty())
-                {
+                } else if (interestedin.isEmpty()) {
                     edit_interest.setError("Please enter interested course");
                     edit_interest.requestFocus();
-                }
-                else if (semester.isEmpty())
-                {
+                } else if (semester.isEmpty()) {
                     editTextsem.setError("Enter your Semester");
                     editTextsem.requestFocus();
-                }
-                else if (reference.isEmpty())
-                {
+                } else if (reference.isEmpty()) {
                     edit_reference.setError("Enter your Semester");
                     edit_reference.requestFocus();
-                }
-                else {
-
+                } else {
                     StudentBean studentBean = new StudentBean();
 
                     studentBean.setStudent_firstname(name);
@@ -243,15 +230,41 @@ public class StudentRegistration extends AppCompatActivity {
                     studentBean.setStudent_sem(semester);
 
 
-                    MyDbHelper dbAdapter= new MyDbHelper(StudentRegistration.this);
+                    MyDbHelper dbAdapter = new MyDbHelper(StudentRegistration.this);
                     dbAdapter.addStudent(studentBean);
-
-                    /*Intent intent =new Intent(StudentRegistration.this,ReferencedFragment.class);
-                    startActivity(intent);*/
-                    Toast.makeText(getApplicationContext(), "student added successfully", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
     }
 }
+
+
+
+
+
+                   /* mDatabaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String name = editTextst.getText().toString().trim();
+                            String fatherName = editTextfa.getText().toString().trim();
+                            String address = editTextadd.getText().toString().trim();
+                            String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                            String contact = editTextcon.getText().toString();
+                            String contactPattern = "(0/91)?[6-9][0-9]{9}";
+                            String college = edit_college.getText().toString();
+                            String emailAddress = editTextem.getText().toString();
+                            String otherContact = editOther.getText().toString();
+                            String rollno = edit_roll.getText().toString();
+                            String reference = edit_reference.getText().toString();
+                            String semester = editTextsem.getText().toString().trim();
+                            String interestedin = edit_interest.getText().toString().trim();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+*/

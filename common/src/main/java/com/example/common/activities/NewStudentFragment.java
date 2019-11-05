@@ -1,13 +1,8 @@
 package com.example.common.activities;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,7 +84,7 @@ public class NewStudentFragment extends Fragment {
             public void onItemSelected(AdapterView<?> arg0, View view,
                                        int arg2, long arg3) {
                 // TODO Auto-generated method stub
-                ((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
+                //((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
                 batch_from = (String) batch_from_spinner.getSelectedItem();
 
             }
@@ -104,7 +99,7 @@ public class NewStudentFragment extends Fragment {
             public void onItemSelected(AdapterView<?> arg0, View view,
                                        int arg2, long arg3) {
                 // TODO Auto-generated method stub
-                ((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
+                //((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
                 batch_to = (String) batch_to_spinner.getSelectedItem();
 
             }
@@ -120,7 +115,7 @@ public class NewStudentFragment extends Fragment {
             public void onItemSelected(AdapterView<?> arg0, View view,
                                        int arg2, long arg3) {
                 // TODO Auto-generated method stub
-                ((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
+                //((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
                 courseSt = (String) course_spinner.getSelectedItem();
 
             }
@@ -135,7 +130,7 @@ public class NewStudentFragment extends Fragment {
             public void onItemSelected(AdapterView<?> arg0, View view,
                                        int arg2, long arg3) {
                 // TODO Auto-generated method stub
-                ((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
+                //((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
                 branchSt = (String) branch_spinner.getSelectedItem();
 
             }
@@ -196,7 +191,7 @@ public class NewStudentFragment extends Fragment {
                     editTextsem.requestFocus();
                 } else {
 
-                    StudentBean studentBean = new StudentBean();
+                    /*StudentBean studentBean = new StudentBean(name, fatherName, address, emailAddress, college, contact, otherContact, rollno, reference, semester, interestedin, batch_from, batch_to, branchSt, courseSt);
 
                     studentBean.setStudent_firstname(name);
                     studentBean.setStudent_fathername(fatherName);
@@ -217,7 +212,7 @@ public class NewStudentFragment extends Fragment {
                     MyDbHelper dbAdapter = new MyDbHelper(getActivity());
                     dbAdapter.addStudent(studentBean);
 
-                    /*Intent intent =new Intent(StudentRegistration.this,ReferencedFragment.class);
+                    *//*Intent intent =new Intent(StudentRegistration.this,ReferencedFragment.class);
                     startActivity(intent);*/
                     Toast.makeText(getContext(), "student added successfully", Toast.LENGTH_SHORT).show();
 
