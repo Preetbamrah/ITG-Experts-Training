@@ -131,7 +131,7 @@
                     android:textSize="@dimen/_15ssp"
                     android:textColor="#000"
                     android:drawableTint="#817b7b"
-                    android:hint="Re-Password"/>
+                    android:hint="Conform Password"/>
             </android.support.design.widget.TextInputLayout>
             <Button
                 android:layout_width="@dimen/_150sdp"
@@ -148,5 +148,12 @@
                 android:textSize="@dimen/_15ssp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_gravity="center_horizontal"
+        />
 
 </LinearLayout>

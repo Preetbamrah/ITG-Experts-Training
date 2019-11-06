@@ -37,8 +37,9 @@ public class StudentRegistration extends AppCompatActivity {
    Button buttonreg;
     boolean[] checkedItems;
     DatabaseReference  mDatabaseReference;
-    DatabaseReference reference;
+    FirebaseAuth firebaseAuth;
     TextView edit_batch_from;
+    StudentBean studentBean;
     ArrayList<StudentBean> student;
     EditText editTextst,editTextfa,editTextadd,editTextcon,edit_roll,editTextem,editTextsem,edit_interest,edit_reference,editOther,edit_college;
     String[] course = {"Select Course","B.Tech","HM","BBA","MCA","IT","B.COM","Other"};
@@ -53,8 +54,9 @@ public class StudentRegistration extends AppCompatActivity {
         buttonreg = findViewById(R.id.registerbtn_stu);
         editTextadd = findViewById(R.id.addressedit);
         student = new ArrayList<>();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
-        reference = mDatabaseReference.child("Student").child("studentId");
+        firebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("Student");
+        //studentBean = new StudentBean();
         editTextst = findViewById(R.id.studentedit);
         editTextfa = findViewById(R.id.fatheredit);
         editTextcon = findViewById(R.id.contactdit);
@@ -161,19 +163,19 @@ public class StudentRegistration extends AppCompatActivity {
 
         buttonreg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String name = editTextst.getText().toString().trim();
-                String fatherName = editTextfa.getText().toString().trim();
-                String address = editTextadd.getText().toString().trim();
+                String name = String.valueOf(editTextst.getText().toString().trim());
+                String fatherName = String.valueOf(editTextfa.getText().toString().trim());
+                String address = String.valueOf(editTextadd.getText().toString().trim());
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-                String contact = editTextcon.getText().toString();
+                String contact = String.valueOf(editTextcon.getText().toString());
                 String contactPattern = "(0/91)?[6-9][0-9]{9}";
-                String college = edit_college.getText().toString();
-                String emailAddress = editTextem.getText().toString();
-                String otherContact = editOther.getText().toString();
-                String rollno = edit_roll.getText().toString();
-                String reference = edit_reference.getText().toString();
-                String semester = editTextsem.getText().toString().trim();
-                String interestedin = edit_interest.getText().toString().trim();
+                String college = String.valueOf(edit_college.getText().toString());
+                String emailAddress = String.valueOf(editTextem.getText().toString());
+                String otherContact = String.valueOf(editOther.getText().toString());
+                String rollno = String.valueOf(edit_roll.getText().toString());
+                String reference = String.valueOf(edit_reference.getText().toString());
+                String semester = String.valueOf(editTextsem.getText().toString().trim());
+                String interestedin = String.valueOf(edit_interest.getText().toString().trim());
                 if (name.isEmpty()) {
                     editTextst.setError("Enter your name");
                     editTextst.requestFocus();
@@ -211,8 +213,6 @@ public class StudentRegistration extends AppCompatActivity {
                     edit_reference.setError("Enter your Semester");
                     edit_reference.requestFocus();
                 } else {
-                    StudentBean studentBean = new StudentBean();
-
                     studentBean.setStudent_firstname(name);
                     studentBean.setStudent_fathername(fatherName);
                     studentBean.setStudent_mobilenumber(contact);
@@ -228,43 +228,11 @@ public class StudentRegistration extends AppCompatActivity {
                     studentBean.setStudent_interested(interestedin);
                     studentBean.setStudent_email(emailAddress);
                     studentBean.setStudent_sem(semester);
+                    mDatabaseReference.push().setValue(studentBean);
 
-
-                    MyDbHelper dbAdapter = new MyDbHelper(StudentRegistration.this);
-                    dbAdapter.addStudent(studentBean);
+                    Toast.makeText(StudentRegistration.this,"Registration Successful",Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 }
-
-
-
-
-
-                   /* mDatabaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String name = editTextst.getText().toString().trim();
-                            String fatherName = editTextfa.getText().toString().trim();
-                            String address = editTextadd.getText().toString().trim();
-                            String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-                            String contact = editTextcon.getText().toString();
-                            String contactPattern = "(0/91)?[6-9][0-9]{9}";
-                            String college = edit_college.getText().toString();
-                            String emailAddress = editTextem.getText().toString();
-                            String otherContact = editOther.getText().toString();
-                            String rollno = edit_roll.getText().toString();
-                            String reference = edit_reference.getText().toString();
-                            String semester = editTextsem.getText().toString().trim();
-                            String interestedin = edit_interest.getText().toString().trim();
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-
-*/

@@ -244,7 +244,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
 
     //student crud
-    public void addStudent(StudentBean studentBean) {
+   /* public void addStudent(StudentBean studentBean) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         String query = "INSERT INTO student_table (student_firstname,student_fathername,student_mobilenumber,student_address,student_batch_from,student_batch_to,student_branch,student_college,student_course,student_contact,student_reference,student_rollno,student_interested,student_email,student_sem) values ('"+
@@ -279,8 +279,8 @@ public class MyDbHelper extends SQLiteOpenHelper {
         if(cursor.moveToFirst())
         {
             do{
-                StudentBean studentBean = new StudentBean();
-                studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
+               // StudentBean studentBean = new StudentBean();
+                //studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
                 studentBean.setStudent_firstname(cursor.getString(1));
                 studentBean.setStudent_fathername(cursor.getString(2));
                 studentBean.setStudent_mobilenumber(cursor.getString(3));
@@ -315,7 +315,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         {
             do{
                 StudentBean studentBean = new StudentBean();
-                studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
+                //studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
                 studentBean.setStudent_firstname(cursor.getString(1));
                 studentBean.setStudent_fathername(cursor.getString(2));
                 studentBean.setStudent_mobilenumber(cursor.getString(3));
@@ -347,7 +347,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         if(cursor.moveToFirst())
         {
             do{
-                studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
+                //studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
                 studentBean.setStudent_firstname(cursor.getString(1));
                 studentBean.setStudent_fathername(cursor.getString(2));
                 studentBean.setStudent_mobilenumber(cursor.getString(3));
@@ -377,7 +377,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         Log.d("query", query);
         db.execSQL(query);
         db.close();
-    }
+    }*/
     //facult crud
    /* public void addReference(ReferenceBean referenceBean) {
         SQLiteDatabase db = this.getWritableDatabase();

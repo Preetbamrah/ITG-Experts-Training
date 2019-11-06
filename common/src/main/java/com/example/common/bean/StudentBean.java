@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StudentBean {
-    private int student_id;
+    private String student_id;
     private String student_firstname;
     private String student_fathername;
     private String student_mobilenumber;
@@ -22,6 +22,25 @@ public class StudentBean {
     private String student_rollno;
     private String student_sem;
     private String student_college;
+
+    public StudentBean(String studentId, String studentName, String studentFather, String student_email, String studentMobilenumber, String studentCourse, String studentBranch, String studentInterested, String studentReference, String studentOtherContact, String studentAddress, String studentBatchFrom, String studentBatchTo, String studentCollege, String studentRollno, String studentSem) {
+    this.student_id = studentId;
+    this.student_firstname = studentName;
+    this.student_fathername = studentFather;
+    this.student_email = student_email;
+    this.student_mobilenumber = studentMobilenumber;
+    this.student_course = studentCourse;
+    this.student_contact = studentOtherContact;
+    this.student_address = studentAddress;
+    this.student_batch_from = studentBatchFrom;
+    this.student_batch_to = studentBatchTo;
+    this.student_branch = studentBranch;
+    this.student_college  = studentCollege;
+    this.student_interested = studentInterested;
+    this.student_reference = studentReference;
+    this.student_rollno = studentRollno;
+    this.student_sem = studentSem;
+    }
 
     public String getStudent_batch_to() {
         return student_batch_to;
@@ -111,10 +130,10 @@ public class StudentBean {
         this.student_college = student_college;
     }
 
-    public int getStudent_id() {
+    public  String getStudent_id() {
         return student_id;
     }
-    public void setStudent_id(int student_id) {
+    public void setStudent_id(String student_id) {
         this.student_id = student_id;
     }
     public String getStudent_firstname() {

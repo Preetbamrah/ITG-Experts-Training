@@ -5,17 +5,35 @@
     <include
         layout="@layout/toolbar_activity"
         android:id="@+id/toolbar_view"/>
-    <ScrollView
+    <HorizontalScrollView
         android:layout_below="@id/toolbar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <ScrollView
         android:layout_width="match_parent"
         android:fillViewport="true"
         android:fitsSystemWindows="true"
         android:layout_height="match_parent">
-        <TableLayout
-            android:id="@+id/view_student_table"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal">
 
-        </TableLayout>
+        </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_values"
+            android:layout_below="@id/recycler_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="horizontal">
+
+        </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
     </ScrollView>
+    </HorizontalScrollView>
 </RelativeLayout>

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.common">
-    <uses-feature android:name="android.hardware.ram.low" android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.ram.low"
+        android:required="true" />
+
     <application
+        android:name=".bean.FirebaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/itg"
         android:label="@string/app_name"
         android:roundIcon="@drawable/itg"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name = "com.example.common.bean.FirebaseApplication">
+        android:theme="@style/AppTheme">
         <activity android:name=".activities.FacultyProfile" />
         <activity android:name=".activities.Dashboard" />
         <activity android:name=".activities.MainActivity">
@@ -28,8 +32,9 @@
         <activity android:name=".activities.RegistrationFormActivity" />
         <activity android:name=".activities.ReferenceList" />
         <activity android:name=".activities.TeacherReferAlert" />
-        <activity android:name=".activities.FriendReferAlert">
-        </activity>
+        <activity android:name=".activities.FriendReferAlert" />
+        <activity android:name=".activities.ViewList" />
+        <activity android:name=".activities.ListStudents"></activity>
     </application>
 
 </manifest>

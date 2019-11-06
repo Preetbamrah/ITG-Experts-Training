@@ -1,6 +1,7 @@
 package com.example.common.bean;
 
 public class ViewBean {
+
     private  String userName;
     private String userEmail;
     private String userMobile;

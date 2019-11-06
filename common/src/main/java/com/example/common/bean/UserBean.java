@@ -1,18 +1,21 @@
 package com.example.common.bean;
 
 public class UserBean {
-    public UserBean(String username, String userid,String useremail,String usermono, String userstatus){
-        this.user_email = useremail;
-        this.user_id = userid;
-        this.user_mo_no= usermono;
-        this.user_name = username;
-        this.user_status = userstatus;
+   public String user_name;
+   public String user_email;
+   protected String user_mobile;
+
+   public UserBean()
+   {
+
+   }
+
+
+    public UserBean(String user_name, String user_email, String user_mobile) {
+        this.user_name = user_name;
+        this.user_email = user_email;
+        this.user_mobile = user_mobile;
     }
-    private String user_name;
-    private String user_email;
-    private String user_id;
-    private String user_mo_no;
-    private String user_status;
 
     public String getUser_name() {
         return user_name;
@@ -20,7 +23,6 @@ public class UserBean {
 
     public void setUser_name(String user_name) {
         this.user_name = user_name;
-        return;
     }
 
     public String getUser_email() {
@@ -29,33 +31,13 @@ public class UserBean {
 
     public void setUser_email(String user_email) {
         this.user_email = user_email;
-        return;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUser_mobile() {
+        return user_mobile;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-        return;
-    }
-
-    public String getUser_mo_no() {
-        return user_mo_no;
-    }
-
-    public void setUser_mo_no(String user_mo_no) {
-        this.user_mo_no = user_mo_no;
-        return;
-    }
-
-    public String getUser_status() {
-        return user_status;
-    }
-
-    public void setUser_status(String user_status) {
-        this.user_status = user_status;
-        return;
+    public void setUser_mobile(String user_mobile) {
+        this.user_mobile = user_mobile;
     }
 }
