@@ -7,11 +7,11 @@
         android:id="@+id/toolbar_view"/>
     <HorizontalScrollView
         android:layout_below="@id/toolbar_view"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fillViewport="true">
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:fillViewport="true"
         android:fitsSystemWindows="true"
         android:layout_height="match_parent">
@@ -20,15 +20,15 @@
             android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_heading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:scrollbars="horizontal">
 
         </android.support.v7.widget.RecyclerView>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_values"
             android:layout_below="@id/recycler_heading"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:scrollbars="horizontal">
 

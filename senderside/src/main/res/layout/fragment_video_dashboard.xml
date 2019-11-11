@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:background="#FDFDFD"
         android:layout_centerVertical="true"
-        android:text="LIVE VIDEO"
+        android:text="PROJECT LIVE VIDEO"
         android:textStyle="bold"
         android:textSize="@dimen/_13ssp"
         android:fontFamily="sans-serif"

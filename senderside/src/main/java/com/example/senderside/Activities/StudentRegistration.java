@@ -18,6 +18,9 @@ import android.widget.Toast;
 import com.example.senderside.Bean.StudentBean;
 import com.example.senderside.R;
 import com.example.senderside.database.MyDatabase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +33,9 @@ public class StudentRegistration extends AppCompatActivity {
    Spinner batch_from_spinner,batch_to_spinner,branch_spinner,course_spinner;
     Button buttonreg;
     boolean[] checkedItems;
+    StudentBean studentBean;
+    DatabaseReference mDatabaseReference;
+    FirebaseAuth firebaseAuth;
     TextView edit_batch_from;
     EditText editTextst,editTextfa,editTextadd,editTextcon,edit_roll,editTextem,editTextsem,edit_interest,edit_reference,editOther,edit_college;
     String[] course = {"Select Course","B.Tech","HM","BBA","MCA","IT","B.COM","Other"};
@@ -57,6 +63,8 @@ public class StudentRegistration extends AppCompatActivity {
         branch_spinner = (Spinner)findViewById(R.id.branch_spinner);
         course_spinner = (Spinner)findViewById(R.id.course_spinner);
         batch_from_spinner = (Spinner)findViewById(R.id.batch_from_spinner);
+        firebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("Student");
         toolbar  = findViewById(R.id.toolbar_registration_form);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -226,9 +234,6 @@ public class StudentRegistration extends AppCompatActivity {
                     edit_reference.requestFocus();
                 }
                 else {
-
-                    StudentBean studentBean = new StudentBean();
-
                     studentBean.setStudent_firstname(name);
                     studentBean.setStudent_fathername(fatherName);
                     studentBean.setStudent_mobilenumber(contact);
@@ -244,15 +249,9 @@ public class StudentRegistration extends AppCompatActivity {
                     studentBean.setStudent_interested(interestedin);
                     studentBean.setStudent_email(emailAddress);
                     studentBean.setStudent_sem(semester);
+                    mDatabaseReference.push().setValue(studentBean);
 
-
-                    MyDatabase dbAdapter= new MyDatabase(StudentRegistration.this);
-                    dbAdapter.addStudent(studentBean);
-
-                    /*Intent intent =new Intent(StudentRegistration.this,ReferencedFragment.class);
-                    startActivity(intent);*/
-                    Toast.makeText(getApplicationContext(), "student added successfully", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(StudentRegistration.this,"Registration Successful",Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -1,7 +1,7 @@
 package com.example.senderside.Bean;
 
 public class StudentBean {
-    private int student_id;
+    private String student_id;
     private String student_firstname;
     private String student_fathername;
     private String student_mobilenumber;
@@ -17,6 +17,30 @@ public class StudentBean {
     private String student_rollno;
     private String student_sem;
     private String student_college;
+
+
+    public StudentBean(String student_id, String student_firstname, String student_fathername, String student_mobilenumber, String student_address, String student_batch_to, String student_batch_from, String student_branch, String student_course, String student_contact, String student_interested, String student_reference, String student_email, String student_rollno, String student_sem, String student_college) {
+        this.student_id = student_id;
+        this.student_firstname = student_firstname;
+        this.student_fathername = student_fathername;
+        this.student_mobilenumber = student_mobilenumber;
+        this.student_address = student_address;
+        this.student_batch_to = student_batch_to;
+        this.student_batch_from = student_batch_from;
+        this.student_branch = student_branch;
+        this.student_course = student_course;
+        this.student_contact = student_contact;
+        this.student_interested = student_interested;
+        this.student_reference = student_reference;
+        this.student_email = student_email;
+        this.student_rollno = student_rollno;
+        this.student_sem = student_sem;
+        this.student_college = student_college;
+    }
+
+    public StudentBean() {
+
+    }
 
     public String getStudent_batch_to() {
         return student_batch_to;
@@ -106,10 +130,10 @@ public class StudentBean {
         this.student_college = student_college;
     }
 
-    public int getStudent_id() {
+    public  String getStudent_id() {
         return student_id;
     }
-    public void setStudent_id(int student_id) {
+    public void setStudent_id(String student_id) {
         this.student_id = student_id;
     }
     public String getStudent_firstname() {

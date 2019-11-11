@@ -14,10 +14,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.common.R;
+import com.example.common.activities.LoginPage;
 import com.example.common.activities.NewStudentFragment;
+import com.example.common.activities.RegisterPage;
 import com.example.common.activities.StudentRegistration;
 import com.example.common.bean.ReferenceBean;
+import com.example.common.bean.StudentReference;
+import com.example.common.bean.TeacherBean;
 import com.example.common.database.MyDbHelper;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -73,11 +81,20 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
 
                                     MyDbHelper myDbHelper = new MyDbHelper(promptView.getContext());
                                     myDbHelper.addReference(referenceBean);*/
-
-                                    Toast.makeText(context,"Register reference",Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(context,StudentRegistration.class);
-                                    context.startActivity(intent);
+                                    TeacherBean teacherBean = new TeacherBean(teachername,
+                                            designationTeacher);
+                                    FirebaseDatabase.getInstance().getReference("Teacher")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(teacherBean).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(context,"Register reference",Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(context,StudentRegistration.class);
+                                            context.startActivity(intent);
+                                        }
+                                    });
                                 }
+
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -119,9 +136,20 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
                                     MyDbHelper myDbHelper = new MyDbHelper(context);
                                     myDbHelper.addReference(referenceBean);
 */
-                                    Intent intent = new Intent(context,StudentRegistration.class);
-                                    context.startActivity(intent);
+                                    StudentReference studentReference = new StudentReference(frdname,
+                                        coursename);
+                                    FirebaseDatabase.getInstance().getReference("ReferenceStudent")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(studentReference).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(context,"Register reference",Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(context,StudentRegistration.class);
+                                            context.startActivity(intent);
+                                        }
+                                    });
                                 }
+
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

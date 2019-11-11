@@ -56,6 +56,7 @@ public class StudentRegistration extends AppCompatActivity {
         student = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("Student");
+
         //studentBean = new StudentBean();
         editTextst = findViewById(R.id.studentedit);
         editTextfa = findViewById(R.id.fatheredit);

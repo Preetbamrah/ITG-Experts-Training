@@ -1,9 +1,11 @@
-package com.example.common.bean;
+package com.example.senderside.Bean;
 
 public class UserBean {
    public String user_name;
    public String user_email;
    protected String user_mobile;
+
+
     public String user_password;
 
    public UserBean()
@@ -12,7 +14,7 @@ public class UserBean {
    }
 
 
-    public UserBean(String user_name, String user_email, String user_mobile,String user_password) {
+    public UserBean(String user_name, String user_email, String user_mobile, String user_password) {
         this.user_name = user_name;
         this.user_email = user_email;
         this.user_mobile = user_mobile;
@@ -50,4 +52,5 @@ public class UserBean {
     public void setUser_password(String user_password) {
         this.user_password = user_password;
     }
+
 }

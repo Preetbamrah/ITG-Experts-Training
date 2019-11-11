@@ -14,13 +14,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.senderside.Activities.StudentRegistration;
+import com.example.senderside.Bean.ReferenceBean;
+import com.example.senderside.Bean.StudentBean;
+import com.example.senderside.Bean.StudentReference;
+import com.example.senderside.Bean.TeacherBean;
 import com.example.senderside.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.ReferenceViewHolder> {
     ArrayList name;
     Context context;
+    DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference("Teacher");
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("ReferenceStudent");
 
     public ReferenceAdapter(Context context, ArrayList name)
     {
@@ -64,11 +75,37 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
                                 }
                                 else
                                 {
+                                   /* ReferenceBean referenceBean = new ReferenceBean();
+                                    referenceBean.setStudent_teacher(teachername);
+                                    referenceBean.setTeacher_designation(designationTeacher);
+
+                                    MyDbHelper myDbHelper = new MyDbHelper(promptView.getContext());
+                                    myDbHelper.addReference(referenceBean);*/
+                                    TeacherBean teacherBean = new TeacherBean(teachername,
+                                            designationTeacher);
+                                    teacherBean.setTeacher_designation(designationTeacher);
+                                    teacherBean.setTeacher_name(teachername);
+                                    mDatabaseReference.push().setValue(teacherBean);
+                                    Toast.makeText(context,"Register reference",Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(context,StudentRegistration.class);
                                     context.startActivity(intent);
+
+                                   /* FirebaseDatabase.getInstance().getReference("Teacher")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(teacherBean).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(context,"Register reference",Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(context,StudentRegistration.class);
+                                            context.startActivity(intent);
+                                        }
+                                    });
+                                */
+
                                 }
                             }
-                        })
+
+                })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -99,9 +136,21 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.Refe
                                 {
                                     Toast.makeText(context,"Please enter the friend course",Toast.LENGTH_LONG).show();
                                 }
-                                else
-                                {
-                                    Intent intent = new Intent(context,StudentRegistration.class);
+                                else {
+                                    /*ReferenceBean referenceBean = new ReferenceBean();
+                                    referenceBean.setStudent_friend(frdname);
+                                    referenceBean.setFriend_cousre(coursename);
+
+                                    MyDbHelper myDbHelper = new MyDbHelper(context);
+                                    myDbHelper.addReference(referenceBean);
+*/
+                                    StudentReference studentReference = new StudentReference(frdname,
+                                            coursename);
+                                    studentReference.setStudent_name(frdname);
+                                    studentReference.setStudent_course(coursename);
+                                    reference.push().setValue(studentReference);
+                                    Toast.makeText(context, "Register reference", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(context, StudentRegistration.class);
                                     context.startActivity(intent);
                                 }
                             }

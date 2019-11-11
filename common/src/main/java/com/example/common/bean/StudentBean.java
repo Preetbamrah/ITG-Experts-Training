@@ -3,6 +3,7 @@ package com.example.common.bean;
 import com.google.firebase.database.Exclude;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class StudentBean {
@@ -23,23 +24,28 @@ public class StudentBean {
     private String student_sem;
     private String student_college;
 
-    public StudentBean(String studentId, String studentName, String studentFather, String student_email, String studentMobilenumber, String studentCourse, String studentBranch, String studentInterested, String studentReference, String studentOtherContact, String studentAddress, String studentBatchFrom, String studentBatchTo, String studentCollege, String studentRollno, String studentSem) {
-    this.student_id = studentId;
-    this.student_firstname = studentName;
-    this.student_fathername = studentFather;
-    this.student_email = student_email;
-    this.student_mobilenumber = studentMobilenumber;
-    this.student_course = studentCourse;
-    this.student_contact = studentOtherContact;
-    this.student_address = studentAddress;
-    this.student_batch_from = studentBatchFrom;
-    this.student_batch_to = studentBatchTo;
-    this.student_branch = studentBranch;
-    this.student_college  = studentCollege;
-    this.student_interested = studentInterested;
-    this.student_reference = studentReference;
-    this.student_rollno = studentRollno;
-    this.student_sem = studentSem;
+
+    public StudentBean(String student_id, String student_firstname, String student_fathername, String student_mobilenumber, String student_address, String student_batch_to, String student_batch_from, String student_branch, String student_course, String student_contact, String student_interested, String student_reference, String student_email, String student_rollno, String student_sem, String student_college) {
+        this.student_id = student_id;
+        this.student_firstname = student_firstname;
+        this.student_fathername = student_fathername;
+        this.student_mobilenumber = student_mobilenumber;
+        this.student_address = student_address;
+        this.student_batch_to = student_batch_to;
+        this.student_batch_from = student_batch_from;
+        this.student_branch = student_branch;
+        this.student_course = student_course;
+        this.student_contact = student_contact;
+        this.student_interested = student_interested;
+        this.student_reference = student_reference;
+        this.student_email = student_email;
+        this.student_rollno = student_rollno;
+        this.student_sem = student_sem;
+        this.student_college = student_college;
+    }
+
+    public StudentBean() {
+
     }
 
     public String getStudent_batch_to() {

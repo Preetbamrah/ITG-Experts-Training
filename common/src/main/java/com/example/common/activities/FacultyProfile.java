@@ -15,13 +15,26 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.common.R;
+import com.example.common.bean.UserBean;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 
@@ -29,9 +42,11 @@ public class FacultyProfile extends AppCompatActivity {
     int SELECT_FILE = 0;
     ImageView img;
     EditText editTextPass,et1,et2;
+    private  static  final  int CAMERA_CAPTURE_CODE = 1;
     private File image;
     DatabaseReference mDatabaseReference, reference;
     TextView txt_name,txt_email,txt_mobile,txt_log;
+    private  StorageReference mStorage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +55,9 @@ public class FacultyProfile extends AppCompatActivity {
         txt_email = findViewById(R.id.user_email);
         txt_mobile = findViewById(R.id.user_mobile);
         txt_log = findViewById(R.id.logout_confi);
+        mStorage = FirebaseStorage.getInstance().getReference();
         editTextPass = (EditText)findViewById(R.id.change_pass);
+        FirebaseAuth.getInstance().signOut();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User");
         reference = FirebaseDatabase.getInstance().getReference("Image");
         img = findViewById(R.id.profile);
@@ -96,9 +113,29 @@ public class FacultyProfile extends AppCompatActivity {
             }
         });
     }
-    protected void   ChangePassDialog() {
 
-        // get prompts.xml view
+    private void logConfiguration() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(FacultyProfile.this);
+        alertDialog.setTitle("Are you sure you want Logout?")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(FacultyProfile.this,LoginPage.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog dialog = alertDialog.create();
+        dialog.show();
+    }
+
+    private void   ChangePassDialog() {
         LayoutInflater layoutInflater = LayoutInflater.from(FacultyProfile.this);
         View promptView = layoutInflater.inflate(R.layout.activity_password_configuration, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FacultyProfile.this);
@@ -109,13 +146,7 @@ public class FacultyProfile extends AppCompatActivity {
         // setup a dialog window
         alertDialogBuilder.setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                      /*  String user_id=UserSession.getInstance(getApplicationContext()).getUserId();
-                        String old_password=et1.getText().toString();
-                        String new_password=et2.getText().toString();
-                        changepassword(user_id,old_password,new_password);*/
-
+                    public void onClick(DialogInterface dialog, final int id) {
 
                     }
                 })
@@ -140,7 +171,7 @@ public class FacultyProfile extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int i) {
                 if (items[i].equals("Camera")) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(intent, 7);
+                    startActivityForResult(intent, CAMERA_CAPTURE_CODE);
                 } else if (items[i].equals("Gallery")) {
                     Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     intent.setType("image/*");
@@ -156,8 +187,20 @@ public class FacultyProfile extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAMERA_CAPTURE_CODE && requestCode == RESULT_OK)
+        {
+            Uri uri = data.getData();
+            StorageReference storageReference =mStorage.child("Photos").child(uri.getLastPathSegment());
+            storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(getApplicationContext(),"Uploading finished.....",Toast.LENGTH_LONG).show();
+                }
+            });
 
-        if (requestCode == 7) {
+        }
+        /*
+       if (requestCode == 7) {
 
 
             if (data == null) {
@@ -180,7 +223,7 @@ public class FacultyProfile extends AppCompatActivity {
             }
         } else if (requestCode == 0) {
             img.setImageResource(R.drawable.default_img);
-        }
+        }*/
 
     }
     public String getRealPathFromURI(Uri contentUri)
@@ -191,27 +234,8 @@ public class FacultyProfile extends AppCompatActivity {
         cursor.moveToFirst();
         return cursor.getString(column_index);
     }
-    public void logConfiguration()
-    {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(FacultyProfile.this);
-        alertDialog.setTitle("Are you sure do you want logout?");
-        alertDialog.setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent mlogout  = new Intent(FacultyProfile.this,LoginPage.class);
-                        startActivity(mlogout);
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        AlertDialog alertDialog1 = alertDialog.create();
-        alertDialog1.show();
-    }
+
+
 }
 
 

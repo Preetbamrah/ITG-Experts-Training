@@ -87,24 +87,6 @@ public class Dashboard extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_refresh:
-                swipeRefreshLayout = new SwipeRefreshLayout(this);
-                swipeRefreshLayout.setRefreshing(true);
-                swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        swipeRefreshLayout.setRefreshing(true);
-                        new Handler().postDelayed(new Runnable() {
-
-                            public void run() {
-                                swipeRefreshLayout.setRefreshing(false);
-                            }
-                        }, 3000);
-                    }
-                });/*
-                        doYourUpdate();*/
-                Toast.makeText(Dashboard.this,"Refresh",Toast.LENGTH_LONG).show();
-                break;
             case R.id.action_about:
                 Intent about = new Intent(Dashboard.this,AboutActivity.class);
                 startActivity(about);

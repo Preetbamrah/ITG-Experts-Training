@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
@@ -21,14 +22,21 @@ import android.widget.TextView;
 
 import com.example.senderside.R;
 import com.example.senderside.Session.UserSession;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
 
 public class ProfileDetail extends AppCompatActivity {
 ImageView imageView;
-TextView name_text,mobile_text,email_text, pass_text,log_text;
+TextView name_text,mobile_text,email_text,log_text;
+EditText pass_text;
 EditText old_edt, new_edt;
     private File image;
+    DatabaseReference mDatabaseReference;
     int SELECT_FILE = 0;
     private final int MY_REQUEST_CODE_WRITE_STORAGE = 45, MY_REQUEST_CODE_READ_STORAGE = 46;
     private final int MY_REQUEST_CODE_CAMERA = 47;
@@ -40,6 +48,7 @@ EditText old_edt, new_edt;
         name_text = findViewById(R.id.name_text_view);
         mobile_text = findViewById(R.id.mobile_text_view);
         email_text = findViewById(R.id.email_text_view);
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User");
         pass_text = findViewById(R.id.password_text);
         log_text = findViewById(R.id.log_out);
         log_text.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +85,25 @@ EditText old_edt, new_edt;
                 alert.show();
             }
         });
+        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String name = ds.child("user_name").getValue().toString();
+                    String email = ds.child("user_email").getValue().toString();
+                    String mobile = ds.child("user_mobile").getValue().toString();
+                    name_text.setText(name);
+                    mobile_text.setText(mobile);
+                    email_text.setText(email);
+                }
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +119,28 @@ EditText old_edt, new_edt;
             }
         });
     }
+    private void checkLogConformation()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProfileDetail.this);
+        alertDialogBuilder.setMessage("ARE YOU SURE YOU WANT TO LOGOUT?")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(ProfileDetail.this,LoginPage.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
+    }
     private void SelectImage() {
         final CharSequence[] items = {"Camera", "Gallery", "Cancel"};
         AlertDialog.Builder builder = new AlertDialog.Builder(ProfileDetail.this);
@@ -118,14 +167,6 @@ EditText old_edt, new_edt;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //if(requestCode == 7 && requestCode  == RESULT_OK)
-        /*if(requestCode == 7)
-        {
-            Bitmap map=(Bitmap) data.getExtras().get("data");
-            img.setImageBitmap(map);
-        }*/
-        //if (requestCode == Activity.RESULT_OK)
-
         if (requestCode == 7) {
 
 
@@ -164,28 +205,7 @@ EditText old_edt, new_edt;
         cursor.moveToFirst();
         return cursor.getString(column_index);
     }
-    public  void checkLogConformation()
-    {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProfileDetail.this);
-        alertDialogBuilder.setMessage("ARE YOU SURE YOU WANT TO LOGOUT?")
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(ProfileDetail.this,LoginPage.class);
-                        startActivity(intent);
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                });
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
 
-    }
 
     /*///////addcabdetail
     private void CallInsertProductApi(File image, String user_id, String cabno) {

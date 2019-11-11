@@ -277,7 +277,7 @@ public class MyDatabase extends SQLiteOpenHelper {
         {
             do{
                 StudentBean studentBean = new StudentBean();
-                studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
+                //studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
                 studentBean.setStudent_firstname(cursor.getString(1));
                 studentBean.setStudent_fathername(cursor.getString(2));
                 studentBean.setStudent_mobilenumber(cursor.getString(3));
@@ -312,7 +312,7 @@ public class MyDatabase extends SQLiteOpenHelper {
         {
             do{
                 StudentBean studentBean = new StudentBean();
-                studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
+                //studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
                 studentBean.setStudent_firstname(cursor.getString(1));
                 studentBean.setStudent_fathername(cursor.getString(2));
                 studentBean.setStudent_mobilenumber(cursor.getString(3));
@@ -344,7 +344,7 @@ public class MyDatabase extends SQLiteOpenHelper {
         if(cursor.moveToFirst())
         {
             do{
-                studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
+                //studentBean.setStudent_id(Integer.parseInt(cursor.getString(0)));
                 studentBean.setStudent_firstname(cursor.getString(1));
                 studentBean.setStudent_fathername(cursor.getString(2));
                 studentBean.setStudent_mobilenumber(cursor.getString(3));

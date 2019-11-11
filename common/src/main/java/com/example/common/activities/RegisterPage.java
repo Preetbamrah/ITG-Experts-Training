@@ -107,15 +107,17 @@ TextView textView;
                                         progressBar.setVisibility(View.GONE);
                                         UserBean userBean = new UserBean(user,
                                                 email,
-                                                mobile);
+                                                mobile,
+                                                pass);
                                         FirebaseDatabase.getInstance().getReference("User")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(userBean).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-                                                Toast.makeText(RegisterPage.this,"Registration Successful",Toast.LENGTH_LONG).show();
                                                 Intent intent = new Intent(RegisterPage.this,LoginPage.class);
                                                 startActivity(intent);
+                                                Toast.makeText(RegisterPage.this,"Registration Successful",Toast.LENGTH_LONG).show();
+
                                             }
                                         });
                                     }
