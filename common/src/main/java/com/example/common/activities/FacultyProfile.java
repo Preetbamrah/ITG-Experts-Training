@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.common.R;
+import com.example.common.bean.StudentBean;
 import com.example.common.bean.UserBean;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -42,8 +43,11 @@ public class FacultyProfile extends AppCompatActivity {
     int SELECT_FILE = 0;
     ImageView img;
     EditText editTextPass,et1,et2;
+    private FirebaseUser user;
     private  static  final  int CAMERA_CAPTURE_CODE = 1;
     private File image;
+    int PICK_IMAGE_REQUEST = 111;
+    Uri filePath;
     DatabaseReference mDatabaseReference, reference;
     TextView txt_name,txt_email,txt_mobile,txt_log;
     private  StorageReference mStorage;
@@ -147,7 +151,31 @@ public class FacultyProfile extends AppCompatActivity {
         alertDialogBuilder.setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, final int id) {
+                        user = FirebaseAuth.getInstance().getCurrentUser();
+                        final String email = user.getEmail();
+                        final String oldpass = et1.getText().toString();
+                        final String newPass = et2.getText().toString();
+                        AuthCredential credential = EmailAuthProvider.getCredential(email,oldpass);
 
+                        user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful()){
+                                    user.updatePassword(newPass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(!task.isSuccessful()){
+                                               Toast.makeText(getApplicationContext(), "Something went wrong. Please try again later", Toast.LENGTH_LONG).show();
+                                            }else {
+                                                Toast.makeText(getApplicationContext(), "Password Successfully Modified", Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    });
+                                }else {
+                                    Toast.makeText(getApplicationContext(), "Authentication Failed", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
                     }
                 })
                 .setNegativeButton("Cancel",
@@ -187,7 +215,7 @@ public class FacultyProfile extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAMERA_CAPTURE_CODE && requestCode == RESULT_OK)
+       /* if (requestCode == CAMERA_CAPTURE_CODE && requestCode == RESULT_OK)
         {
             Uri uri = data.getData();
             StorageReference storageReference =mStorage.child("Photos").child(uri.getLastPathSegment());
@@ -198,9 +226,44 @@ public class FacultyProfile extends AppCompatActivity {
                 }
             });
 
-        }
-        /*
-       if (requestCode == 7) {
+        }*/
+        Uri selectedImageUri = data.getData();
+            try {
+                if (requestCode == 7) {
+
+
+                    if (data == null) {
+
+                        img.setImageResource(R.drawable.default_img);
+                    } else {
+                        Bitmap map = (Bitmap) data.getExtras().get("data");
+                        img.setImageBitmap(map);
+                        image = new File(getRealPathFromURI(data.getData()));
+                    }
+                } else if (requestCode == SELECT_FILE) {
+
+                    if (data == null) {
+
+                        img.setImageResource(R.drawable.default_img);
+                    } else {
+
+                        img.setImageURI(selectedImageUri);
+                        image = new File(getRealPathFromURI(data.getData()));
+                    }
+                } else if (requestCode == 0) {
+                    img.setImageResource(R.drawable.default_img);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        StorageReference storageReference =mStorage.child("Photos").child(selectedImageUri.getLastPathSegment());
+        storageReference.putFile(selectedImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(getApplicationContext(),"Uploading finished.....",Toast.LENGTH_LONG).show();
+            }
+        });
+       /*if (requestCode == 7) {
 
 
             if (data == null) {
@@ -223,7 +286,8 @@ public class FacultyProfile extends AppCompatActivity {
             }
         } else if (requestCode == 0) {
             img.setImageResource(R.drawable.default_img);
-        }*/
+        }
+*/
 
     }
     public String getRealPathFromURI(Uri contentUri)

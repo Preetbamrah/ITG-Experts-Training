@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.senderside.Bean.StudentBean;
-import com.example.senderside.R;
 import com.example.senderside.database.MyDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
