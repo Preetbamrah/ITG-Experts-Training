@@ -18,45 +18,68 @@
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
--keepclassmembers class ** {
-   public static *** pure(...);
-}
--dontwarn okio.**
--ignorewarnings
+-keep public class !testAppH23.** { *;}
+-dontwarn org.apache.http.**
+-keep class *{
+ public private *;
+ }
 -keep public class com.google.android.gms.* { public *; }
 -dontwarn com.google.android.gms.**
--dontwarn com.google.firebase.messaging.**
+-keep class com.google.android.** { *; }
+-ignorewarnings
+-dontwarn com.google.android.**
+-keep class com.google.android.gms.internal.** { *; }
+-keep class com.google.gson.** { *; }
+-dontwarn com.google.android.gms.internal.zzhu
+-dontwarn java.nio.file.Files
+-dontwarn java.nio.file.Path
+-dontwarn java.nio.file.OpenOption
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 -keepattributes Signature
 -keepattributes *Annotation*
-# Add this global rule
--keepattributes Signature
+-dontwarn com.google.firebase.messaging.**
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
 
-# This rule will properly ProGuard all the model classes in
-# the package com.yourcompany.models. Modify to fit the structure
-# of your app.
-  -keepclassmembers class com.example.senderside.** {
-*;
-}
--dontwarn com.firebase.**
--keep class com.firebase.** { *; }
--keep interface com.firebase.** { *; }
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
 
--keep class io.card.**
--keepclassmembers class io.card.** { *; }
--keep class com.lowagie.text.** { *; }
--keep class android.support.v7.widget.** { *; }
--keep interface android.support.v7.widget.** { *; }
--keepattributes SourceFile,LineNumberTable
--keep class com.nostra13.** { *; }
--keepclassmembers class com.nostra13.** { *; }
--keep class com.google.android.gms.internal.** { *; }
--keep public class com.google.android.gms.* { public *; }
--dontwarn com.google.android.gms.**
--keep class com.apptimize.** { *; }
--keepclassmembers class * extends com.apptimize.ApptimizeTest {
-  <methods>;
+-dontwarn org.xmlpull.v1.**
+-dontnote org.xmlpull.v1.**
+-keep class org.xmlpull.** { *; }
+-keepclassmembers class org.xmlpull.** { *; }
+
+# Only necessary if you downloaded the SDK jar directly instead of from maven.
+-keep class com.shaded.fasterxml.jackson.** { *; }
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+-dontoptimize
+-dontpreverify
+-keep class com.example.senderside.** { *; }
+-dontwarn okio.**
+-dontwarn retrofit2.Call
+-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+-keep class android.support.v7.widget.RecyclerView { *; }
+-keep class persistence.** {
+  *;
 }
-#https://apptimize.com/docs/installation/android-installation.html#initializing-apptimize Step 4
--keep class com.mixpanel.android.mpmetrics.MixpanelAPI { *; }
--keep class com.google.android.gms.analytics.Tracker { *; }
--keep class com.google.analytics.tracking.android.Tracker { *; }
+-dontwarn kotlin.Unit
+
+#Top-level functions that can only be used by Kotlin.
+-dontwarn retrofit2.-KotlinExtensions
+-dontwarn kotlin.**
+
+-dontwarn com.squareup.okhttp.**
+-dontwarn okhttp3.internal.platform.*
+-dontwarn org.conscrypt.*
+
+-libraryjars   libs/android-support-v4.jar
+-dontwarn android.support.**
+-keep class android.support.** { *; }
+-keep interface android.support.app.** { *; }
+-keepattributes *Annotation*
+
+-dontoptimize
+-dontpreverify

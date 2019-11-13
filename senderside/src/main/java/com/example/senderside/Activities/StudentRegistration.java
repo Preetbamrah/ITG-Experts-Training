@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.senderside.Bean.StudentBean;
+import com.example.senderside.R;
 import com.example.senderside.database.MyDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -34,9 +35,9 @@ public class StudentRegistration extends AppCompatActivity {
     boolean[] checkedItems;
     StudentBean studentBean;
     DatabaseReference mDatabaseReference;
-    FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
     TextView edit_batch_from;
-    EditText editTextst,editTextfa,editTextadd,editTextcon,edit_roll,editTextem,editTextsem,edit_interest,edit_reference,editOther,edit_college;
+    EditText editTextst,editTextfa,editTextadd,editTextcon,edit_roll,editTextem,editTextsem,edit_interest = findViewById(R.id.interest_edit),edit_reference,editOther,edit_college;
     String[] course = {"Select Course","B.Tech","HM","BBA","MCA","IT","B.COM","Other"};
     String[] branch = {"Select Branch","CSE","EE","ECE","ME","CE","IT","NO ONE"};
     final String[] interested = {"Java", "Python", "Android", "Php", "C", "C++", "Networking", "3DS-MAX", "Autocad", "Revit Architecture Structure", "Staad-Pro","Marketing","Digital Marketing","Finance","HR","SEO","Accounting","Tally","Telecom","Robotics","Embedded System","PLC/SCADA","MATLAB","IOT","Solid Work","Catia","CNC","NX CAD/CAM"};
@@ -56,7 +57,6 @@ public class StudentRegistration extends AppCompatActivity {
         editTextem = findViewById(R.id.emailedit);
         editTextsem = findViewById(R.id.semedit);
         edit_college = (EditText)findViewById(R.id.college);
-        edit_interest = findViewById(R.id.interest_edit);
         edit_reference = (EditText)findViewById(R.id.referenceedit);
         batch_to_spinner = (Spinner)findViewById(R.id.batch_to_spinner);
         branch_spinner = (Spinner)findViewById(R.id.branch_spinner);

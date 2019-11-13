@@ -8,19 +8,21 @@
         android:required="true" />
 
     <application
-        android:name=".bean.FirebaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/itg"
+        android:appComponentFactory="whateverString"
         android:label="@string/app_name"
         android:roundIcon="@drawable/itg"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:appComponentFactory">
+        tools:replace="android:appComponentFactory"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".activities.FacultyProfile" />
         <activity android:name=".activities.Dashboard" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,7 +37,7 @@
         <activity android:name=".activities.TeacherReferAlert" />
         <activity android:name=".activities.FriendReferAlert" />
         <activity android:name=".activities.ViewList" />
-        <activity android:name=".activities.ListStudents"></activity>
+        <activity android:name=".activities.ListStudents"/>
     </application>
 
 </manifest>
